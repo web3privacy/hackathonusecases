@@ -1,4 +1,8 @@
-# Waku
+## Contents
+- [Waku](#Waku)
+- [Aztec](#Aztec)
+
+## Waku
 [source](https://github.com/waku-org/ideas/)
 
 <details>
@@ -219,7 +223,7 @@ REST APIs can log IP addresses of the data source and the receiver. Building a d
 The codebases on GitHub are vulnerable to censorship as they are stored and retrieved from a centralized source. A git client built on top of Waku is definitely an amazing idea.
 </details>
 
-# Aztec
+## Aztec
 [source](https://github.com/AztecProtocol/dev-rel/blob/main/hackathons/INSPIRATION.md)
 
 ## DeFi 💸
