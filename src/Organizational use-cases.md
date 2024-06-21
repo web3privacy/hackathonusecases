@@ -1,3 +1,6 @@
+# Organizational use-cases
+Repo with use-cases from organizations (within their hackathon guides, githubs etc)
+
 ## Contents
 - [Waku](#Waku)
 - [Aztec](#Aztec)
