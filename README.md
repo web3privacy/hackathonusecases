@@ -6,9 +6,9 @@ micro-service to generate ideas for hackathon privacy-projects
 
 ## Useful links
 
-Main repo: link
-Current repo: [link](https://github.com/hackyguru/web3privacy-ideas) (basic UI)
-Use-cases repo: [link](https://github.com/web3privacy/web3privacy/blob/main/Market%20overview/Ethereum%20Ecosystem/Hackathon%20projects.md)
+Main repo: [link](https://github.com/web3privacy/hackathonusecases)
+- Current repo: [link](https://github.com/hackyguru/web3privacy-ideas) (basic UI)
+- Use-cases repo: [link](https://github.com/web3privacy/web3privacy/blob/main/Market%20overview/Ethereum%20Ecosystem/Hackathon%20projects.md)
 
 There are 3 different type of use-cases we tackle at the moment
 - orgs ideas: [Waku](https://github.com/waku-org/ideas/), [Aztec](https://github.com/AztecProtocol/dev-rel/blob/main/hackathons/INSPIRATION.md)
