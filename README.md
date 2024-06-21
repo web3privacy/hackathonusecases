@@ -6,7 +6,7 @@ service to generate ideas for hackathon privacy-projects
 
 ## Useful links
 
-Main repo: [link](https://github.com/web3privacy/hackathonusecases)
+- Main repo: [link](https://github.com/web3privacy/hackathonusecases)
 - Current repo: [link](https://github.com/hackyguru/web3privacy-ideas) (basic UI)
 - Use-cases repo: [link](https://github.com/web3privacy/web3privacy/blob/main/Market%20overview/Ethereum%20Ecosystem/Hackathon%20projects.md)
 
