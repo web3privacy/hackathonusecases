@@ -19,3 +19,6 @@ All them are quite different within the use-case content
 - raw ideas can lack specifics
 - use-cases need event tag
 - expert need an expert feature like (org or a photo)
+
+## Part of the Hackathon curation pack project
+[docs](https://docs.web3privacy.info/research/hackathon-pack/)
