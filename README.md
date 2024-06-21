@@ -1,6 +1,6 @@
 # Hackathon use-cases generator
 
-micro-service to generate ideas for hackathon privacy-projects
+service to generate ideas for hackathon privacy-projects
 [docs](https://github.com/web3privacy/docs/blob/main/src/content/docs/projects/hackathon-use-cases-generator.md)
 ![alt text](https://github.com/web3privacy/docs/blob/main/src/content/docs/assets/privacy%20idea%20generator.png)
 
