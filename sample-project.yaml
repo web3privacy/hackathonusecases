@@ -1,0 +1,14 @@
+# Essential (minimum) use-case data ----------------------------------------------------------------------------------------------------------------
+# Please have a look at https://github.com/web3privacy/hackathonusecases/tree/main for explanations + examples 
+
+# Hackathon use-case
+name: SampleUseCase
+categories: [ Fundraising ]
+description: 'Short description of project features and mission'
+event: [ ETHBerlin ] 
+Github: link
+
+# Expert use-case
+name: Bluesky with only a wallet identity
+category: [ Social ]
+expert: name
