@@ -169,7 +169,7 @@ export default function Home() {
                       </div>
                       <hr className="opacity-10 my-3" />
                       <h3 className="archivo mt-2 text-sm opacity-50 text-end hover:underline cursor-pointer">
-                        Source: {generatedIdea.event.join(', ')}
+                        Source: {generatedIdea.event}
                       </h3>
                     </>
                   ) : (
@@ -240,7 +240,7 @@ export default function Home() {
                     description={idea.description}
                     categories={idea.categories}
                     github={idea.Github}
-                    source={idea.event.join(', ')}
+                    source={idea.event}
                   />
                 ))}
               </div>
@@ -254,7 +254,7 @@ export default function Home() {
                     description={idea.description}
                     categories={idea.categories}
                     github={idea.Github}
-                    source={idea.event.join(', ')}
+                    source={idea.event}
                   />
                 ))}
               </div>

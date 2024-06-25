@@ -1,72 +1,34 @@
 [
     {
-      "name": "AAA",
-      "categories": ["Privacy", "DeFi"],
-      "description": "A zero-knowledge proof system for private transactions in decentralized finance",
-      "event": ["ETHGlobal"],
-      "Github": "https://github.com/zkpriv/zkpriv-protocol"
+      "name": "Private notepad",
+      "categories": ["Privacy", "Communications"],
+      "description": "A simple notepad that uses Waku to privately communicate",
+      "event": ["@hackyguru"],
+      "Github": "https://github.com/zkpriv/zkpriv-protocol",
+      "featured": true
     },
     {
-      "name": "BBB",
-      "categories": ["Identity", "Governance"],
-      "description": "Decentralized identity solution using blockchain for self-sovereign identity management",
-      "event": ["ETHDenver"],
-      "Github": "https://github.com/decentralid/identity-protocol"
+      "name": "Censorship resistant Github",
+      "categories": ["Identity", "Privacy"],
+      "description": "Distributed and permissionless codebases with censorship resistant github",
+      "event": ["@hackyguru"],
+      "Github": "https://github.com/decentralid/identity-protocol",
+      "featured": true
     },
     {
-      "name": "CCC",
-      "categories": ["Sustainability", "Supply Chain"],
-      "description": "Blockchain-based supply chain tracking for eco-friendly products",
-      "event": ["ETHBerlin"],
-      "Github": "https://github.com/ecochain/green-supply-tracker"
+      "name": "Anonymous chat app",
+      "categories": ["Communications", "Privacy"],
+      "description": "Blockchain-based chat application",
+      "event": ["@somerandomperson"],
+      "Github": "https://github.com/ecochain/green-supply-tracker",
+      "featured": true
     },
     {
-      "name": "DDD",
-      "categories": ["Healthcare", "Data Privacy"],
-      "description": "Secure and private health data management system using blockchain",
-      "event": ["ETHSanFrancisco"],
-      "Github": "https://github.com/cryptohealth/health-data-vault"
-    },
-    {
-      "name": "FFF",
-      "categories": ["NFT", "Creative"],
-      "description": "Decentralized platform for generative art NFTs with built-in royalties",
-      "event": ["NFTHack"],
-      "Github": "https://github.com/artblocks/generative-nft-platform"
-    },
-    {
-      "name": "GGG",
-      "categories": ["Governance", "Voting"],
-      "description": "Decentralized autonomous organization toolkit with quadratic voting",
-      "event": ["ETHNewYork"],
-      "Github": "https://github.com/daogovernance/quadratic-voting-dao"
-    },
-    {
-      "name": "HHH",
-      "categories": ["Insurance", "DeFi"],
-      "description": "Decentralized insurance protocol for DeFi investments",
-      "event": ["DeFiSummit"],
-      "Github": "https://github.com/defiinsure/defi-coverage-protocol"
-    },
-    {
-      "name": "III",
-      "categories": ["Education", "Credentials"],
-      "description": "Blockchain-based educational credential verification system",
-      "event": ["ETHIndia"],
-      "Github": "https://github.com/educhain/credential-verifier"
-    },
-    {
-      "name": "JJJ",
-      "categories": ["Energy", "Sustainability"],
-      "description": "Peer-to-peer renewable energy trading platform using smart contracts",
-      "event": ["ETHLondon"],
-      "Github": "https://github.com/greenenergy/p2p-energy-trade"
-    },
-    {
-      "name": "III",
-      "categories": ["Charity", "Transparency"],
-      "description": "Transparent donation tracking and fund allocation system for charities",
-      "event": ["ETHParis"],
-      "Github": "https://github.com/cryptocharity/transparent-giving"
+      "name": "Private airtags",
+      "categories": ["Privacy"],
+      "description": "Private  alternative for airtags",
+      "event": ["@randomdude"],
+      "Github": "https://github.com/cryptohealth/health-data-vault",
+      "featured": true
     }
   ]

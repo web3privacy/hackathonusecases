@@ -1,72 +1,262 @@
 [
     {
-      "name": "ZKPriv",
-      "categories": ["Privacy", "DeFi"],
-      "description": "A zero-knowledge proof system for private transactions in decentralized finance",
-      "event": ["ETHGlobal"]
-    },
-    {
-      "name": "DecentralID",
-      "categories": ["Identity", "Governance"],
-      "description": "Decentralized identity solution using blockchain for self-sovereign identity management",
-      "event": ["ETHDenver"]
-    },
-    {
-      "name": "EcoChain",
-      "categories": ["Sustainability", "Supply Chain"],
-      "description": "Blockchain-based supply chain tracking for eco-friendly products",
-      "event": ["ETHBerlin"]
-    },
-    {
-      "name": "CryptoHealth",
-      "categories": ["Healthcare", "Data Privacy"],
-      "description": "Secure and private health data management system using blockchain",
-      "event": ["ETHSanFrancisco"]
-    },
-    {
-      "name": "ArtBlocks",
-      "categories": ["NFT", "Creative"],
-      "description": "Decentralized platform for generative art NFTs with built-in royalties",
-      "event": ["NFTHack"],
-      "Github": "https://github.com/artblocks/generative-nft-platform"
-    },
-    {
-      "name": "DAOGovernance",
-      "categories": ["Governance", "Voting"],
-      "description": "Decentralized autonomous organization toolkit with quadratic voting",
-      "event": ["ETHNewYork"],
-      "Github": "https://github.com/daogovernance/quadratic-voting-dao"
-    },
-    {
-      "name": "DefiInsure",
-      "categories": ["Insurance", "DeFi"],
-      "description": "Decentralized insurance protocol for DeFi investments",
-      "event": ["DeFiSummit"],
-      "Github": "https://github.com/defiinsure/defi-coverage-protocol",
+      "name": "zk loyalty",
+      "categories": ["Privacy", "Loyalty Program"],
+      "description": "A GDPR compliant, anonymous loyalty program",
+      "event": "ETHDam",
+      "github": "https://github.com/ETHDam-Hackathon/zkLoyalty/",
+      "website": "https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/cluxue9cx00s9vq01twk54w31/idea",
       "featured": true
     },
     {
-      "name": "EduChain",
-      "categories": ["Education", "Credentials"],
-      "description": "Blockchain-based educational credential verification system",
-      "event": ["ETHIndia"],
-      "Github": "https://github.com/educhain/credential-verifier",
+      "name": "Whisper",
+      "categories": ["Privacy", "Social"],
+      "description": "Platform for anonymized members to create privacy-preserved groups",
+      "event": "ETHDam",
+      "github": "https://github.com/gundeep/ethdam",
+      "website": "https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/cluz7whmw018nz301b1rrtbio/idea",
       "featured": true
     },
     {
-      "name": "GreenEnergy",
-      "categories": ["Energy", "Sustainability"],
-      "description": "Peer-to-peer renewable energy trading platform using smart contracts",
-      "event": ["ETHLondon"],
-      "Github": "https://github.com/greenenergy/p2p-energy-trade",
+      "name": "ZeroDock",
+      "categories": ["Computation", "Blockchain"],
+      "description": "Providing provable off-chain computation based on on-chain events",
+      "event": "ETHDam",
+      "github": "https://github.com/Quix44/ZeroDock-ethdam-2024.git",
+      "website": "https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/cluwkzjz100c6yz01i36k9rcu/idea",
       "featured": true
     },
     {
-      "name": "CryptoCharity",
-      "categories": ["Charity", "Transparency"],
-      "description": "Transparent donation tracking and fund allocation system for charities",
-      "event": ["ETHParis"],
-      "Github": "https://github.com/cryptocharity/transparent-giving",
+      "name": "TACo Snap",
+      "categories": ["Wallet", "Security"],
+      "description": "Store sensitive data like seed phrases and passwords directly within your MetaMask wallet",
+      "event": "ETHDam",
+      "github": "https://github.com/Feka7/taco-snap",
+      "website": "https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/clux1ntjg00m5z301xb0bdehj/idea",
       "featured": true
+    },
+    {
+      "name": "SunkETH",
+      "categories": ["Token", "Privacy"],
+      "description": "Token implementation of \"Zero-Knowledge Wormholes\"",
+      "event": "ETHDam",
+      "github": "https://github.com/kevincharm/i_lost_my_eth_in_a_boating_accident",
+      "website": "https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/cluz5su4e015uz3016zl2wio0/idea"
+    },
+    {
+      "name": "Stealth Keystore",
+      "categories": ["Wallet", "Security"],
+      "description": "Control multiple Safes from a single registered key using an on-chain keystore",
+      "event": "ETHDam",
+      "github": "https://github.com/fluidkey/ethdam-2024",
+      "website": "https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/cluyvpci0014zvq01b9ux91sp/idea"
+    },
+    {
+      "name": "StealthAlloc",
+      "categories": ["DAO", "Privacy"],
+      "description": "DAOs privately fund ventures",
+      "event": "ETHDam",
+      "github": "https://github.com/tse-lao/ethdam24",
+      "website": "https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/cluxse8cz00pjz3010wbq3thf/idea"
+    },
+    {
+      "name": "NEVO",
+      "categories": ["Voting", "Privacy"],
+      "description": "Decentralized voting by combining the privacy-enhanced MACI protocol with Near Protocol's seamless cross-chain capabilities",
+      "event": "ETHDam",
+      "github": "https://github.com/atahanyild/NEVO",
+      "website": "https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/cluz9746q01c2z301tupriiuq/idea"
+    },
+    {
+      "name": "munus",
+      "categories": ["Charity", "Privacy"],
+      "description": "Anonymous charity donations that allow for the donator to prove he did the donation",
+      "event": "ETHDam",
+      "github": "https://github.com/hackaugusto/munus",
+      "website": "https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/cluwhh6om00a8yz01gsluxt2g/idea"
+    },
+    {
+      "name": "BrickWall",
+      "categories": ["Social", "Privacy"],
+      "description": "Company reviews platform with privacy-preserving groups",
+      "event": "ETHDam",
+      "github": "https://github.com/Eugenumber1/BrickWall",
+      "website": "https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/cluz8gb2701a9z301ptjuvhlo/idea"
+    },
+    {
+      "name": "Browser socket MPC",
+      "categories": ["Security", "Networking"],
+      "description": "tlsnotary in browsers via the direct socket api",
+      "event": "ETHDam",
+      "github": "https://github.com/maceip/tlsnotary-direct",
+      "website": "https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/cluzbu4lm01e6yz01eovzk5k8/idea"
+    },
+    {
+      "name": "AUDIT-TRAIL",
+      "categories": ["Storage", "Security"],
+      "description": "Immutable and permanent record storage",
+      "event": "ETHDam",
+      "github": "",
+      "website": "https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/cluzaxmnf01h6vq01t9b5o7cd/idea"
+    },
+    {
+      "name": "ｗｈｉｓｐｅｒ",
+      "categories": ["Finance", "Privacy"],
+      "description": "Private Cross-chain Quadratic Funding",
+      "event": "ETHDam",
+      "github": "https://github.com/ethdam24-quadratic/secret-repo",
+      "website": "https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/cluxtb3ci00qaz301yt806bvw/idea"
+    },
+    {
+      "name": "Football",
+      "categories": ["Gaming", "Privacy"],
+      "description": "On-chain football manager game that leverages the privacy that TEN Protocol provides to hide players' strategies from opponents",
+      "event": "SCALING ETHEREUM 2024",
+      "github": "https://github.com/Akhil-2310/Scaling-ethereum",
+      "website": "https://ethglobal.com/showcase/football-gvaa8"
+    },
+    {
+      "name": "z0Wallet",
+      "categories": ["Wallet", "Privacy"],
+      "description": "Privacy focused multi sig wallet powered by the risc0 stack",
+      "event": "SCALING ETHEREUM 2024",
+      "github": "https://github.com/rahul0tripathi/z0wallet",
+      "website": "https://ethglobal.com/showcase/z0wallet-8hj73"
+    },
+    {
+      "name": "VerifyLearning",
+      "categories": ["Machine Learning", "Privacy"],
+      "description": "Secure Model Training: Zero-Knowledge Proofs can be used to ensure that the data used for training machine learning models remains private",
+      "event": "SCALING ETHEREUM 2024",
+      "github": "https://github.com/deepshah9696/ScalingWeb3",
+      "website": "https://ethglobal.com/showcase/verifylearning-orhg3"
+    },
+    {
+      "name": "AuthChain:FHE Auth",
+      "categories": ["Auth", "Privacy"],
+      "description": "A decentralized authentication app leveraging blockchain, passkeys, and Fully Homomorphic Encryption",
+      "event": "SCALING ETHEREUM 2024",
+      "github": "https://github.com/pratham-bhatnagar/fhe-2fa",
+      "website": "https://ethglobal.com/showcase/authchain-fhe-auth-61m9b"
+    },
+    {
+      "name": "zkSocial",
+      "categories": ["Social", "Privacy"],
+      "description": "Social media powered by ZKML",
+      "event": "SCALING ETHEREUM 2024",
+      "github": "https://github.com/star-gazer111/zkSocial",
+      "website": "https://ethglobal.com/showcase/zksocial-q1b7z"
+    },
+    {
+      "name": "Shadow Pay",
+      "categories": ["Payments", "Privacy"],
+      "description": "A privacy preserving p2p transaction platform",
+      "event": "SCALING ETHEREUM 2024",
+      "github": "https://github.com/Ankush523/shadow-pay",
+      "website": "https://ethglobal.com/showcase/shadow-pay-ke4se"
+    },
+    {
+      "name": "FHE Vickrey Auction",
+      "categories": ["Auction", "Privacy"],
+      "description": "A type of sealed-bid second-price auction powered by FHE",
+      "event": "SCALING ETHEREUM 2024",
+      "github": "https://github.com/tnkshuuhei/fhe-vickrey",
+      "website": "https://ethglobal.com/showcase/fhe-vickrey-auction-3iyxh"
+    },
+    {
+      "name": "PrivPay",
+      "categories": ["Payments", "Privacy"],
+      "description": "The DeFi application to receive and send payments with just simple Link, no need to reveal your address",
+      "event": "SCALING ETHEREUM 2024",
+      "github": "https://github.com/marotipatre/Priv-Pay",
+      "website": "https://ethglobal.com/showcase/privpay-krzdn"
+    },
+    {
+      "name": "GhostPay",
+      "categories": ["Payments", "Privacy"],
+      "description": "Defi application that let you send and receive funds anonymously with just a link",
+      "event": "SCALING ETHEREUM 2024",
+      "github": "https://github.com/porco-rosso-j/eth-rome-2023",
+      "website": "https://ethglobal.com/showcase/ghostpay-9vs0x"
+    },
+    {
+      "name": "zkbiometric",
+      "categories": ["Auth", "Privacy"],
+      "description": "Authentication by securely verifying biometric onboarding data",
+      "event": "SCALING ETHEREUM 2024",
+      "github": "https://github.com/aridder/zkbiometric",
+      "website": "https://ethglobal.com/showcase/zkbiometric-p8nva"
+    },
+    {
+      "name": "nfl",
+      "categories": ["Machine Learning", "Privacy"],
+      "description": "Use Nillion for training federated learning models while keeping datasets private",
+      "event": "SCALING ETHEREUM 2024",
+      "github": "https://github.com/bowenyou/nillion-federated-learning",
+      "website": "https://ethglobal.com/showcase/nfl-w7yg3"
+    },
+    {
+      "name": "Monadic DNA",
+      "categories": ["Genomics", "Privacy"],
+      "description": "Privacy preserving personal genomics for health and ancestry",
+      "event": "SCALING ETHEREUM 2024",
+      "github": "https://github.com/Cryptonomic/MonadicDNA",
+      "website": "https://ethglobal.com/showcase/monadic-dna-h7k7q"
+    },
+    {
+      "name": "zkWarden",
+      "categories": ["Social", "Privacy"],
+      "description": "Farcaster x zk proofs for verifying user details like age and location, allowing access to restricted group chats",
+      "event": "SCALING ETHEREUM 2024",
+      "github": "https://github.com/fabianferno/zkwarden",
+      "website": "https://ethglobal.com/showcase/zkwarden-nka1v"
+    },
+    {
+      "name": "AddressMe",
+      "categories": ["Social", "Privacy"],
+      "description": "A private address book",
+      "event": "SCALING ETHEREUM 2024",
+      "github": "https://github.com/MikePawel/AddressMe",
+      "website": "https://ethglobal.com/showcase/addressme-5urum"
+    },
+    {
+      "name": "Staked Steps",
+      "categories": ["Gaming", "Fitness"],
+      "description": "A gamified fitness app where users can join public or private challenges by staking cryptocurrency",
+      "event": "SCALING ETHEREUM 2024",
+      "github": "https://github.com/mohanvaddi/staked-steps",
+      "website": "https://ethglobal.com/showcase/staked-steps-euwx0"
+    },
+    {
+      "name": "Thumper",
+      "categories": ["Privacy", "Coordination"],
+      "description": "Structured zk setup ceremonies with trustless coordination, privacy, sybil-resistance, and zk-proven results",
+      "event": "SCALING ETHEREUM 2024",
+      "github": "https://github.com/justinfrevert/thumper",
+      "website": "https://ethglobal.com/showcase/thumper-dbvy2"
+    },
+    {
+      "name": "Polar",
+      "categories": ["Auth", "Privacy"],
+      "description": "Web3 auth provider that privately stores user data in decentralized storage and selectively reveals it to the client app",
+      "event": "SCALING ETHEREUM 2024",
+      "github": "https://github.com/Complexia/polar",
+      "website": "https://ethglobal.com/showcase/polar-p0f2b"
+    },
+    {
+      "name": "zK-Vote",
+      "categories": ["Voting", "Privacy"],
+      "description": "A decentralized voting platform",
+      "event": "ETHBucharest",
+      "github": "https://github.com/Akhil-2310/Eth-Bucharest",
+      "website": "https://dorahacks.io/buidl/10887"
+    },
+    {
+      "name": "stray",
+      "categories": ["Social", "Privacy"],
+      "description": "The go-to extension for every website, providing chat functionality to ensure privacy, facilitate engaging conversations",
+      "event": "ETHBucharest",
+      "github": "https://github.com/Enrypase/stray",
+      "website": "https://dorahacks.io/buidl/10859"
     }
   ]
