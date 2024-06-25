@@ -1,0 +1,72 @@
+[
+    {
+      "name": "ZKPriv",
+      "categories": ["Privacy", "DeFi"],
+      "description": "A zero-knowledge proof system for private transactions in decentralized finance",
+      "event": ["ETHGlobal"]
+    },
+    {
+      "name": "DecentralID",
+      "categories": ["Identity", "Governance"],
+      "description": "Decentralized identity solution using blockchain for self-sovereign identity management",
+      "event": ["ETHDenver"]
+    },
+    {
+      "name": "EcoChain",
+      "categories": ["Sustainability", "Supply Chain"],
+      "description": "Blockchain-based supply chain tracking for eco-friendly products",
+      "event": ["ETHBerlin"]
+    },
+    {
+      "name": "CryptoHealth",
+      "categories": ["Healthcare", "Data Privacy"],
+      "description": "Secure and private health data management system using blockchain",
+      "event": ["ETHSanFrancisco"]
+    },
+    {
+      "name": "ArtBlocks",
+      "categories": ["NFT", "Creative"],
+      "description": "Decentralized platform for generative art NFTs with built-in royalties",
+      "event": ["NFTHack"],
+      "Github": "https://github.com/artblocks/generative-nft-platform"
+    },
+    {
+      "name": "DAOGovernance",
+      "categories": ["Governance", "Voting"],
+      "description": "Decentralized autonomous organization toolkit with quadratic voting",
+      "event": ["ETHNewYork"],
+      "Github": "https://github.com/daogovernance/quadratic-voting-dao"
+    },
+    {
+      "name": "DefiInsure",
+      "categories": ["Insurance", "DeFi"],
+      "description": "Decentralized insurance protocol for DeFi investments",
+      "event": ["DeFiSummit"],
+      "Github": "https://github.com/defiinsure/defi-coverage-protocol",
+      "featured": true
+    },
+    {
+      "name": "EduChain",
+      "categories": ["Education", "Credentials"],
+      "description": "Blockchain-based educational credential verification system",
+      "event": ["ETHIndia"],
+      "Github": "https://github.com/educhain/credential-verifier",
+      "featured": true
+    },
+    {
+      "name": "GreenEnergy",
+      "categories": ["Energy", "Sustainability"],
+      "description": "Peer-to-peer renewable energy trading platform using smart contracts",
+      "event": ["ETHLondon"],
+      "Github": "https://github.com/greenenergy/p2p-energy-trade",
+      "featured": true
+    },
+    {
+      "name": "CryptoCharity",
+      "categories": ["Charity", "Transparency"],
+      "description": "Transparent donation tracking and fund allocation system for charities",
+      "event": ["ETHParis"],
+      "Github": "https://github.com/cryptocharity/transparent-giving",
+      "featured": true
+    }
+  ]
