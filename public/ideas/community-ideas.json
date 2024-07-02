@@ -259,4 +259,220 @@
       "github": "https://github.com/Enrypase/stray",
       "website": "https://dorahacks.io/buidl/10859"
     }
+    ,
+    {
+      "name": "MultiFactor Wallet",
+      "categories": ["Wallet"],
+      "description": "provided a Web2-like experience to Web3 authentication while preserving user security and privacy.",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/Ferossgp/mfkdf-wallet",
+      "website": "https://projects.ethberlin.org/submissions/339"
+    }
+     ,
+    {
+      "name": "zkStealth",
+      "categories": ["Transactions"],
+      "description": "Stealth Addresses make ZKP more accessible to the general ethereum user",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/sembrestels/zkStealth/",
+      "website": "https://projects.ethberlin.org/submissions/340"
+    }
+     ,
+    {
+      "name": "Cr3dential",
+      "categories": ["DID", "Credentials"],
+      "description": "Secure, instant verification without exposing personal data for academics",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/cduchinois/ethberlin_cr3dential",
+      "website": "https://projects.ethberlin.org/submissions/342"
+    }
+     ,
+    {
+      "name": "KinkLink",
+      "categories": ["Dating"],
+      "description": "Privacy-preserving dating service",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/swissDAO-labs/KinkLink",
+      "website": "https://projects.ethberlin.org/submissions/345"
+    }
+    ,
+    {
+      "name": "GitVault",
+      "categories": ["Programming"],
+      "description": "Identity-less code collaboration on a censorship resistant version control",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/hackyguru/ethberlin",
+      "website": "https://projects.ethberlin.org/submissions/347"
+    }
+     ,
+    {
+      "name": "shovel-bootstrap",
+      "categories": ["Data"],
+      "description": "an open source tool for synchronizing Ethereum data to your Postgres database",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/jalbritt/ETHBerlin-shovel-bootstrap",
+      "website": "https://projects.ethberlin.org/submissions/349"
+    }
+     ,
+    {
+      "name": "BlockWhisper",
+      "categories": ["Whistleblowing"],
+      "description": "a decentralized platform that enables anyone to anonymously share sensitive information",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/itsmeyaw/ethberlin4/tree/main",
+      "website": "https://projects.ethberlin.org/submissions/351"
+     ,
+    {
+      "name": "Zukofi",
+      "categories": ["Voting"],
+      "description": "Private qudaratic voting using FHE",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/shuklaayush/zukofi",
+      "website": "https://projects.ethberlin.org/submissions/352"
+    }
+     ,
+    {
+      "name": "CypherSmith",
+      "categories": ["Wallet"],
+      "description": "Wallet dApp which automates the process of stealth wallet creation and management",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/dvboost/cypher-smith",
+      "website": "https://projects.ethberlin.org/submissions/353"
+     ,
+    {
+      "name": "Zupass Collab",
+      "categories": ["Collaboration", "Groups"],
+      "description": "Onchain Community Identity for ZuPass Groups",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/vijaykrishnavanshi/ethberlin04",
+      "website": "https://projects.ethberlin.org/submissions/354"
+     ,
+    {
+      "name": "zk0fficer",
+      "categories": ["Collaboration", "Groups"],
+      "description": "allows for the reusing and validation of existing digital credentials, while keeping your credentials private",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/hooperben/zkOfficer",
+      "website": "https://projects.ethberlin.org/submissions/355"
+     ,
+    {
+      "name": "CloakMyFox",
+      "categories": ["DID"],
+      "description": "fingerprinting resistance to Metamask",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/onyb/cloakmyfox",
+      "website": "https://projects.ethberlin.org/submissions/356"
+     ,
+    {
+      "name": "Chainmail",
+      "categories": ["Whistleblowing", "Email"],
+      "description": "empowers and incentivises whistleblowers that would otherwise be too afraid to reveal vital information for fear of safety or reputational damage",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/HumptyDumptyDevs/chainmail/tree/main",
+      "website": "https://projects.ethberlin.org/submissions/358"
+     ,
+    {
+      "name": "Trigger Warding",
+      "categories": ["Whistleblowing", "Data"],
+      "description": "Programmable, encrypted & triggerable data vault",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/TriggerWard/catacombs",
+      "website": "https://projects.ethberlin.org/submissions/361"
+      ,
+    {
+      "name": "zk-twitter",
+      "categories": ["Socials"],
+      "description": "connect with each other by dropping ZK-Proveable data (called PODs)",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/ichub/zk-twitter",
+      "website": "https://projects.ethberlin.org/submissions/363"
+      ,
+    {
+      "name": "CarnationFM",
+      "categories": ["Communication", "Media"],
+      "description": "an experiment in decentralized and encrypted communication with a focus on music as transport vessel carrying hidden messages",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/Tranquil-Flow/carnation-radio/tree/main",
+      "website": "https://projects.ethberlin.org/submissions/364"
+      ,
+    {
+      "name": "Pomar",
+      "categories": ["P2P", "Education"],
+      "description": "peer-to-peer spaces where mentees can join mentors on a quest to learn something mutually beneficial.",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/obernardovieira/ethberlin4",
+      "website": "https://projects.ethberlin.org/submissions/365"
+     ,
+    {
+      "name": "SilentVote",
+      "categories": ["Voting"],
+      "description": "secure and anonymous voting system",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/savchart/eth_vote_module",
+      "website": "https://projects.ethberlin.org/submissions/366"
+     ,
+    {
+      "name": "PeerPack",
+      "categories": ["Storage"],
+      "description": "censorship resistance package distribution system for opensource ecosystems",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/BeyondDimensions/PeerPack",
+      "website": "https://projects.ethberlin.org/submissions/370"
+     ,
+    {
+      "name": "PriMaci",
+      "categories": ["Voting"],
+      "description": "eliminating the need to trust into public parties and private voting with MACI",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/CodeByNikolas/ETHBerlinPriMacyBigRepo",
+      "website": "https://projects.ethberlin.org/submissions/376"
+     ,
+    {
+      "name": "Decentralized Freelance Platform",
+      "categories": ["Hiring", "Reputation"],
+      "description": "bring trust between pseudonyms in the context of freelancing so that no information beyond what is necessary is exchanged to the other party",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/chrdamico/ETHBerlin2024/tree/main",
+      "website": "https://projects.ethberlin.org/submissions/379"
+      ,
+    {
+      "name": "Canonical Frontend Registry",
+      "categories": ["Frontend", "Security"],
+      "description": "a Web extension + smart contract which are used to verify that frontends at a particular ENS domain are legit / not compromised",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/mfahampshire/CFRWebExtension",
+      "website": "https://projects.ethberlin.org/submissions/380"
+     ,
+    {
+      "name": "zk TRIPSTER",
+      "categories": ["Bug bounty", "Hiring", "Security"],
+      "description": "Bug bounty program in the DeFi with proving vulnerabilities via ZK proofs",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/tripster-hackers/zkTripster",
+      "website": "https://projects.ethberlin.org/submissions/381"
+      ,
+    {
+      "name": "Whirl",
+      "categories": ["Transactions"],
+      "description": "enchance privacy to Atomic Swaps from Bitcoin to Ethereum",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/itublockchain/ETHBerlin-Ezytrax/tree/main",
+      "website": "https://projects.ethberlin.org/submissions/383"
+       ,
+    {
+      "name": "zKal",
+      "categories": ["Calendar", "Project management"],
+      "description": "de-Googled community & group calendars",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/voboda/zKal",
+      "website": "https://projects.ethberlin.org/submissions/387"
+       ,
+    {
+      "name": "zKal",
+      "categories": ["Calendar", "Project management"],
+      "description": "de-Googled community & group calendars",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/voboda/zKal",
+      "website": "https://projects.ethberlin.org/submissions/387"
+     }
   ]
