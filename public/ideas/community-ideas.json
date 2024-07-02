@@ -271,7 +271,7 @@
      ,
     {
       "name": "zkStealth",
-      "categories": ["Transactions"],
+      "categories": ["Transactions", "DeFi"],
       "description": "Stealth Addresses make ZKP more accessible to the general ethereum user",
       "event": "ETHBerlin 2024",
       "github": "https://github.com/sembrestels/zkStealth/",
@@ -434,7 +434,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/chrdamico/ETHBerlin2024/tree/main",
       "website": "https://projects.ethberlin.org/submissions/379"
-      ,
+     ,
     {
       "name": "Canonical Frontend Registry",
       "categories": ["Frontend", "Security"],
@@ -450,15 +450,15 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/tripster-hackers/zkTripster",
       "website": "https://projects.ethberlin.org/submissions/381"
-      ,
+     ,
     {
       "name": "Whirl",
-      "categories": ["Transactions"],
+      "categories": ["Transactions", "DeFi"],
       "description": "enchance privacy to Atomic Swaps from Bitcoin to Ethereum",
       "event": "ETHBerlin 2024",
       "github": "https://github.com/itublockchain/ETHBerlin-Ezytrax/tree/main",
       "website": "https://projects.ethberlin.org/submissions/383"
-       ,
+     ,
     {
       "name": "zKal",
       "categories": ["Calendar", "Project management"],
@@ -466,13 +466,139 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/voboda/zKal",
       "website": "https://projects.ethberlin.org/submissions/387"
-       ,
+     ,
     {
-      "name": "zKal",
-      "categories": ["Calendar", "Project management"],
-      "description": "de-Googled community & group calendars",
+      "name": "zkAd",
+      "categories": ["Marketing"],
+      "description": "Privacy preserving personalized ads",
       "event": "ETHBerlin 2024",
-      "github": "https://github.com/voboda/zKal",
-      "website": "https://projects.ethberlin.org/submissions/387"
+      "github": "https://github.com/4turkuaz/eth-berlin",
+      "website": "https://projects.ethberlin.org/submissions/311"
+     }
+     ,
+    {
+      "name": "Private Peers",
+      "categories": ["Collaboration", "P2P"],
+      "description": "Own subjective sub-graph of connections, and attributes",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/olehmisar/six-dos",
+      "website": "https://projects.ethberlin.org/submissions/314"
+     }
+     ,
+    {
+      "name": "Acropolis",
+      "categories": ["Voting"],
+      "description": "Authorized Anonymous Voting through Signatures over Public Keys",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/cspr-rad/acropolis",
+      "website": "https://projects.ethberlin.org/submissions/316"
+     }
+     ,
+    {
+      "name": "Kabuso",
+      "categories": ["Censorship resistance", "Transactions", "DeFi"],
+      "description": "censorship resistant smart-contracts",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/VMLVaske/Kabuso",
+      "website": "https://projects.ethberlin.org/submissions/321"
+     }
+     ,
+    {
+      "name": "ZkUbiToken",
+      "categories": ["Sybil resistance", "Transactions", "DeFi"],
+      "description": "redistributing a universal basic income (UBI) to ensure fair wealth distribution, leveraging zero-knowledge proofs for sybil-resistant identity verification without the need for a trust network",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/valle-xyz/ZkUbi",
+      "website": "https://projects.ethberlin.org/submissions/325"
+     }
+     ,
+    {
+      "name": "zu-git-proofs",
+      "categories": ["Collaboration", "Reputation"],
+      "description": "anonymous feedback in forums by assigning credibility badges based on GitHub contributions",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/sztok7/zu-git-proofs",
+      "website": "https://projects.ethberlin.org/submissions/326"
+     }
+     ,
+    {
+      "name": "Schufher",
+      "categories": ["Credit scoring"],
+      "description": "private alternative to the Schufa credit scores",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/TUM-Blockchain-Club/ethberlin-schufher",
+      "website": "https://projects.ethberlin.org/submissions/327"
+     }
+     ,
+    {
+      "name": "InclusionBribes",
+      "categories": ["MEV"],
+      "description": "the scale for non censoring block builders to build more profitable blocks",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/nodestarQ/InclusionBribes",
+      "website": "https://projects.ethberlin.org/submissions/328"
+     }
+     ,
+    {
+      "name": "RageAgainst.eu",
+      "categories": ["DeFi", "Frontend"],
+      "description": "give everyday DeFi users the power to host their own frontends locally",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/kevincharm/rageagainst/",
+      "website": "https://projects.ethberlin.org/submissions/329"
+     }
+     ,
+    {
+      "name": "Secret Talk",
+      "categories": ["Communication", "Project management"],
+      "description": "Ethereum powered voice encryption that allows you to join calls on Google Meet, Discrod, Teams and still be in charge of who can actually hear you",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/gedithejedi/secret-talk",
+      "website": "https://projects.ethberlin.org/submissions/331"
+     }
+     ,
+    {
+      "name": "Voto",
+      "categories": ["Voting", "DID"],
+      "description": "an on-chain censorship-resistant anonymous voting solution built on decentralised identities.",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/gedithejedi/secret-talk",
+      "website": "https://projects.ethberlin.org/submissions/331"
+     }
+     ,
+    {
+      "name": "Shadowlings",
+      "categories": ["Defi"],
+      "description": "generates unique and disposable deposit addresses that appear to be clean EOAs but are supercharged using EIP-3074 and ERC-4337",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/nlordell/shadowlings",
+      "website": "https://projects.ethberlin.org/submissions/335"
+     }
+     ,
+    {
+      "name": "Coinguard",
+      "categories": ["Defi", "Wallet"],
+      "description": "an Ethereum self custody wallet with a integrated incognito mode",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/TrungNguyen1409/ethberlin24_coinguard",
+      "website": "https://projects.ethberlin.org/submissions/336"
+     }
+     ,
+    {
+      "name": "Bet&Bed",
+      "categories": ["Reputation", "DID"],
+      "description": "a solution that allows for blind auctions curated by on-chain activity to determine a better match with the house owner / host.",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/grmkris/eth-berlin-2024",
+      "website": "https://projects.ethberlin.org/submissions/337"
+     }
+     ,
+    {
+      "name": "ZKMAV",
+      "categories": ["Reputation", "Whistleblowing"],
+      "description": "a platform to help authenticate true photos, guaranteeing their binding to an immutable timestamp and relevant information to boost the legitimacy of a photo without giving away personal information of the one behind the camera.",
+      "event": "ETHBerlin 2024",
+      "github": "https://github.com/aatifsyed/c2pa4a/",
+      "website": "https://projects.ethberlin.org/submissions/338"
      }
   ]
