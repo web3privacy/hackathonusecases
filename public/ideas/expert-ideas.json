@@ -30,5 +30,262 @@
       "event": ["@randomdude"],
       "Github": "https://github.com/cryptohealth/health-data-vault",
       "featured": true
+    },
+    {
+      "name": "Private derivatives market",
+      "categories": ["DeFi"],
+      "description": "Private derivatives market",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "Permissionless private prediction markets",
+      "categories": ["DeFi"],
+      "description": "Permissionless private prediction markets",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "zk casino",
+      "categories": ["DeFi"],
+      "description": "a casino where bets are spent from the pool, so that individual betters can't be behaviourally manipulated by the casino",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "gasless txs",
+      "categories": ["DeFi"],
+      "description": "expanding the anonymity set of a tornado.cash relayers by using the account abstraction / alt mempool infrastructure",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "dark market using FHE",
+      "categories": ["DeFi"],
+      "description": "expanding the anonymity set of a tornado.cash relayers by using the account abstraction / alt mempool infrastructure",
+      "event": ["@Msiusko"],
+      "Github": "https://github.com/darkrenaissance/darkfi/tree/master/script/research/tfhe/src",
+      "featured": false
+    },
+    {
+      "name": "Tornado Nova fork with PLUME",
+      "categories": ["DeFi"],
+      "description": "Tornado Nova fork with PLUME signatures that will enable private transactions with evm addresses. (No need to store additional secret keys. Privacy with hardware wallets ). ",
+      "event": ["@Msiusko"],
+      "Github": "https://github.com/ekrembal/halo2-tornado-nova",
+      "featured": false
+    },
+    {
+      "name": "Privacy Pools with Stealth addresses",
+      "categories": ["DeFi"],
+      "description": "an interface combining privacy pools + stealth addresses - privacy pools to break traceability.",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "Privacy Pools with Stealth addresses",
+      "categories": ["DeFi"],
+      "description": "an interface combining privacy pools + stealth addresses - privacy pools to break traceability. Stealth addresses to move funds out of privacy pools and do stuff onchain privately
+e.g. move $1000 into privacy pool, move out 10 x $100 to 10 stealth addresses to pay different people, do other stuff onchain",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "Privacy Preserving Credentials",
+      "categories": ["DID"],
+      "description": "Privacy Preserving Credentials",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "Secure drop on a Nym gateway",
+      "categories": ["Communication"],
+      "description": "Secure drop on a Nym gateway",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "Bluesky with only a wallet - no other identity",
+      "categories": ["Socials"],
+      "description": "Bluesky with only a wallet - no other identity",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "Private Bitcoin Balance Lookup with an Ethereum wallet",
+      "categories": ["DeFi"],
+      "description": "Expand Private Bitcoin Balance Lookup via Spiral to a full eth wallet",
+      "event": ["@Msiusko"],
+      "Github": "https://spiraldb.xyz/balances/",
+      "featured": false
+    },
+    {
+      "name": "Privacy preserving LLM",
+      "categories": ["AI"],
+      "description": "privacy preserving LLM platform that collects prompt data without the the identity of the user",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "P2P Marketplace",
+      "categories": ["AI"],
+      "description": "a private p2p marketplace like local bitcoin but more privacy focused",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "Private 2FA",
+      "categories": ["Security"],
+      "description": "private 2factor authentication app (something like google authenticator but shouldn’t rely on servers)",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "Private version of the expense management app",
+      "categories": ["AI"],
+      "description": "private version of Expensify",
+      "event": ["@Msiusko"],
+      "Github": "https://www.expensify.com",
+      "featured": false
+    },
+    {
+      "name": "fully decentralized Github environment",
+      "categories": ["Collaboration"],
+      "description": "I'm not sure where we have got to on fully decentralized Github environment, but that has been a #1 thing which I think we need for many years. Darkfi use Codeberg via Tor, but it still a dependency on a centralized service provider. Axis made Mango way back in 2016: https://github.com/axic/mango (In the meantime, it really should be possible to build good Github alternatives today on ETH+IFPS.). So code hosting, plus pull request infrastructure, plus issue tracking / comms",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "Anonimity sets based on a real-world use-cases",
+      "categories": ["Collaboration"],
+      "description": "Real-world use-cases using huge anonimity sets (anon groups)",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "Mpc or Fhe on-chain primitives (e.g., float32)",
+      "categories": ["R&D"],
+      "description": "Mpc or Fhe on-chain primitives (e.g., float32)",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "Combinations of MPC + FHE or ZK + FHE (+ ML)",
+      "categories": ["R&D"],
+      "description": "Combinations of MPC + FHE or ZK + FHE (+ ML)",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "Subscription SDK",
+      "categories": ["DeFi"],
+      "description": "Subscription SDK based on semaphore or so (i.e. provable that I paid some monthly fee without revealing who I am out of the subscribers)",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "Multi-send transaction",
+      "categories": ["DeFi"],
+      "description": "Private batch/multi-send transaction (so being able to send payment to many people at once privately) this could be for payroll",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "Messenger protocol",
+      "categories": ["Communication"],
+      "description": "private messenger protocol (having the possibility of multiple UIs: cli, web, mobile app).",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "Filesharing (similar to ipfs)",
+      "categories": ["Storage"],
+      "description": "Filesharing (similar to ipfs)",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "Torrenting",
+      "categories": ["Storage"],
+      "description": "Anon torrenting + media service like plex",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "Private collaboration",
+      "categories": ["Collaboration"],
+      "description": "Private collab tools (like doc collab, collab pixel drawing)",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "Audio chat",
+      "categories": ["Collaboration"],
+      "description": "audio chat",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "DNS",
+      "categories": ["Domain"],
+      "description": "dns system within NYM, which can allow for a new darknet to exist",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "Anon/decentralised twitter spaces",
+      "categories": ["Socials"],
+      "description": "anon/decentralised twitter spaces",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "Validator privacy: IPs & other public data",
+      "categories": ["Nodes"],
+      "description": "Validator privacy: IPs & other public data",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "Privacy-centric simple swamp or atomic swap protocol",
+      "categories": ["DeFi"],
+      "description": "Vprivacy-centric simple swamp or atomic swap protocol",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
+    },
+    {
+      "name": "Privacy-centric simple swamp or atomic swap protocol",
+      "categories": ["DeFi"],
+      "description": "Vprivacy-centric simple swamp or atomic swap protocol",
+      "event": ["@Msiusko"],
+      "Github": "-",
+      "featured": false
     }
   ]
