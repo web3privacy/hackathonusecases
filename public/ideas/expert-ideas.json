@@ -88,15 +88,6 @@
       "featured": false
     },
     {
-      "name": "Privacy Pools with Stealth addresses",
-      "categories": ["DeFi"],
-      "description": "an interface combining privacy pools + stealth addresses - privacy pools to break traceability. Stealth addresses to move funds out of privacy pools and do stuff onchain privately
-e.g. move $1000 into privacy pool, move out 10 x $100 to 10 stealth addresses to pay different people, do other stuff onchain",
-      "event": ["@Msiusko"],
-      "Github": "-",
-      "featured": false
-    },
-    {
       "name": "Privacy Preserving Credentials",
       "categories": ["DID"],
       "description": "Privacy Preserving Credentials",

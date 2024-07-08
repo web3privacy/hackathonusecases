@@ -303,8 +303,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/hackyguru/ethberlin",
       "website": "https://projects.ethberlin.org/submissions/347"
-    }
-     ,
+    },
     {
       "name": "shovel-bootstrap",
       "categories": ["Data"],
@@ -312,8 +311,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/jalbritt/ETHBerlin-shovel-bootstrap",
       "website": "https://projects.ethberlin.org/submissions/349"
-    }
-     ,
+    },
     {
       "name": "BlockWhisper",
       "categories": ["Whistleblowing"],
@@ -321,6 +319,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/itsmeyaw/ethberlin4/tree/main",
       "website": "https://projects.ethberlin.org/submissions/351"
+    }
      ,
     {
       "name": "Zukofi",
@@ -338,6 +337,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/dvboost/cypher-smith",
       "website": "https://projects.ethberlin.org/submissions/353"
+    }
      ,
     {
       "name": "Zupass Collab",
@@ -346,6 +346,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/vijaykrishnavanshi/ethberlin04",
       "website": "https://projects.ethberlin.org/submissions/354"
+    } 
      ,
     {
       "name": "zk0fficer",
@@ -354,6 +355,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/hooperben/zkOfficer",
       "website": "https://projects.ethberlin.org/submissions/355"
+    }
      ,
     {
       "name": "CloakMyFox",
@@ -362,6 +364,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/onyb/cloakmyfox",
       "website": "https://projects.ethberlin.org/submissions/356"
+    }
      ,
     {
       "name": "Chainmail",
@@ -370,6 +373,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/HumptyDumptyDevs/chainmail/tree/main",
       "website": "https://projects.ethberlin.org/submissions/358"
+    }
      ,
     {
       "name": "Trigger Warding",
@@ -378,6 +382,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/TriggerWard/catacombs",
       "website": "https://projects.ethberlin.org/submissions/361"
+    }
       ,
     {
       "name": "zk-twitter",
@@ -386,6 +391,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/ichub/zk-twitter",
       "website": "https://projects.ethberlin.org/submissions/363"
+    }
       ,
     {
       "name": "CarnationFM",
@@ -394,6 +400,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/Tranquil-Flow/carnation-radio/tree/main",
       "website": "https://projects.ethberlin.org/submissions/364"
+    }
       ,
     {
       "name": "Pomar",
@@ -402,6 +409,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/obernardovieira/ethberlin4",
       "website": "https://projects.ethberlin.org/submissions/365"
+    }
      ,
     {
       "name": "SilentVote",
@@ -410,6 +418,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/savchart/eth_vote_module",
       "website": "https://projects.ethberlin.org/submissions/366"
+    }
      ,
     {
       "name": "PeerPack",
@@ -418,6 +427,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/BeyondDimensions/PeerPack",
       "website": "https://projects.ethberlin.org/submissions/370"
+    }
      ,
     {
       "name": "PriMaci",
@@ -426,6 +436,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/CodeByNikolas/ETHBerlinPriMacyBigRepo",
       "website": "https://projects.ethberlin.org/submissions/376"
+    }
      ,
     {
       "name": "Decentralized Freelance Platform",
@@ -434,6 +445,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/chrdamico/ETHBerlin2024/tree/main",
       "website": "https://projects.ethberlin.org/submissions/379"
+    }
      ,
     {
       "name": "Canonical Frontend Registry",
@@ -442,6 +454,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/mfahampshire/CFRWebExtension",
       "website": "https://projects.ethberlin.org/submissions/380"
+    }
      ,
     {
       "name": "zk TRIPSTER",
@@ -450,6 +463,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/tripster-hackers/zkTripster",
       "website": "https://projects.ethberlin.org/submissions/381"
+    }
      ,
     {
       "name": "Whirl",
@@ -458,6 +472,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/itublockchain/ETHBerlin-Ezytrax/tree/main",
       "website": "https://projects.ethberlin.org/submissions/383"
+    }
      ,
     {
       "name": "zKal",
@@ -466,6 +481,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/voboda/zKal",
       "website": "https://projects.ethberlin.org/submissions/387"
+    }
      ,
     {
       "name": "zkAd",
