@@ -173,7 +173,7 @@ export default function Home() {
                       </h3>
                     </>
                   ) : (
-                    <p>No idea generated yet. Click "GENERATE" to get an idea.</p>
+                    <div>Looks like no ideas were found for the specified filters</div>
                   )}
                 </DialogDescription>
               </DialogHeader>
@@ -246,7 +246,7 @@ export default function Home() {
               </div>
             </TabsContent>
             <TabsContent value="expert">
-              <div className="md:flex flex-wrap justify-start px-5 gap-5">
+            <div className="md:flex flex-wrap md:justify-center justify-start px-5 gap-5 space-y-5 md:space-y-0">
                 {featuredExpertIdeas.map((idea, index) => (
                   <IdeaCard
                     key={index}

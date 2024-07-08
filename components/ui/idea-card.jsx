@@ -1,6 +1,6 @@
 import React from 'react'
 import { Badge } from "@/components/ui/badge";
-import { Github } from 'lucide-react';
+import { Github, Globe } from 'lucide-react';
 
 export default function IdeaCard({ name, description, categories, github, source, website }) {
   return (
