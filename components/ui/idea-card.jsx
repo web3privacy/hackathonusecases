@@ -2,7 +2,7 @@ import React from 'react'
 import { Badge } from "@/components/ui/badge";
 import { Github, Globe } from 'lucide-react';
 
-export default function IdeaCard({ name, description, categories, github, source, website }) {
+export default function IdeaCard({ name, description, categories, github, source, website, author }) {
   return (
     <div className="bg-[#0d0d0d] md:w-1/3 w-full p-6">
       <div className="h-10">
@@ -32,7 +32,16 @@ export default function IdeaCard({ name, description, categories, github, source
         </div>
       </div>
       <hr className="opacity-10 my-3" />
-      <h3 className="archivo mt-2 text-sm opacity-50 text-end hover:underline cursor-pointer">Source: {source}</h3>
+      {source &&
+        <h3 className="archivo mt-2 text-sm opacity-50 text-end hover:underline cursor-pointer">{source}</h3>
+      }
+      {author &&
+        <h3 className="archivo mt-2 text-sm opacity-50 text-end hover:underline cursor-pointer">
+          <a href={author} target="_blank" rel="noopener noreferrer">
+            {author.toString().replace("https://twitter.com/", "@")}
+          </a>
+        </h3>
+      }
     </div>
   )
 }

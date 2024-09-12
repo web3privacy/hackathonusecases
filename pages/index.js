@@ -52,8 +52,8 @@ const getRandomIdea = (ideas, selectedTags) => {
   const filteredIdeas =
     selectedTags.length > 0
       ? ideas.filter((idea) =>
-          idea.categories.some((cat) => selectedTags.includes(cat))
-        )
+        idea.categories.some((cat) => selectedTags.includes(cat))
+      )
       : ideas;
   if (filteredIdeas.length === 0) return null;
   const randomIndex = Math.floor(Math.random() * filteredIdeas.length);
@@ -208,7 +208,7 @@ export default function Home() {
                       </div>
                       <hr className="opacity-10 my-3" />
                       <h3 className="archivo mt-2 text-sm opacity-50 text-end hover:underline cursor-pointer">
-                        Source: {generatedIdea.event}
+                        {generatedIdea.event}
                       </h3>
                     </>
                   ) : (
@@ -288,8 +288,9 @@ export default function Home() {
                     name={idea.name}
                     description={idea.description}
                     categories={idea.categories}
-                    github={idea.Github}
+                    github={idea.github}
                     source={idea.event}
+                    website={idea.website}
                   />
                 ))}
               </div>
@@ -302,8 +303,7 @@ export default function Home() {
                     name={idea.name}
                     description={idea.description}
                     categories={idea.categories}
-                    github={idea.Github}
-                    source={idea.event}
+                    author={idea.author}
                   />
                 ))}
               </div>
