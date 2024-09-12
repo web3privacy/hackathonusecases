@@ -1,25 +1,40 @@
-# Hackathon use-cases generator
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-service to generate ideas for hackathon privacy-projects
-[docs](https://github.com/web3privacy/docs/blob/main/src/content/docs/projects/hackathon-use-cases-generator.md)
-![alt text](https://github.com/web3privacy/docs/blob/main/src/content/docs/assets/privacy%20idea%20generator.png)
+## Getting Started
 
-## Useful links
+First, run the development server:
 
-- Main repo: [link](https://github.com/web3privacy/hackathonusecases)
-- Current repo: [link](https://github.com/hackyguru/web3privacy-ideas) (basic UI)
-- Use-cases repo: [link](https://github.com/web3privacy/web3privacy/blob/main/Market%20overview/Ethereum%20Ecosystem/Hackathon%20projects.md)
-- [Vercel front](https://hackathonusecases-okf4.vercel.app)
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-There are 3 different type of use-cases we tackle at the moment
-- orgs ideas: [Waku](https://github.com/waku-org/ideas/), [Aztec](https://github.com/AztecProtocol/dev-rel/blob/main/hackathons/INSPIRATION.md)
-- hackathon use-cases like Whisper
-- expert recos: [ETHBerlin example](https://cryptpad.fr/pad/#/2/pad/view/sKQtC07xhA5jHvs9cnnBz+rOl74ds9WUPjuusf6y7us/)
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-All them are quite different within the use-case content
-- raw ideas can lack specifics
-- use-cases need event tag
-- expert need an expert feature like (org or a photo)
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-## Part of the Hackathon curation pack project
-[docs](https://docs.web3privacy.info/research/hackathon-pack/)
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
