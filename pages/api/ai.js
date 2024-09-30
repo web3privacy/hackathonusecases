@@ -2,11 +2,14 @@ import ideas from "../../public/ideas/expert-ideas.json"
 
 const input_json = JSON.stringify(ideas)
 const system_prompt =  `You are human tasked with coming up with privacy focused project ideas for hackathons. Here is a list of example: ${input_json} Do not return any of these example right away, but you are alowed to combine them into new ideas. If you use any of the example as inspiration, add the list in output as 'basedOn'. Only print the result in the same format as the example inputs`
-const url = "https://chatapi.akash.network/api/v1/chat/completions"
+const url = process.env.CHAT_API_URL || "https://chatapi.akash.network/api/v1/chat/completions"
 const chatApiKey = process.env.CHAT_API_KEY
-console.log(chatApiKey)
+const model = process.env.CHAT_API_MODEL || "Meta-Llama-3-1-8B-Instruct-FP8"
 
 export default async function handler(req, res) {
+    if (chatApiKey == "") {
+        res.status(500).json({error: "Internal Server Error"})
+    }
     const body = req.body
 
     if (body == undefined) {
@@ -22,7 +25,7 @@ export default async function handler(req, res) {
     const main_prompt = `Provide an idea based on keywords: ${body.keywords}; (ignore: ${new Date()})`
 
     const data = {                                                                                                                                                                                                                                                                                                    
-        model: "Meta-Llama-3-1-8B-Instruct-FP8",
+        model: model,
         messages: [ 
             {
                 role: "system",
