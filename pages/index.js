@@ -280,8 +280,18 @@ export default function Home() {
         <Tabs defaultValue="community" className="mt-5">
           <div className="flex justify-center w-full">
             <TabsList className="archivo">
-              <TabsTrigger value="community">Community ideas</TabsTrigger>
-              <TabsTrigger value="expert">Expert ideas</TabsTrigger>
+              <TabsTrigger
+                value="community"
+                onClick={() => setSelectedIdeaType("community")}
+              >
+                Community ideas
+              </TabsTrigger>
+              <TabsTrigger
+                value="expert"
+                onClick={() => setSelectedIdeaType("expert")}
+              >
+                Expert ideas
+              </TabsTrigger>
             </TabsList>
           </div>
           <div className="mt-10 w-full text-left">
