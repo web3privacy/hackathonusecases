@@ -1,4 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# hackathonusecases
+
+Hackathon use-cases generator - generate ideas curated by the Web3Privacy Now community and experts
+
+Deployed at [https://ideas.web3privacy.info/](https://ideas.web3privacy.info/)
+
+Development instance: [https://hackathonusecases-nu.vercel.app/](https://hackathonusecases-nu.vercel.app/)
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with Vercel's [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
