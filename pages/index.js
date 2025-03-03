@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { Filter, Github, Globe } from "lucide-react";
+import { useRouter } from "next/router";
+import { Filter, Github, Globe, Share2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import IdeaCard from "@/components/ui/idea-card";
+import ShareableCard from "@/components/ui/shareable-card";
 import {
   Dialog,
   DialogContent,
@@ -24,7 +25,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import bgCover from "../assets/generator.jpg";
 
-// Function to read and parse the JSON file
+// Function to read and parse the JSON file.
 const readIdeasFile = async (filename) => {
   try {
     const response = await fetch(`/ideas/${filename}`);
@@ -32,8 +33,19 @@ const readIdeasFile = async (filename) => {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
-    console.log(`Data fetched from ${filename}:`, data);
-    return data;
+    
+    // Add IDs to ideas if they don't have them.
+    const processedData = data.map((idea, index) => {
+      if (!idea.id) {
+        const filePrefix = filename.includes("community") ? "community" : "expert";
+        const generatedId = `${filePrefix}-${idea.name.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')}-${index}`;
+        return { ...idea, id: generatedId };
+      }
+      return idea;
+    });
+    
+    console.log(`Data fetched from ${filename}:`, processedData);
+    return processedData;
   } catch (error) {
     console.error(`Error fetching ${filename}:`, error);
     return [];
@@ -62,6 +74,7 @@ const getAllTags = (ideas) => {
 };
 
 export default function Home() {
+  const router = useRouter();
   const contributeIdeaTo =
     "https://github.com/web3privacy/docs/blob/main/src/content/docs/projects/hackathon-use-cases-generator.md";
   const [communityIdeas, setCommunityIdeas] = useState([]);
@@ -206,12 +219,19 @@ export default function Home() {
                         <h3 className="archivo text-lg mb-4 text-center mx-auto">
                           {generatedIdea.event}
                         </h3>
-                        <div className="flex justify-center">
+                        <div className="flex justify-center gap-4">
                           <button
                             className="bg-white text-[#0d0d0d] archivo text-sm flex space-x-3 items-center p-2 mt-4"
                             onClick={handleGenerateIdea}
                           >
                             GENERATE AGAIN
+                          </button>
+                          <button
+                            className="border archivo text-sm flex items-center p-2 mt-4"
+                            onClick={() => router.push(`/idea/${generatedIdea.id}`)}
+                          >
+                            <Share2 className="w-4 h-4 mr-2" />
+                            SHARE
                           </button>
                         </div>
                       </>
@@ -298,8 +318,9 @@ export default function Home() {
             <TabsContent value="community">
               <div className="md:flex flex-wrap md:justify-center justify-start px-5 gap-5 space-y-5 md:space-y-0">
                 {featuredCommunityIdeas.map((idea, index) => (
-                  <IdeaCard
+                  <ShareableCard
                     key={index}
+                    id={idea.id}
                     name={idea.name}
                     description={idea.description}
                     categories={idea.categories}
@@ -313,8 +334,9 @@ export default function Home() {
             <TabsContent value="expert">
               <div className="md:flex flex-wrap md:justify-center justify-start px-5 gap-5 space-y-5 md:space-y-0">
                 {featuredExpertIdeas.map((idea, index) => (
-                  <IdeaCard
+                  <ShareableCard
                     key={index}
+                    id={idea.id}
                     name={idea.name}
                     description={idea.description}
                     categories={idea.categories}
