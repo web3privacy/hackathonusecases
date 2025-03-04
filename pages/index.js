@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { Filter, Github, Globe, Share2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import ShareableCard from "@/components/ui/shareable-card";
+import IdeaCard from "@/components/ui/idea-card";
 import {
   Dialog,
   DialogContent,
@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import bgCover from "../assets/generator.jpg";
 
-// Function to read and parse the JSON file.
+// Function to read and parse the JSON file
 const readIdeasFile = async (filename) => {
   try {
     const response = await fetch(`/ideas/${filename}`);
@@ -34,10 +34,11 @@ const readIdeasFile = async (filename) => {
     }
     const data = await response.json();
     
-    // Add IDs to ideas if they don't have them.
+    // Add IDs to ideas if they don't have them
     const processedData = data.map((idea, index) => {
       if (!idea.id) {
-        const filePrefix = filename.includes("community") ? "community" : "expert";
+        const filePrefix = filename.includes("community") ? "community" : 
+                          filename.includes("expert") ? "expert" : "organization";
         const generatedId = `${filePrefix}-${idea.name.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')}-${index}`;
         return { ...idea, id: generatedId };
       }
@@ -73,12 +74,23 @@ const getAllTags = (ideas) => {
   return Array.from(tagSet);
 };
 
+// Function to determine card type based on idea properties
+const getIdeaType = (idea) => {
+  if (idea.organizationName || idea.organizationLogo || idea.features) {
+    return 'organization';
+  } else if (idea.author) {
+    return 'expert';
+  }
+  return 'community';
+};
+
 export default function Home() {
   const router = useRouter();
   const contributeIdeaTo =
     "https://github.com/web3privacy/docs/blob/main/src/content/docs/projects/hackathon-use-cases-generator.md";
   const [communityIdeas, setCommunityIdeas] = useState([]);
   const [expertIdeas, setExpertIdeas] = useState([]);
+  const [organizationIdeas, setOrganizationIdeas] = useState([]);
   const [selectedIdeaType, setSelectedIdeaType] = useState("community");
   const [generatedIdea, setGeneratedIdea] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -88,6 +100,7 @@ export default function Home() {
   const [filteredTags, setFilteredTags] = useState([]);
   const [featuredCommunityIdeas, setFeaturedCommunityIdeas] = useState([]);
   const [featuredExpertIdeas, setFeaturedExpertIdeas] = useState([]);
+  const [featuredOrganizationIdeas, setFeaturedOrganizationIdeas] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -95,17 +108,33 @@ export default function Home() {
       try {
         const communityData = await readIdeasFile("community-ideas.json");
         const expertData = await readIdeasFile("expert-ideas.json");
+        
+        // Try to fetch organization ideas, but don't fail if they don't exist
+        let organizationData = [];
+        try {
+          organizationData = await readIdeasFile("organization-ideas.json");
+        } catch (err) {
+          console.warn("No organization ideas found:", err);
+        }
+        
         setCommunityIdeas(communityData);
         setExpertIdeas(expertData);
-        const uniqueTags = getAllTags([...communityData, ...expertData]);
+        setOrganizationIdeas(organizationData);
+        
+        const uniqueTags = getAllTags([...communityData, ...expertData, ...organizationData]);
         setAllTags(uniqueTags);
         setFilteredTags(uniqueTags);
+        
         setFeaturedCommunityIdeas(
           communityData.filter((idea) => idea.featured === true)
         );
         setFeaturedExpertIdeas(
           expertData.filter((idea) => idea.featured === true)
         );
+        setFeaturedOrganizationIdeas(
+          organizationData.filter((idea) => idea.featured === true)
+        );
+        
         setError(null);
       } catch (err) {
         setError("Failed to load ideas. Please try again later.");
@@ -119,8 +148,21 @@ export default function Home() {
   }, []);
 
   const handleGenerateIdea = () => {
-    const ideas =
-      selectedIdeaType === "community" ? communityIdeas : expertIdeas;
+    let ideas;
+    switch (selectedIdeaType) {
+      case "community":
+        ideas = communityIdeas;
+        break;
+      case "expert":
+        ideas = expertIdeas;
+        break;
+      case "organization":
+        ideas = organizationIdeas;
+        break;
+      default:
+        ideas = [...communityIdeas, ...expertIdeas, ...organizationIdeas];
+    }
+    
     const newIdea = getRandomIdea(ideas, selectedTags);
     setGeneratedIdea(newIdea);
     console.log("Generated idea:", newIdea);
@@ -163,7 +205,6 @@ export default function Home() {
                   onClick={handleGenerateIdea}
                 >
                   <h3>GENERATE IDEA</h3>
-
                 </div>
               </DialogTrigger>
               <DialogContent>
@@ -175,6 +216,48 @@ export default function Home() {
                       <p>{error}</p>
                     ) : generatedIdea ? (
                       <>
+                        {/* Expert info display */}
+                        {generatedIdea.author && typeof generatedIdea.author === 'object' && (
+                          <div className="flex items-center mb-4">
+                            {generatedIdea.author.avatar && (
+                              <img 
+                                src={generatedIdea.author.avatar}
+                                alt={generatedIdea.author.name}
+                                className="w-10 h-10 rounded-full mr-3 object-cover"
+                                onError={(e) => {
+                                  e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(generatedIdea.author.name)}&background=random`;
+                                }}
+                              />
+                            )}
+                            <div>
+                              <h3 className="archivo text-md font-medium">
+                                {generatedIdea.author.name}
+                              </h3>
+                              {generatedIdea.author.organization && (
+                                <p className="text-xs text-zinc-400">
+                                  {generatedIdea.author.organization}
+                                </p>
+                              )}
+                            </div>
+                          </div>
+                        )}
+                        
+                        {/* Organization info display */}
+                        {generatedIdea.organizationName && (
+                          <div className="flex items-center mb-4">
+                            {generatedIdea.organizationLogo && (
+                              <img 
+                                src={generatedIdea.organizationLogo}
+                                alt={generatedIdea.organizationName}
+                                className="w-12 h-12 mr-3 object-contain"
+                              />
+                            )}
+                            <h3 className="archivo text-md font-medium">
+                              {generatedIdea.organizationName}
+                            </h3>
+                          </div>
+                        )}
+                      
                         <div className="h-10">
                           <h1 className="archivo text-lg mb-4">
                             {generatedIdea.name}
@@ -186,6 +269,19 @@ export default function Home() {
                             {generatedIdea.description}
                           </h3>
                         </div>
+                        
+                        {/* Features list for organization ideas */}
+                        {generatedIdea.features && generatedIdea.features.length > 0 && (
+                          <div className="mt-4 mb-2">
+                            <h4 className="text-sm font-medium">Privacy features:</h4>
+                            <ul className="list-none pl-0">
+                              {generatedIdea.features.map((feature, idx) => (
+                                <li key={idx} className="text-sm opacity-70">- {feature}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                        
                         <div className="flex justify-between items-center my-3">
                           <div className="flex space-x-3 w-2/3">
                             {generatedIdea.categories.map((category, index) => (
@@ -216,9 +312,11 @@ export default function Home() {
                           </div>
                         </div>
                         <hr className="opacity-10 my-3" />
-                        <h3 className="archivo text-lg mb-4 text-center mx-auto">
-                          {generatedIdea.event}
-                        </h3>
+                        {generatedIdea.event && (
+                          <h3 className="archivo text-lg mb-4 text-center mx-auto">
+                            {generatedIdea.event}
+                          </h3>
+                        )}
                         <div className="flex justify-center gap-4">
                           <button
                             className="bg-white text-[#0d0d0d] archivo text-sm flex space-x-3 items-center p-2 mt-4"
@@ -254,7 +352,9 @@ export default function Home() {
                     Filter by type (
                     {selectedIdeaType === "community"
                       ? "Community Ideas"
-                      : "Expert Ideas"}
+                      : selectedIdeaType === "expert"
+                      ? "Expert Ideas"
+                      : "Organization Ideas"}
                     )
                   </DropdownMenuSubTrigger>
                   <DropdownMenuPortal>
@@ -268,6 +368,11 @@ export default function Home() {
                         onClick={() => setSelectedIdeaType("expert")}
                       >
                         Expert Ideas
+                      </DropdownMenuItem>
+                      <DropdownMenuItem
+                        onClick={() => setSelectedIdeaType("organization")}
+                      >
+                        Organization Ideas
                       </DropdownMenuItem>
                     </DropdownMenuSubContent>
                   </DropdownMenuPortal>
@@ -295,6 +400,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      
       <div className="mt-10">
         <h1 className="major text-center text-xl">featured ideas</h1>
         <Tabs defaultValue="community" className="mt-5">
@@ -312,21 +418,28 @@ export default function Home() {
               >
                 Expert ideas
               </TabsTrigger>
+              <TabsTrigger
+                value="organization"
+                onClick={() => setSelectedIdeaType("organization")}
+              >
+                Organization ideas
+              </TabsTrigger>
             </TabsList>
           </div>
           <div className="mt-10 w-full text-left">
             <TabsContent value="community">
               <div className="md:flex flex-wrap md:justify-center justify-start px-5 gap-5 space-y-5 md:space-y-0">
                 {featuredCommunityIdeas.map((idea, index) => (
-                  <ShareableCard
+                  <IdeaCard
                     key={index}
                     id={idea.id}
                     name={idea.name}
                     description={idea.description}
                     categories={idea.categories}
                     github={idea.github}
-                    source={idea.event}
                     website={idea.website}
+                    event={idea.event}
+                    type="community"
                   />
                 ))}
               </div>
@@ -334,13 +447,36 @@ export default function Home() {
             <TabsContent value="expert">
               <div className="md:flex flex-wrap md:justify-center justify-start px-5 gap-5 space-y-5 md:space-y-0">
                 {featuredExpertIdeas.map((idea, index) => (
-                  <ShareableCard
+                  <IdeaCard
                     key={index}
                     id={idea.id}
                     name={idea.name}
                     description={idea.description}
                     categories={idea.categories}
                     author={idea.author}
+                    github={idea.github}
+                    website={idea.website}
+                    event={idea.event}
+                    type="expert"
+                  />
+                ))}
+              </div>
+            </TabsContent>
+            <TabsContent value="organization">
+              <div className="md:flex flex-wrap md:justify-center justify-start px-5 gap-5 space-y-5 md:space-y-0">
+                {featuredOrganizationIdeas.map((idea, index) => (
+                  <IdeaCard
+                    key={index}
+                    id={idea.id}
+                    name={idea.name}
+                    description={idea.description}
+                    categories={idea.categories}
+                    github={idea.github}
+                    website={idea.website}
+                    organizationLogo={idea.organizationLogo}
+                    organizationName={idea.organizationName}
+                    features={idea.features}
+                    type="organization"
                   />
                 ))}
               </div>

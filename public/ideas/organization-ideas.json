@@ -1,0 +1,19 @@
+[
+    {
+        "id": "org-zk-stablecoin",
+        "name": "ZK stablecoin",
+        "description": "A stablecoin that allows you to wrap a stablecoin so it can be privately transferred.",
+        "categories": [
+            "DeFi",
+            "Privacy"
+        ],
+        "features": [
+            "private balance (#stablecoins)",
+            "private transfer (receive-send)"
+        ],
+        "organizationName": "Aztec",
+        "organizationLogo": "https://cdn.prod.website-files.com/65804cbd4c37d195e67717e9/65e1af471158ca9d1ae94eac_aztec-iso_dark.svg",
+        "github": "https://github.com/AztecProtocol",
+        "featured": true
+    }
+]

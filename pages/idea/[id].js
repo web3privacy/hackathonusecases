@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import ShareableCard from "@/components/ui/shareable-card";
+import IdeaCard from "@/components/ui/idea-card";
 
 // Function to read and parse the JSON files
 const readIdeasFile = async (filename) => {
@@ -10,11 +10,31 @@ const readIdeasFile = async (filename) => {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
-    return data;
+    
+    // Add IDs to ideas if they don't have them
+    return data.map((idea, index) => {
+      if (!idea.id) {
+        const filePrefix = filename.includes("community") ? "community" : 
+                         filename.includes("expert") ? "expert" : "organization";
+        const generatedId = `${filePrefix}-${idea.name.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')}-${index}`;
+        return { ...idea, id: generatedId };
+      }
+      return idea;
+    });
   } catch (error) {
     console.error(`Error fetching ${filename}:`, error);
     return [];
   }
+};
+
+// Function to determine card type based on idea properties
+const getIdeaType = (idea) => {
+  if (idea.organizationName || idea.organizationLogo || idea.features) {
+    return 'organization';
+  } else if (idea.author) {
+    return 'expert';
+  }
+  return 'community';
 };
 
 export default function IdeaPage() {
@@ -30,30 +50,20 @@ export default function IdeaPage() {
       
       setIsLoading(true);
       try {
-        // Fetch from both sources and find the matching idea
+        // Fetch from all sources and find the matching idea
         const communityIdeas = await readIdeasFile("community-ideas.json");
         const expertIdeas = await readIdeasFile("expert-ideas.json");
         
-        // Add ids to ideas if they don't have them
-        const processedCommunityIdeas = communityIdeas.map((idea, index) => {
-          if (!idea.id) {
-            const generatedId = `community-${idea.name.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')}-${index}`;
-            return { ...idea, id: generatedId };
-          }
-          return idea;
-        });
-        
-        const processedExpertIdeas = expertIdeas.map((idea, index) => {
-          if (!idea.id) {
-            const generatedId = `expert-${idea.name.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')}-${index}`;
-            return { ...idea, id: generatedId };
-          }
-          return idea;
-        });
-        
-        const allIdeas = [...processedCommunityIdeas, ...processedExpertIdeas];
+        // Try to fetch organization ideas, but don't fail if they don't exist
+        let organizationIdeas = [];
+        try {
+          organizationIdeas = await readIdeasFile("organization-ideas.json");
+        } catch (err) {
+          console.warn("No organization ideas found:", err);
+        }
         
         // Try to find by id
+        const allIdeas = [...communityIdeas, ...expertIdeas, ...organizationIdeas];
         let foundIdea = allIdeas.find(idea => idea.id === id);
         
         // If not found by id, try finding by name converted to id format
@@ -102,6 +112,9 @@ export default function IdeaPage() {
     );
   }
 
+  // Determine the type of idea
+  const ideaType = getIdeaType(idea);
+
   return (
     <main className="bg-black w-full min-h-screen pb-10">
       <nav className="flex justify-between p-5 items-center">
@@ -118,20 +131,25 @@ export default function IdeaPage() {
         </button>
       </nav>
       
-      <div className="flex flex-col items-center mt-10">
+      <div className={`flex flex-col items-center mt-10 ${ideaType === 'organization' ? 'max-w-4xl mx-auto' : ''}`}>
         <h1 className="major text-center text-3xl md:text-5xl mb-8">
-          Shared Idea
+          {ideaType === 'organization' ? 'Organization Idea' : 
+           ideaType === 'expert' ? 'Expert Idea' : 'Community Idea'}
         </h1>
         
-        <ShareableCard 
+        <IdeaCard
           id={idea.id}
           name={idea.name}
           description={idea.description}
           categories={idea.categories}
           github={idea.github}
           website={idea.website}
-          source={idea.event}
+          event={idea.event}
           author={idea.author}
+          type={ideaType}
+          organizationLogo={idea.organizationLogo}
+          organizationName={idea.organizationName}
+          features={idea.features}
         />
         
         <div className="mt-8">
