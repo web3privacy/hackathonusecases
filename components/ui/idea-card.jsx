@@ -10,6 +10,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from '@/components/ui/button';
+import ReactMarkdown from 'react-markdown';
 
 const IdeaCard = ({ 
   id = '', 
@@ -181,6 +182,15 @@ const IdeaCard = ({
     return null;
   };
 
+  // Render description with Markdown support
+  const renderDescription = () => {
+    return (
+      <div className="mt-4 mb-4 archivo text-sm opacity-70 prose prose-invert prose-sm max-w-none">
+        <ReactMarkdown>{description}</ReactMarkdown>
+      </div>
+    );
+  };
+
   return (
     <div className="bg-[#0d0d0d] md:w-1/3 w-full p-6">
       {renderCardHeader()}
@@ -194,9 +204,8 @@ const IdeaCard = ({
       
       {type !== 'expert' && <hr className="opacity-10 my-2" />}
       
-      <div className="h-20">
-        <h3 className="archivo mt-4 text-sm opacity-50">{description}</h3>
-      </div>
+      {/* Description with Markdown support */}
+      {renderDescription()}
       
       {renderFeatures()}
       
