@@ -16,8 +16,10 @@
         "github": "https://github.com/AztecProtocol",
         "featured": true
     }
+]
 
-     {
+[
+  {
         "id": "voting",
         "name": "Private voting",
         "description": "Enable polling or voting off-chain, vote results could be aggregated and submitted on-chain in one transaction",
