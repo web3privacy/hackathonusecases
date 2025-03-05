@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import { Filter, Github, Globe, Share2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -101,6 +102,7 @@ export default function Home() {
   const [featuredCommunityIdeas, setFeaturedCommunityIdeas] = useState([]);
   const [featuredExpertIdeas, setFeaturedExpertIdeas] = useState([]);
   const [featuredOrganizationIdeas, setFeaturedOrganizationIdeas] = useState([]);
+  const [uniqueOrganizations, setUniqueOrganizations] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -134,6 +136,25 @@ export default function Home() {
         setFeaturedOrganizationIdeas(
           organizationData.filter((idea) => idea.featured === true)
         );
+
+        // Extract unique organizations for the organization links section
+        if (organizationData.length > 0) {
+          const orgs = Array.from(
+            new Set(
+              organizationData
+                .filter(idea => idea.organizationName)
+                .map(idea => idea.organizationName)
+            )
+          ).map(orgName => {
+            const orgIdea = organizationData.find(idea => idea.organizationName === orgName);
+            return {
+              name: orgName,
+              logo: orgIdea.organizationLogo || null,
+              slug: orgName.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')
+            };
+          });
+          setUniqueOrganizations(orgs);
+        }
         
         setError(null);
       } catch (err) {
@@ -401,26 +422,60 @@ export default function Home() {
         </div>
       </div>
       
-      <div className="mt-10">
-        <h1 className="major text-center text-xl">featured ideas</h1>
+      {/* Organizations section styled like the screenshot */}
+      {uniqueOrganizations.length > 0 && (
+        <div className="mt-16 mb-12">
+          <h1 className="major text-center text-4xl mb-12 uppercase">ORGANIZATIONS</h1>
+          <div className="flex flex-wrap justify-center gap-8">
+            {uniqueOrganizations.map((org, index) => (
+              <Link 
+                key={index} 
+                href={`/org/${org.slug}`}
+                className="flex flex-col items-center"
+              >
+                <div className="bg-zinc-900 p-8 rounded-md mb-2 hover:bg-zinc-800 transition-colors">
+                  {org.logo ? (
+                    <img 
+                      src={org.logo} 
+                      alt={org.name} 
+                      className="w-24 h-24 object-contain" 
+                    />
+                  ) : (
+                    <div className="w-24 h-24 flex items-center justify-center bg-zinc-800 rounded">
+                      {org.name.substring(0, 2).toUpperCase()}
+                    </div>
+                  )}
+                </div>
+                <span className="text-center text-lg mt-2">{org.name}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+      
+      <div className="mt-16">
+        <h1 className="major text-center text-4xl uppercase mb-12">FEATURED IDEAS</h1>
         <Tabs defaultValue="community" className="mt-5">
           <div className="flex justify-center w-full">
-            <TabsList className="archivo">
+            <TabsList className="archivo border border-zinc-800">
               <TabsTrigger
                 value="community"
                 onClick={() => setSelectedIdeaType("community")}
+                className="px-6"
               >
                 Community ideas
               </TabsTrigger>
               <TabsTrigger
                 value="expert"
                 onClick={() => setSelectedIdeaType("expert")}
+                className="px-6"
               >
                 Expert ideas
               </TabsTrigger>
               <TabsTrigger
                 value="organization"
                 onClick={() => setSelectedIdeaType("organization")}
+                className="px-6"
               >
                 Organization ideas
               </TabsTrigger>

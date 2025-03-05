@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { Share2, Github, Globe, Copy, Check } from 'lucide-react';
 import { Badge } from "@/components/ui/badge";
 import {
@@ -97,22 +98,39 @@ const IdeaCard = ({
 
   const expertDetails = type === 'expert' ? getExpertDetails() : null;
 
+  // Get organization URL-friendly name
+  const getOrgPathName = () => {
+    if (organizationName) {
+      return organizationName.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '');
+    }
+    return null;
+  };
+
   // Render different card headers based on type
   const renderCardHeader = () => {
     if (type === 'organization') {
+      const orgPath = getOrgPathName();
+      
       return (
         <div className="flex items-center mb-4 pb-3 border-b border-zinc-800">
           {organizationLogo && (
             <div className="mr-3">
-              <img 
-                src={organizationLogo} 
-                alt={organizationName || name}
-                className="w-10 h-10 rounded object-contain" 
-              />
+              <Link href={`/org/${orgPath}`}>
+                <img 
+                  src={organizationLogo} 
+                  alt={organizationName || name}
+                  className="w-10 h-10 rounded object-contain cursor-pointer" 
+                />
+              </Link>
             </div>
           )}
           <div className="flex-1">
-            <h3 className="archivo text-md font-medium">{organizationName || name}</h3>
+            <Link 
+              href={`/org/${orgPath}`}
+              className="archivo text-md font-medium hover:underline"
+            >
+              {organizationName || name}
+            </Link>
           </div>
         </div>
       );
@@ -150,7 +168,15 @@ const IdeaCard = ({
               </a>
             </h3>
             {expertDetails.organization && (
-              <p className="text-xs text-zinc-400">{expertDetails.organization}</p>
+              <p className="text-xs text-zinc-400">
+                {/* If organization is mentioned, make it a link to org page */}
+                <Link 
+                  href={`/org/${expertDetails.organization.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')}`}
+                  className="hover:underline"
+                >
+                  {expertDetails.organization}
+                </Link>
+              </p>
             )}
           </div>
         </div>
@@ -196,7 +222,7 @@ const IdeaCard = ({
       {renderCardHeader()}
       
       {/* For organization cards, put name after the org header if not already used */}
-      {type === 'organization' && organizationName && (
+      {type === 'organization' && organizationName && name !== organizationName && (
         <div className="h-10">
           <h1 className="archivo text-lg mb-4">{name}</h1>
         </div>
