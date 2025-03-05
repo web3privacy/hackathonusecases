@@ -17,23 +17,3 @@
         "featured": true
     }
 ]
-
-[
-  {
-        "id": "voting",
-        "name": "Private voting",
-        "description": "Enable polling or voting off-chain, vote results could be aggregated and submitted on-chain in one transaction",
-        "categories": [
-            "Voting",
-            "Privacy"
-        ],
-        "features": [
-            "private vote (#voting)",
-            "private identity (vote author)"
-        ],
-        "organizationName": "Waku",
-        "organizationLogo": "https://waku.org",
-        "github": "https://github.com/waku-org",
-        "featured": true
-    }
-]
