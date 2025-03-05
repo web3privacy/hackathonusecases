@@ -29,7 +29,7 @@
             "private identity (vote author)"
         ],
         "organizationName": "Waku",
-        "organizationLogo": "https://waku.org",
+        "organizationLogo": "https://waku.org/theme/image/logo.svg",
         "github": "https://github.com/waku-org",
         "featured": true
     }
