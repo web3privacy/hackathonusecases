@@ -2,6 +2,12 @@
 
 Hackathon use-cases generator - generate ideas curated by the Web3Privacy Now community and experts
 
+<a href="https://web3privacy.info"><img width="100%" alt="w3pn-website-screen" src="https://github.com/web3privacy/hackathonusecases/blob/main/assets/Privacy%20use-cases%20segmentation.png"></a>
+
+- **Community ideas** - use-cases delivered through hackathons
+- **Expert ideas** - use-cases from expert like Vitalik Buterin
+- **Organizational ideas** - use-cases from both privacy-focused and web3-native organizations
+
 # How to add organizational idea
 
 1. Open [Organizational Ideas JSON](https://github.com/web3privacy/hackathonusecases/blob/main/public/ideas/organization-ideas.json).
