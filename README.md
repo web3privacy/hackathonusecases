@@ -1,6 +1,35 @@
-# hackathonusecases
+# Privacy idea generator - use-cases ideation tool from hackathons to the next idea explorations
 
 Hackathon use-cases generator - generate ideas curated by the Web3Privacy Now community and experts
+
+# How to add organizational idea
+
+1. Open [Organizational Ideas JSON](https://github.com/web3privacy/hackathonusecases/blob/main/public/ideas/organization-ideas.json).
+2. Follow this Aztec example
+
+```bash
+        "id": "org-zk-stablecoin",
+        "name": "ZK stablecoin",
+        "description": "A stablecoin that allows you to wrap a stablecoin so it can be privately transferred.",
+        "categories": [
+            "DeFi",
+            "Privacy"
+        ],
+        "features": [
+            "private balance (#stablecoins)",
+            "private transfer (receive-send)"
+        ],
+        "organizationName": "Aztec",
+        "organizationLogo": "https://cdn.prod.website-files.com/65804cbd4c37d195e67717e9/65e1af471158ca9d1ae94eac_aztec-iso_dark.svg",
+        "github": "https://github.com/AztecProtocol",
+        "featured": true
+    }
+```
+3. Add your data (use-cases).
+4. Make a Pull Request.
+5. Our team will review contributions - later they will appear on the front-end.
+
+# Tech specs 
 
 Deployed at [https://ideas.web3privacy.info/](https://ideas.web3privacy.info/)
 
