@@ -147,6 +147,7 @@ export default function IdeaPage() {
           event={idea.event}
           author={idea.author}
           type={ideaType}
+          organization={idea.organization}
           organizationLogo={idea.organizationLogo}
           organizationName={idea.organizationName}
           features={idea.features}

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { Filter, Github, Globe, Share2 } from "lucide-react";
+import { Filter, Github, Globe, Share2, ChevronLeft, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import IdeaCard from "@/components/ui/idea-card";
@@ -85,6 +85,32 @@ const getIdeaType = (idea) => {
   return 'community';
 };
 
+const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+  return (
+    <div className="flex justify-center items-center space-x-4 mt-8 mb-8">
+      <button 
+        onClick={() => onPageChange(Math.max(1, currentPage - 1))} 
+        disabled={currentPage <= 1}
+        className={`p-2 ${currentPage <= 1 ? 'opacity-50 cursor-not-allowed' : 'hover:text-zinc-300 cursor-pointer'}`}
+        aria-label="Previous page"
+      >
+        <ChevronLeft className="w-5 h-5" />
+      </button>
+      
+      <div className="archivo text-sm">{currentPage} / {Math.max(totalPages, 1)}</div>
+      
+      <button 
+        onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))} 
+        disabled={currentPage >= totalPages}
+        className={`p-2 ${currentPage >= totalPages ? 'opacity-50 cursor-not-allowed' : 'hover:text-zinc-300 cursor-pointer'}`}
+        aria-label="Next page"
+      >
+        <ChevronRight className="w-5 h-5" />
+      </button>
+    </div>
+  );
+};
+
 export default function Home() {
   const router = useRouter();
   const contributeIdeaTo =
@@ -103,6 +129,12 @@ export default function Home() {
   const [featuredExpertIdeas, setFeaturedExpertIdeas] = useState([]);
   const [featuredOrganizationIdeas, setFeaturedOrganizationIdeas] = useState([]);
   const [uniqueOrganizations, setUniqueOrganizations] = useState([]);
+  
+  // Pagination states
+  const [communityPage, setCommunityPage] = useState(1);
+  const [expertPage, setExpertPage] = useState(1);
+  const [organizationPage, setOrganizationPage] = useState(1);
+  const ideasPerPage = 4;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -127,15 +159,13 @@ export default function Home() {
         setAllTags(uniqueTags);
         setFilteredTags(uniqueTags);
         
-        setFeaturedCommunityIdeas(
-          communityData.filter((idea) => idea.featured === true)
-        );
-        setFeaturedExpertIdeas(
-          expertData.filter((idea) => idea.featured === true)
-        );
-        setFeaturedOrganizationIdeas(
-          organizationData.filter((idea) => idea.featured === true)
-        );
+        const communityFeatured = communityData.filter((idea) => idea.featured === true);
+        const expertFeatured = expertData.filter((idea) => idea.featured === true);
+        const organizationFeatured = organizationData.filter((idea) => idea.featured === true);
+        
+        setFeaturedCommunityIdeas(communityFeatured);
+        setFeaturedExpertIdeas(expertFeatured);
+        setFeaturedOrganizationIdeas(organizationFeatured);
 
         // Extract unique organizations for the organization links section
         if (organizationData.length > 0) {
@@ -168,6 +198,10 @@ export default function Home() {
     fetchData();
   }, []);
 
+  const communityTotalPages = Math.max(1, Math.ceil(featuredCommunityIdeas.length / ideasPerPage));
+  const expertTotalPages = Math.max(1, Math.ceil(featuredExpertIdeas.length / ideasPerPage));
+  const organizationTotalPages = Math.max(1, Math.ceil(featuredOrganizationIdeas.length / ideasPerPage));
+
   const handleGenerateIdea = () => {
     let ideas;
     switch (selectedIdeaType) {
@@ -193,6 +227,18 @@ export default function Home() {
     setSelectedTags((prev) =>
       prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
     );
+  };
+
+  // Get paginated ideas for the current tab
+  const getPaginatedIdeas = (ideas, page) => {
+    const startIndex = (page - 1) * ideasPerPage;
+    const endIndex = startIndex + ideasPerPage;
+    return ideas.slice(startIndex, endIndex);
+  };
+
+  // Handle tab change
+  const handleTabChange = (value) => {
+    setSelectedIdeaType(value);
   };
 
   return (
@@ -455,26 +501,23 @@ export default function Home() {
       
       <div className="mt-16">
         <h1 className="major text-center text-4xl uppercase mb-12">FEATURED IDEAS</h1>
-        <Tabs defaultValue="community" className="mt-5">
+        <Tabs defaultValue="community" className="mt-5" onValueChange={handleTabChange}>
           <div className="flex justify-center w-full">
             <TabsList className="archivo border border-zinc-800">
               <TabsTrigger
                 value="community"
-                onClick={() => setSelectedIdeaType("community")}
                 className="px-6"
               >
                 Community ideas
               </TabsTrigger>
               <TabsTrigger
                 value="expert"
-                onClick={() => setSelectedIdeaType("expert")}
                 className="px-6"
               >
                 Expert ideas
               </TabsTrigger>
               <TabsTrigger
                 value="organization"
-                onClick={() => setSelectedIdeaType("organization")}
                 className="px-6"
               >
                 Organization ideas
@@ -484,7 +527,7 @@ export default function Home() {
           <div className="mt-10 w-full text-left">
             <TabsContent value="community">
               <div className="md:flex flex-wrap md:justify-center justify-start px-5 gap-5 space-y-5 md:space-y-0">
-                {featuredCommunityIdeas.map((idea, index) => (
+                {getPaginatedIdeas(featuredCommunityIdeas, communityPage).map((idea, index) => (
                   <IdeaCard
                     key={index}
                     id={idea.id}
@@ -498,10 +541,15 @@ export default function Home() {
                   />
                 ))}
               </div>
+              <Pagination 
+                currentPage={communityPage} 
+                totalPages={communityTotalPages} 
+                onPageChange={setCommunityPage} 
+              />
             </TabsContent>
             <TabsContent value="expert">
               <div className="md:flex flex-wrap md:justify-center justify-start px-5 gap-5 space-y-5 md:space-y-0">
-                {featuredExpertIdeas.map((idea, index) => (
+                {getPaginatedIdeas(featuredExpertIdeas, expertPage).map((idea, index) => (
                   <IdeaCard
                     key={index}
                     id={idea.id}
@@ -509,6 +557,7 @@ export default function Home() {
                     description={idea.description}
                     categories={idea.categories}
                     author={idea.author}
+                    organization={idea.organization}
                     github={idea.github}
                     website={idea.website}
                     event={idea.event}
@@ -516,10 +565,15 @@ export default function Home() {
                   />
                 ))}
               </div>
+              <Pagination 
+                currentPage={expertPage} 
+                totalPages={expertTotalPages} 
+                onPageChange={setExpertPage} 
+              />
             </TabsContent>
             <TabsContent value="organization">
               <div className="md:flex flex-wrap md:justify-center justify-start px-5 gap-5 space-y-5 md:space-y-0">
-                {featuredOrganizationIdeas.map((idea, index) => (
+                {getPaginatedIdeas(featuredOrganizationIdeas, organizationPage).map((idea, index) => (
                   <IdeaCard
                     key={index}
                     id={idea.id}
@@ -535,6 +589,11 @@ export default function Home() {
                   />
                 ))}
               </div>
+              <Pagination 
+                currentPage={organizationPage} 
+                totalPages={organizationTotalPages} 
+                onPageChange={setOrganizationPage} 
+              />
             </TabsContent>
           </div>
         </Tabs>

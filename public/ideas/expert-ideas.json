@@ -1,401 +1,574 @@
 [
-    {
-      "name": "Wallet with One account per dapp",
-      "categories": ["Wallet", "DeFi"],
-      "description": "build a wallet that does one account per dapp and makes send-to-others and send-to-self go through a pool by default",
-      "author": "https://x.com/VitalikButerin",
-      "featured": true
-    },
-    {
-      "name": "Censorship resistant Github",
-      "categories": ["Identity", "Privacy"],
-      "description": "Distributed and permissionless codebases with censorship resistant github",
-      "author": "https://twitter.com/hackyguru",
-      "featured": true
-    },
-    {
-      "name": "Anonymous chat app",
-      "categories": ["Communications", "Privacy"],
-      "description": "Blockchain-based chat application",
-      "author": "https://twitter.com/somerandomperson",
-      "featured": true
-    },
-    {
-      "name": "Private airtags",
-      "categories": ["Privacy"],
-      "description": "Private  alternative for airtags",
-      "author": "https://twitter.com/randomdude",
-      "featured": true
-    },
-    {
-      "name": "Private derivatives market",
-      "categories": ["DeFi"],
-      "description": "Private derivatives market",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Permissionless private prediction markets",
-      "categories": ["DeFi"],
-      "description": "Permissionless private prediction markets",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "zk casino",
-      "categories": ["DeFi"],
-      "description": "a casino where bets are spent from the pool, so that individual betters can't be behaviourally manipulated by the casino",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "gasless txs",
-      "categories": ["DeFi"],
-      "description": "expanding the anonymity set of a tornado.cash relayers by using the account abstraction / alt mempool infrastructure",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "dark market using FHE",
-      "categories": ["DeFi"],
-      "description": "expanding the anonymity set of a tornado.cash relayers by using the account abstraction / alt mempool infrastructure",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Tornado Nova fork with PLUME",
-      "categories": ["DeFi"],
-      "description": "Tornado Nova fork with PLUME signatures that will enable private transactions with evm addresses. (No need to store additional secret keys. Privacy with hardware wallets ). ",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Privacy Pools with Stealth addresses",
-      "categories": ["DeFi"],
-      "description": "an interface combining privacy pools + stealth addresses - privacy pools to break traceability.",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Privacy Preserving Credentials",
-      "categories": ["DID"],
-      "description": "Privacy Preserving Credentials",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Secure drop on a Nym gateway",
-      "categories": ["Communication"],
-      "description": "Secure drop on a Nym gateway",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Bluesky with only a wallet - no other identity",
-      "categories": ["Socials"],
-      "description": "Bluesky with only a wallet - no other identity",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Private Bitcoin Balance Lookup with an Ethereum wallet",
-      "categories": ["DeFi"],
-      "description": "Expand Private Bitcoin Balance Lookup via Spiral to a full eth wallet",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Privacy preserving LLM",
-      "categories": ["AI"],
-      "description": "privacy preserving LLM platform that collects prompt data without the the identity of the user",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "P2P Marketplace",
-      "categories": ["AI"],
-      "description": "a private p2p marketplace like local bitcoin but more privacy focused",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Private 2FA",
-      "categories": ["Security"],
-      "description": "private 2factor authentication app (something like google authenticator but shouldn’t rely on servers)",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Private version of the expense management app",
-      "categories": ["AI"],
-      "description": "private version of Expensify",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "fully decentralized Github environment",
-      "categories": ["Collaboration"],
-      "description": "I'm not sure where we have got to on fully decentralized Github environment, but that has been a #1 thing which I think we need for many years. Darkfi use Codeberg via Tor, but it still a dependency on a centralized service provider. Axis made Mango way back in 2016: https://github.com/axic/mango (In the meantime, it really should be possible to build good Github alternatives today on ETH+IFPS.). So code hosting, plus pull request infrastructure, plus issue tracking / comms",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Anonimity sets based on a real-world use-cases",
-      "categories": ["Collaboration"],
-      "description": "Real-world use-cases using huge anonimity sets (anon groups)",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Mpc or Fhe on-chain primitives (e.g., float32)",
-      "categories": ["R&D"],
-      "description": "Mpc or Fhe on-chain primitives (e.g., float32)",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Combinations of MPC + FHE or ZK + FHE (+ ML)",
-      "categories": ["R&D"],
-      "description": "Combinations of MPC + FHE or ZK + FHE (+ ML)",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Subscription SDK",
-      "categories": ["DeFi"],
-      "description": "Subscription SDK based on semaphore or so (i.e. provable that I paid some monthly fee without revealing who I am out of the subscribers)",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Multi-send transaction",
-      "categories": ["DeFi"],
-      "description": "Private batch/multi-send transaction (so being able to send payment to many people at once privately) this could be for payroll",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Messenger protocol",
-      "categories": ["Communication"],
-      "description": "private messenger protocol (having the possibility of multiple UIs: cli, web, mobile app).",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Filesharing (similar to ipfs)",
-      "categories": ["Storage"],
-      "description": "Filesharing (similar to ipfs)",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Torrenting",
-      "categories": ["Storage"],
-      "description": "Anon torrenting + media service like plex",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Private collaboration",
-      "categories": ["Collaboration"],
-      "description": "Private collab tools (like doc collab, collab pixel drawing)",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Audio chat",
-      "categories": ["Collaboration"],
-      "description": "audio chat",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "DNS",
-      "categories": ["Domain"],
-      "description": "dns system within NYM, which can allow for a new darknet to exist",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Anon/decentralised twitter spaces",
-      "categories": ["Socials"],
-      "description": "anon/decentralised twitter spaces",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Validator privacy: IPs & other public data",
-      "categories": ["Nodes"],
-      "description": "Validator privacy: IPs & other public data",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Privacy-centric simple swamp or atomic swap protocol",
-      "categories": ["DeFi"],
-      "description": "Vprivacy-centric simple swamp or atomic swap protocol",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Privacy-centric simple swamp or atomic swap protocol",
-      "categories": ["DeFi"],
-      "description": "Vprivacy-centric simple swamp or atomic swap protocol",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Private income stream on Aztec",
-      "categories": ["DeFi"],
-      "description": "can be used later for credit scores",
-      "author": "https://x.com/omw_to_the_moon",
-      "featured": false
-    },
-    {
-      "name": "Private crowdsourcing",
-      "categories": ["DeFi"],
-      "description": "fix the constitution dao issues",
-      "author": "https://x.com/omw_to_the_moon",
-      "featured": false
-    },
-    {
-      "name": "Private Google docs",
-      "categories": ["Collaboration"],
-      "description": "each doc is encrypted with keys that are shared among a group",
-      "author": "https://x.com/web3privacy",
-      "featured": false
-    },
-    {
-      "name": "Private biometrics description",
-      "categories": ["Health"],
-      "description": "local-first biometrics app to keep track of weight, heartrate, etc",
-      "author": "https://x.com/web3privacy",
-      "featured": false
-    },
-    {
-      "name": "Private strava",
-      "categories": ["Health"],
-      "description": "Strava app that doesn't leak your location to outside observers",
-      "author": "https://x.com/web3privacy",
-      "featured": false
-    },
-    {
-      "name": "Location",
-      "categories": ["Coordination"],
-      "description": "Private and secure location sharing",
-      "author": "https://x.com/web3privacy",
-      "featured": false
-    },
-    {
-      "name": "Bug bounty",
-      "categories": ["Coordination"],
-      "description": "Tools that facilitate anon disclosures and rewards",
-      "author": "https://x.com/web3privacy",
-      "featured": false
-    },
-    {
-      "name": "Private XMTP x socials",
-      "categories": ["Socials"],
-      "description": "Private XMTP messaging functionality especially for web3 social apps",
-      "author": "https://x.com/BenWest",
-      "featured": false
-    },
-    {
-      "name": "HW wallet based password manager",
-      "categories": ["Wallets"],
-      "description": "password manager that encrypts each password with a different key. The encryption/decryption is faciliatated by a hardware wallet (Trezor, Ledger, Jade), possibly using their GPG support",
-      "author": "https://x.com/jurbed",
-      "featured": false
-    },
-    {
-      "name": "Encrypted facial recognition",
-      "categories": ["Home security"],
-      "description": "Private and encrypted facial recognition for building access cameras (local non-Internet system)",
-      "author": "https://x.com/web3privacy",
-      "featured": false
-    },
-    {
-      "name": "zk visitorID database",
-      "categories": ["Identity"],
-      "description": "Private and encrypted database verification system for building access that requires ID for security purposes",
-      "author": "https://x.com/web3privacy",
-      "featured": false
-    },
-    {
-      "name": "zk eDiscovery",
-      "categories": ["Identity"],
-      "description": "Client-side scanning of sensitive documents, for use in litigation",
-      "author": "https://x.com/web3privacy",
-      "featured": false
-    },
-    {
-      "name": "Private indexer",
-      "categories": ["Indexing"],
-      "description": "Like TheGraph but it uses homomorphic encryption to index encrypted data on the blockchain, only the client can decrypt it",
-      "author": "https://x.com/web3privacy",
-      "featured": false
-    },
-    {
-      "name": "Zk attestations of ownership in git organisations",
-      "categories": ["Collaboration"],
-      "description": "ownership in git organisations / across repos ('the same person who made this anon repo also published this other one) ",
-      "author": "https://x.com/web3privacy",
-      "featured": false
-    },
-    {
-      "name": "Evm compatible zcash-esq commit reveal scheme",
-      "categories": ["Collaboration"],
-      "description": "-",
-      "author": "https://x.com/web3privacy",
-      "featured": false
-    },
-    {
-      "name": "Totally anon public forum",
-      "categories": ["Collaboration"],
-      "description": "with selective disclosure for linking selected prev sent messages ",
-      "author": "https://x.com/web3privacy",
-      "featured": false
-    },
-    {
-      "name": "Anon blogs",
-      "categories": ["Collaboration"],
-      "description": "resilient pseudo or anon publishing hosting for blogs - can you have a NoBlogs that is hosted on IPFS / something resilient for e.g. anarcho orgs.",
-      "author": "https://x.com/web3privacy",
-      "featured": false
-    },
-    {
-      "name": "Unstoppable meme board",
-      "categories": ["Collaboration"],
-      "description": "The page list latest meme and potentially attached comments. Meme can be curated, preferably using zero-knowledge technology for anonymous yet on-chain backed curation",
-      "author": "https://x.com/web3privacy",
-      "featured": false
-    },
-    {
-      "name": "23 and only me",
-      "categories": ["Health"],
-      "description": "Upload DNA profile and store privately in cloud. Analysis tools run under MPC to deliver insights with maximum privacy guarantees",
-      "author": "https://x.com/web3privacy",
-      "featured": false
-    },
-    {
-      "name": "Privacy-focused home security",
-      "categories": ["Security"],
-      "description": "Privacy-focused/local-first home security",
-      "author": "https://x.com/web3privacy",
-      "featured": false
-    },
-    {
-      "name": "Tor RPC for Ethereum",
-      "categories": ["RPC"],
-      "description": "a localhost service which exposes normal node RPC and relays it through tor. user should be able to just put localhost/smth in their RPC and use their wallet normally b) a listener implemented as a tor hidden service, which relays the calls to the node caveats",
-      "author": "https://x.com/web3privacy",
-      "featured": false
-    },
-    {
-      "name": "Split-signing injective wallet for Ethereum.",
-      "categories": ["Wallet"],
-      "description": "normal wallet, such as metamask, which, upon prompting a transaction, will expose an unsigned tx (through system output, or, optionally, as a string that can be copied / QR code)",
-      "author": "https://x.com/web3privacy",
-      "featured": false
-    }
-  ]
+  {
+    "name": "Wallet with One account per dapp",
+    "categories": [
+      "Wallet",
+      "DeFi"
+    ],
+    "description": "build a wallet that does one account per dapp and makes send-to-others and send-to-self go through a pool by default",
+    "author": "https://x.com/VitalikButerin",
+    "organization": "Ethereum Foundation",
+    "featured": true
+  },
+  {
+    "name": "Censorship resistant Github",
+    "categories": [
+      "Identity",
+      "Privacy"
+    ],
+    "description": "Distributed and permissionless codebases with censorship resistant github",
+    "author": "https://twitter.com/hackyguru",
+    "organization": "Waku",
+    "featured": true
+  },
+  {
+    "name": "Anonymous chat app",
+    "categories": [
+      "Communications",
+      "Privacy"
+    ],
+    "description": "Blockchain-based chat application",
+    "author": "https://twitter.com/somerandomperson",
+    "organization": "",
+    "featured": true
+  },
+  {
+    "name": "Private airtags",
+    "categories": [
+      "Privacy"
+    ],
+    "description": "Private  alternative for airtags",
+    "author": "https://twitter.com/randomdude",
+    "organization": "",
+    "featured": true
+  },
+  {
+    "name": "Private derivatives market",
+    "categories": [
+      "DeFi"
+    ],
+    "description": "Private derivatives market",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": true
+  },
+  {
+    "name": "Permissionless private prediction markets",
+    "categories": [
+      "DeFi"
+    ],
+    "description": "Permissionless private prediction markets",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "zk casino",
+    "categories": [
+      "DeFi"
+    ],
+    "description": "a casino where bets are spent from the pool, so that individual betters can't be behaviourally manipulated by the casino",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "gasless txs",
+    "categories": [
+      "DeFi"
+    ],
+    "description": "expanding the anonymity set of a tornado.cash relayers by using the account abstraction / alt mempool infrastructure",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "dark market using FHE",
+    "categories": [
+      "DeFi"
+    ],
+    "description": "expanding the anonymity set of a tornado.cash relayers by using the account abstraction / alt mempool infrastructure",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Tornado Nova fork with PLUME",
+    "categories": [
+      "DeFi"
+    ],
+    "description": "Tornado Nova fork with PLUME signatures that will enable private transactions with evm addresses. (No need to store additional secret keys. Privacy with hardware wallets ). ",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Privacy Pools with Stealth addresses",
+    "categories": [
+      "DeFi"
+    ],
+    "description": "an interface combining privacy pools + stealth addresses - privacy pools to break traceability.",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Privacy Preserving Credentials",
+    "categories": [
+      "DID"
+    ],
+    "description": "Privacy Preserving Credentials",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Secure drop on a Nym gateway",
+    "categories": [
+      "Communication"
+    ],
+    "description": "Secure drop on a Nym gateway",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Bluesky with only a wallet - no other identity",
+    "categories": [
+      "Socials"
+    ],
+    "description": "Bluesky with only a wallet - no other identity",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Private Bitcoin Balance Lookup with an Ethereum wallet",
+    "categories": [
+      "DeFi"
+    ],
+    "description": "Expand Private Bitcoin Balance Lookup via Spiral to a full eth wallet",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Privacy preserving LLM",
+    "categories": [
+      "AI"
+    ],
+    "description": "privacy preserving LLM platform that collects prompt data without the the identity of the user",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "P2P Marketplace",
+    "categories": [
+      "AI"
+    ],
+    "description": "a private p2p marketplace like local bitcoin but more privacy focused",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Private 2FA",
+    "categories": [
+      "Security"
+    ],
+    "description": "private 2factor authentication app (something like google authenticator but shouldn’t rely on servers)",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Private version of the expense management app",
+    "categories": [
+      "AI"
+    ],
+    "description": "private version of Expensify",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "fully decentralized Github environment",
+    "categories": [
+      "Collaboration"
+    ],
+    "description": "I'm not sure where we have got to on fully decentralized Github environment, but that has been a #1 thing which I think we need for many years. Darkfi use Codeberg via Tor, but it still a dependency on a centralized service provider. Axis made Mango way back in 2016: https://github.com/axic/mango (In the meantime, it really should be possible to build good Github alternatives today on ETH+IFPS.). So code hosting, plus pull request infrastructure, plus issue tracking / comms",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Anonimity sets based on a real-world use-cases",
+    "categories": [
+      "Collaboration"
+    ],
+    "description": "Real-world use-cases using huge anonimity sets (anon groups)",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Mpc or Fhe on-chain primitives (e.g., float32)",
+    "categories": [
+      "R&D"
+    ],
+    "description": "Mpc or Fhe on-chain primitives (e.g., float32)",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Combinations of MPC + FHE or ZK + FHE (+ ML)",
+    "categories": [
+      "R&D"
+    ],
+    "description": "Combinations of MPC + FHE or ZK + FHE (+ ML)",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Subscription SDK",
+    "categories": [
+      "DeFi"
+    ],
+    "description": "Subscription SDK based on semaphore or so (i.e. provable that I paid some monthly fee without revealing who I am out of the subscribers)",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Multi-send transaction",
+    "categories": [
+      "DeFi"
+    ],
+    "description": "Private batch/multi-send transaction (so being able to send payment to many people at once privately) this could be for payroll",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Messenger protocol",
+    "categories": [
+      "Communication"
+    ],
+    "description": "private messenger protocol (having the possibility of multiple UIs: cli, web, mobile app).",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Filesharing (similar to ipfs)",
+    "categories": [
+      "Storage"
+    ],
+    "description": "Filesharing (similar to ipfs)",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Torrenting",
+    "categories": [
+      "Storage"
+    ],
+    "description": "Anon torrenting + media service like plex",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Private collaboration",
+    "categories": [
+      "Collaboration"
+    ],
+    "description": "Private collab tools (like doc collab, collab pixel drawing)",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Audio chat",
+    "categories": [
+      "Collaboration"
+    ],
+    "description": "audio chat",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "DNS",
+    "categories": [
+      "Domain"
+    ],
+    "description": "dns system within NYM, which can allow for a new darknet to exist",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Anon/decentralised twitter spaces",
+    "categories": [
+      "Socials"
+    ],
+    "description": "anon/decentralised twitter spaces",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Validator privacy: IPs & other public data",
+    "categories": [
+      "Nodes"
+    ],
+    "description": "Validator privacy: IPs & other public data",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Privacy-centric simple swamp or atomic swap protocol",
+    "categories": [
+      "DeFi"
+    ],
+    "description": "Vprivacy-centric simple swamp or atomic swap protocol",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Privacy-centric simple swamp or atomic swap protocol",
+    "categories": [
+      "DeFi"
+    ],
+    "description": "Vprivacy-centric simple swamp or atomic swap protocol",
+    "author": "https://twitter.com/Msiusko",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Private income stream on Aztec",
+    "categories": [
+      "DeFi"
+    ],
+    "description": "can be used later for credit scores",
+    "author": "https://x.com/omw_to_the_moon",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Private crowdsourcing",
+    "categories": [
+      "DeFi"
+    ],
+    "description": "fix the constitution dao issues",
+    "author": "https://x.com/omw_to_the_moon",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Private Google docs",
+    "categories": [
+      "Collaboration"
+    ],
+    "description": "each doc is encrypted with keys that are shared among a group",
+    "author": "https://x.com/web3privacy",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Private biometrics description",
+    "categories": [
+      "Health"
+    ],
+    "description": "local-first biometrics app to keep track of weight, heartrate, etc",
+    "author": "https://x.com/web3privacy",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Private strava",
+    "categories": [
+      "Health"
+    ],
+    "description": "Strava app that doesn't leak your location to outside observers",
+    "author": "https://x.com/web3privacy",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Location",
+    "categories": [
+      "Coordination"
+    ],
+    "description": "Private and secure location sharing",
+    "author": "https://x.com/web3privacy",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Bug bounty",
+    "categories": [
+      "Coordination"
+    ],
+    "description": "Tools that facilitate anon disclosures and rewards",
+    "author": "https://x.com/web3privacy",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Private XMTP x socials",
+    "categories": [
+      "Socials"
+    ],
+    "description": "Private XMTP messaging functionality especially for web3 social apps",
+    "author": "https://x.com/BenWest",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "HW wallet based password manager",
+    "categories": [
+      "Wallets"
+    ],
+    "description": "password manager that encrypts each password with a different key. The encryption/decryption is faciliatated by a hardware wallet (Trezor, Ledger, Jade), possibly using their GPG support",
+    "author": "https://x.com/jurbed",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Encrypted facial recognition",
+    "categories": [
+      "Home security"
+    ],
+    "description": "Private and encrypted facial recognition for building access cameras (local non-Internet system)",
+    "author": "https://x.com/web3privacy",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "zk visitorID database",
+    "categories": [
+      "Identity"
+    ],
+    "description": "Private and encrypted database verification system for building access that requires ID for security purposes",
+    "author": "https://x.com/web3privacy",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "zk eDiscovery",
+    "categories": [
+      "Identity"
+    ],
+    "description": "Client-side scanning of sensitive documents, for use in litigation",
+    "author": "https://x.com/web3privacy",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Private indexer",
+    "categories": [
+      "Indexing"
+    ],
+    "description": "Like TheGraph but it uses homomorphic encryption to index encrypted data on the blockchain, only the client can decrypt it",
+    "author": "https://x.com/web3privacy",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Zk attestations of ownership in git organisations",
+    "categories": [
+      "Collaboration"
+    ],
+    "description": "ownership in git organisations / across repos ('the same person who made this anon repo also published this other one) ",
+    "author": "https://x.com/web3privacy",
+    "organization": "",
+    "featured": true
+  },
+  {
+    "name": "Evm compatible zcash-esq commit reveal scheme",
+    "categories": [
+      "Collaboration"
+    ],
+    "description": "-",
+    "author": "https://x.com/web3privacy",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Totally anon public forum",
+    "categories": [
+      "Collaboration"
+    ],
+    "description": "with selective disclosure for linking selected prev sent messages ",
+    "author": "https://x.com/web3privacy",
+    "featured": false
+  },
+  {
+    "name": "Anon blogs",
+    "categories": [
+      "Collaboration"
+    ],
+    "description": "resilient pseudo or anon publishing hosting for blogs - can you have a NoBlogs that is hosted on IPFS / something resilient for e.g. anarcho orgs.",
+    "author": "https://x.com/web3privacy",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Unstoppable meme board",
+    "categories": [
+      "Collaboration"
+    ],
+    "description": "The page list latest meme and potentially attached comments. Meme can be curated, preferably using zero-knowledge technology for anonymous yet on-chain backed curation",
+    "author": "https://x.com/web3privacy",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "23 and only me",
+    "categories": [
+      "Health"
+    ],
+    "description": "Upload DNA profile and store privately in cloud. Analysis tools run under MPC to deliver insights with maximum privacy guarantees",
+    "author": "https://x.com/web3privacy",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Privacy-focused home security",
+    "categories": [
+      "Security"
+    ],
+    "description": "Privacy-focused/local-first home security",
+    "author": "https://x.com/web3privacy",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Tor RPC for Ethereum",
+    "categories": [
+      "RPC"
+    ],
+    "description": "a localhost service which exposes normal node RPC and relays it through tor. user should be able to just put localhost/smth in their RPC and use their wallet normally b) a listener implemented as a tor hidden service, which relays the calls to the node caveats",
+    "author": "https://x.com/web3privacy",
+    "organization": "",
+    "featured": false
+  },
+  {
+    "name": "Split-signing injective wallet for Ethereum.",
+    "categories": [
+      "Wallet"
+    ],
+    "description": "normal wallet, such as metamask, which, upon prompting a transaction, will expose an unsigned tx (through system output, or, optionally, as a string that can be copied / QR code)",
+    "author": "https://x.com/web3privacy",
+    "organization": "",
+    "featured": false
+  }
+]
