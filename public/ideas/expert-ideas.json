@@ -1,9 +1,9 @@
 [
     {
-      "name": "Private notepad",
-      "categories": ["Privacy", "Communications"],
-      "description": "A simple notepad that uses Waku to privately communicate",
-      "author": "https://twitter.com/hackyguru",
+      "name": "Wallet with One account per dapp",
+      "categories": ["Wallet", "DeFi"],
+      "description": "build a wallet that does one account per dapp and makes send-to-others and send-to-self go through a pool by default",
+      "author": "https://x.com/VitalikButerin",
       "featured": true
     },
     {
