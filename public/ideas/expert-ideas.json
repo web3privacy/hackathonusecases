@@ -7,31 +7,31 @@
       "featured": true
     },
     {
-      "name": "Censorship resistant Github",
-      "categories": ["Identity", "Privacy"],
-      "description": "Distributed and permissionless codebases with censorship resistant github",
-      "author": "https://twitter.com/hackyguru",
-      "featured": true
+      "name": "minimal LoC ethereum wallet",
+      "categories": ["Wallet", "DeFi"],
+      "description": "minimal LoC ethereum wallet",
+      "author": "https://x.com/VitalikButerin",
+      "featured": false
     },
     {
-      "name": "Anonymous chat app",
+      "name": "minimal LoC signal client",
       "categories": ["Communications", "Privacy"],
-      "description": "Blockchain-based chat application",
-      "author": "https://twitter.com/somerandomperson",
+      "description": "minimal LoC signal client",
+      "author": "https://x.com/VitalikButerin",
+      "featured": false
+    },
+    {
+      "name": "minimal LoC local AI agent thing",
+      "categories": ["Privacy", "AI"],
+      "description": "minimal LoC local AI agent thing",
+      "author": "https://x.com/VitalikButerin",
       "featured": true
     },
     {
-      "name": "Private airtags",
-      "categories": ["Privacy"],
-      "description": "Private  alternative for airtags",
-      "author": "https://twitter.com/randomdude",
-      "featured": true
-    },
-    {
-      "name": "Private derivatives market",
-      "categories": ["DeFi"],
-      "description": "Private derivatives market",
-      "author": "https://twitter.com/Msiusko",
+      "name": "full code supply chain verification",
+      "categories": ["Infrastructure"],
+      "description": "How do you know that the thing you're running that claims to have some guarantees actually has those guarantees",
+      "author": "https://x.com/VitalikButerin",
       "featured": false
     },
     {
@@ -42,101 +42,101 @@
       "featured": false
     },
     {
-      "name": "zk casino",
-      "categories": ["DeFi"],
-      "description": "a casino where bets are spent from the pool, so that individual betters can't be behaviourally manipulated by the casino",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
+      "name": "hide-my-address aliases",
+      "categories": ["Identity"],
+      "description": "hide-my-address aliases for sign-ins; similar to emails, you use a random address for sign-in that is tied to your main wallet address in a zk-way",
+      "author": "https://twitter.com/pcaversaccio",
+      "featured": true
     },
     {
-      "name": "gasless txs",
-      "categories": ["DeFi"],
-      "description": "expanding the anonymity set of a tornado.cash relayers by using the account abstraction / alt mempool infrastructure",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "dark market using FHE",
-      "categories": ["DeFi"],
-      "description": "expanding the anonymity set of a tornado.cash relayers by using the account abstraction / alt mempool infrastructure",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Tornado Nova fork with PLUME",
-      "categories": ["DeFi"],
-      "description": "Tornado Nova fork with PLUME signatures that will enable private transactions with evm addresses. (No need to store additional secret keys. Privacy with hardware wallets ). ",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Privacy Pools with Stealth addresses",
-      "categories": ["DeFi"],
-      "description": "an interface combining privacy pools + stealth addresses - privacy pools to break traceability.",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Privacy Preserving Credentials",
-      "categories": ["DID"],
-      "description": "Privacy Preserving Credentials",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Secure drop on a Nym gateway",
-      "categories": ["Communication"],
-      "description": "Secure drop on a Nym gateway",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Bluesky with only a wallet - no other identity",
-      "categories": ["Socials"],
-      "description": "Bluesky with only a wallet - no other identity",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Private Bitcoin Balance Lookup with an Ethereum wallet",
-      "categories": ["DeFi"],
-      "description": "Expand Private Bitcoin Balance Lookup via Spiral to a full eth wallet",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Privacy preserving LLM",
-      "categories": ["AI"],
-      "description": "privacy preserving LLM platform that collects prompt data without the the identity of the user",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "P2P Marketplace",
-      "categories": ["AI"],
-      "description": "a private p2p marketplace like local bitcoin but more privacy focused",
-      "author": "https://twitter.com/Msiusko",
-      "featured": false
-    },
-    {
-      "name": "Private 2FA",
+      "name": "What you leak data",
       "categories": ["Security"],
-      "description": "private 2factor authentication app (something like google authenticator but shouldn’t rely on servers)",
-      "author": "https://twitter.com/Msiusko",
+      "description": "can be a browser extension to start with that shows and warns each user whenever he interacts with a certain website, tool etc. what he currently leaks. People will get annoyed after a while but might also understand what they constantly leak",
+      "author": "https://twitter.com/pcaversaccio",
+      "featured": true
+    },
+    {
+      "name": "private academic peer review system",
+      "categories": ["Identity", "Retupation"],
+      "description": "Submissions and feedback are encrypted, and decrypted once a threshold of reviewers have submitted their input. (can use threshold encryption e.g. via Shutter API). private state: reviews, reviewer identity",
+      "author": "https://x.com/bezzenberger",
       "featured": false
     },
     {
-      "name": "Private version of the expense management app",
-      "categories": ["AI"],
-      "description": "private version of Expensify",
-      "author": "https://twitter.com/Msiusko",
+      "name": "threshold-secured contact discovery",
+      "categories": ["Identity"],
+      "description": "Contacts are encrypted. Discovery (e.g., “do we both know Alice?”) requires threshold approval, preserving privacy. (can use threshold encryption e.g. via Shutter API, or more complext FHE/MPC scheme). private state: contact lists, shared contacts" ",
+      "author": "https://x.com/bezzenberger",
       "featured": false
     },
     {
-      "name": "fully decentralized Github environment",
-      "categories": ["Collaboration"],
-      "description": "I'm not sure where we have got to on fully decentralized Github environment, but that has been a #1 thing which I think we need for many years. Darkfi use Codeberg via Tor, but it still a dependency on a centralized service provider. Axis made Mango way back in 2016: https://github.com/axic/mango (In the meantime, it really should be possible to build good Github alternatives today on ETH+IFPS.). So code hosting, plus pull request infrastructure, plus issue tracking / comms",
-      "author": "https://twitter.com/Msiusko",
+      "name": "dark pool DEX with VBB-obfuscated re-encryption",
+      "categories": ["DeFi"],
+      "description": "FHE-encrypted trading with an iO-obfuscated proxy re-encryption program replacing trusted decryption parties. Users prove access and receive re-encrypted results without exposing keys or logic. Private state: encrypted orders, balances",
+      "author": "https://x.com/bezzenberger",
+      "featured": false
+    },
+    {
+      "name": "p2p music file share over a mixnet",
+      "categories": ["Music"],
+      "description": "p2p music file share over a mixnet",
+      "author": "https://x.com/hxrts",
+      "featured": false
+    },
+    {
+      "name": "trust based credit with private payments",
+      "categories": ["DeFi", "Identity"],
+      "description": "a service that combines trust based credit with private payments, ie: any user can apply for a non-collateralized credit line and if it’s granted, they can then send up to the max amount of free credit to a new, anon wallet of which nobody knows they control it. from there they can then transact anonymously in order to apply for credit you have to show some onchain score, lets say for simplicity your gitcoin passport score",
+      "author": "https://x.com/heckerhut",
+      "featured": false
+    },
+    {
+      "name": "Proof of liveness (ZK client side) - Aka Proof of human",
+      "categories": ["ZK", "Identity"],
+      "description": "IDs and image vectors. Proof of liveness that works directly on the user's device and is able to generate a liveness proof (verifiable on-chain) without specialized hardware, or need to share biometrics to external servers. Client side ZK-image recognition is required by Rarimo."",
+      "author": "https://x.com/LashaAntadze",
+      "featured": true
+    },
+    {
+      "name": "private trustlines",
+      "categories": ["DeFi"],
+      "description": "A private version of the original trustlines network idea: A decentralized payment system that enables users to create mutual credit lines with trusted peers, facilitating transactions through interconnected networks of trust relationships without requiring traditional banking infrastructure.  Private state: connections, capacities and transfers should be private",
+      "author": "https://x.com/_czepluch",
+      "featured": false
+    },
+    {
+      "name": "private event planning",
+      "categories": ["Identity", "Coordination"],
+      "description": "You should be able to sign up for events as easily as with luma, but you shouldn't get spammed by random projects because you shared your email or other information after. Using the zupass API to create a luma experience that is fully private! Private state: user information",
+      "author": "https://x.com/_czepluch",
+      "featured": false
+    },
+    {
+      "name": "Blinded Tokens",
+      "categories": ["DeFi"],
+      "description": "There should be a template of how to engage with a contract in order to exchange coins for a set of https://privacypass.github.io/ blinded tokens, that can be later used to access a service without linking back to which users/authorization is making the access Private state: who got the tokens",
+      "author": "https://x.com/willscott",
+      "featured": false
+    },
+    {
+      "name": "Private email recovery",
+      "categories": ["Email", "Communication"],
+      "description": "ProtonMail stores users' recovery emails in plaintext, and recently had to hand over an activist's recovery email (iCloud) to the Spanish authorities. Instead, it could store some seeded hash of the recovery email, send the seed to the recovery email, and require a zkEmail proof to prove knowledge of preimage + control of the recovery email. Private state: plaintext recovery email address",
+      "author": "https://x.com/therealyingtong",
+      "featured": false
+    },
+    {
+      "name": "Private & verifiable edits in ProofMode",
+      "categories": ["Identity"],
+      "description": "The ProofMode app does not seem to natively support photo edits (e.g. cropping, rotation). Let's integrate a zk image editor (e.g. https://github.com/Sofianel5/zk-img-editor) with ProofMode, to get private verifiable edits private state: original photograph",
+      "author": "https://x.com/therealyingtong",
+      "featured": false
+    },
+    {
+      "name": "Private & verifiable eDiscovery",
+      "categories": ["GDPR", "eDiscovery"],
+      "description": "eDiscovery is a multi-billion dollar industry, but often requires organisations to hand over their data to a third-party service (which may not always be GDPR complaint). Instead, organisations could verifiably run the software client-side and produce a zk proof that they did so correctly. private state: org database",
+      "author": "https://x.com/therealyingtong",
       "featured": false
     },
     {
