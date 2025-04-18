@@ -13,8 +13,8 @@ import {
 import { Button } from '@/components/ui/button';
 import ReactMarkdown from 'react-markdown';
 
-const IdeaCard = ({ 
-  id = '', 
+const IdeaCard = ({
+  id = '',
   name,
   description,
   categories = [],
@@ -23,13 +23,14 @@ const IdeaCard = ({
   event,
   author,
   type = 'community', // 'community', 'expert', or 'organization'
+  organization,
   organizationLogo,
   organizationName,
   features = []
 }) => {
   const [copied, setCopied] = useState(false);
   const shareUrl = typeof window !== 'undefined' ? `${window.location.origin}/idea/${id}` : '';
-  
+
   const handleCopyLink = async () => {
     try {
       await navigator.clipboard.writeText(shareUrl);
@@ -40,65 +41,37 @@ const IdeaCard = ({
     }
   };
 
-  // Format Twitter handle from URL
-  const formatTwitterHandle = (url) => {
-    if (typeof url !== 'string') return null;
-    if (url.includes('twitter.com/') || url.includes('x.com/')) {
-      const handle = url.split('/').pop();
-      return `@${handle}`;
-    }
-    return url;
-  };
-
-  // Generate placeholder avatar URL based on twitter handle
-  const getAvatarUrl = (twitterUrl) => {
-    if (typeof twitterUrl !== 'string') return null;
-    // Extract username from Twitter URL
-    const username = twitterUrl.split('/').pop();
-    
-    // Generate a unique but consistent color based on username
-    const getColor = (str) => {
-      let hash = 0;
-      for (let i = 0; i < str.length; i++) {
-        hash = str.charCodeAt(i) + ((hash << 5) - hash);
-      }
-      const color = (hash & 0x00FFFFFF).toString(16).toUpperCase();
-      return "00000".substring(0, 6 - color.length) + color;
-    };
-    
-    const color = getColor(username);
-    // Use UI Avatars service to generate a profile picture with user's initials
-    return `https://ui-avatars.com/api/?name=${username}&background=${color}&color=fff`;
-  };
-
-  // Extract expert details if provided
   const getExpertDetails = () => {
     if (typeof author === 'object' && author !== null) {
+      const isTwitterUrl = typeof author.name === 'string' &&
+        (author.name.includes('twitter.com/') || author.name.includes('x.com/'));
+      const twitterHandle = isTwitterUrl ? author.name.split('/').pop() : null;
+      const twitterAvatar = twitterHandle ? `https://unavatar.io/twitter/${twitterHandle}` : null;
+
       return {
         name: author.name,
-        avatar: author.avatar || getAvatarUrl(author.name),
-        organization: author.organization,
-        displayName: author.name,
-        twitterUrl: typeof author.name === 'string' && 
-                   (author.name.includes('twitter.com/') || author.name.includes('x.com/')) ? 
-                   author.name : null
+        avatar: twitterAvatar,
+        organization: author.organization || organization,
+        displayName: isTwitterUrl ? `@${twitterHandle}` : author.name,
+        twitterUrl: isTwitterUrl ? author.name : null
       };
     } else if (typeof author === 'string') {
-      const formattedHandle = formatTwitterHandle(author);
+      const isTwitterUrl = author.includes('twitter.com/') || author.includes('x.com/');
+      const twitterHandle = isTwitterUrl ? author.split('/').pop() : null;
+      const twitterAvatar = twitterHandle ? `https://unavatar.io/twitter/${twitterHandle}` : null;
+
       return {
         name: author,
-        avatar: getAvatarUrl(author),
-        organization: null,
-        displayName: formattedHandle || author,
-        twitterUrl: (author.includes('twitter.com/') || author.includes('x.com/')) ? author : null
+        avatar: twitterAvatar,
+        organization: organization,
+        displayName: isTwitterUrl ? `@${twitterHandle}` : author,
+        twitterUrl: isTwitterUrl ? author : null
       };
     }
     return null;
   };
-
   const expertDetails = type === 'expert' ? getExpertDetails() : null;
 
-  // Get organization URL-friendly name
   const getOrgPathName = () => {
     if (organizationName) {
       return organizationName.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '');
@@ -106,26 +79,24 @@ const IdeaCard = ({
     return null;
   };
 
-  // Render different card headers based on type
   const renderCardHeader = () => {
     if (type === 'organization') {
       const orgPath = getOrgPathName();
-      
       return (
         <div className="flex items-center mb-4 pb-3 border-b border-zinc-800">
           {organizationLogo && (
             <div className="mr-3">
               <Link href={`/org/${orgPath}`}>
-                <img 
-                  src={organizationLogo} 
+                <img
+                  src={organizationLogo}
                   alt={organizationName || name}
-                  className="w-10 h-10 rounded object-contain cursor-pointer" 
+                  className="w-10 h-10 rounded object-contain cursor-pointer"
                 />
               </Link>
             </div>
           )}
           <div className="flex-1">
-            <Link 
+            <Link
               href={`/org/${orgPath}`}
               className="archivo text-md font-medium hover:underline"
             >
@@ -139,51 +110,35 @@ const IdeaCard = ({
         <div className="flex items-center mb-4 pb-3 border-b border-zinc-800">
           {expertDetails.avatar && (
             <div className="mr-3">
-              <a 
-                href={expertDetails.twitterUrl || '#'} 
-                target="_blank" 
+              <a
+                href={expertDetails.twitterUrl || '#'}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="block w-10 h-10 rounded-full overflow-hidden"
               >
-                <img 
-                  src={expertDetails.avatar} 
-                  alt={expertDetails.displayName} 
+                <img
+                  src={expertDetails.avatar}
+                  alt={expertDetails.displayName}
                   className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.target.src = getAvatarUrl(expertDetails.name);
-                  }}
                 />
               </a>
             </div>
           )}
           <div className="flex-1">
             <h3 className="archivo text-md font-medium">
-              <a 
-                href={expertDetails.twitterUrl || '#'} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={expertDetails.twitterUrl || '#'}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hover:underline"
               >
                 {expertDetails.displayName}
               </a>
             </h3>
-            {expertDetails.organization && (
-              <p className="text-xs text-zinc-400">
-                {/* If organization is mentioned, make it a link to org page */}
-                <Link 
-                  href={`/org/${expertDetails.organization.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')}`}
-                  className="hover:underline"
-                >
-                  {expertDetails.organization}
-                </Link>
-              </p>
-            )}
           </div>
         </div>
       );
     }
-    
-    // Default community header
     return (
       <div className="h-10">
         <h1 className="archivo text-lg mb-4">{name}</h1>
@@ -191,7 +146,6 @@ const IdeaCard = ({
     );
   };
 
-  // Render feature list for organization cards
   const renderFeatures = () => {
     if (type === 'organization' && features && features.length > 0) {
       return (
@@ -208,7 +162,6 @@ const IdeaCard = ({
     return null;
   };
 
-  // Render description with Markdown support
   const renderDescription = () => {
     return (
       <div className="mt-4 mb-4 archivo text-sm opacity-70 prose prose-invert prose-sm max-w-none">
@@ -218,23 +171,21 @@ const IdeaCard = ({
   };
 
   return (
-    <div className="bg-[#0d0d0d] md:w-1/3 w-full p-6">
+    <div className="bg-[#0d0d0d] md:w-1/3 w-full p-6 relative">
       {renderCardHeader()}
-      
-      {/* For organization cards, put name after the org header if not already used */}
+
       {type === 'organization' && organizationName && name !== organizationName && (
         <div className="h-10">
           <h1 className="archivo text-lg mb-4">{name}</h1>
         </div>
       )}
-      
+
       {type !== 'expert' && <hr className="opacity-10 my-2" />}
-      
-      {/* Description with Markdown support */}
+
       {renderDescription()}
-      
+
       {renderFeatures()}
-      
+
       <div className='flex justify-between items-center my-3'>
         <div className="flex flex-wrap gap-1 w-2/3">
           {categories.map((category, index) => (
@@ -279,7 +230,13 @@ const IdeaCard = ({
           </Dialog>
         </div>
       </div>
+
       <hr className="opacity-10 my-3" />
+
+      {type === 'expert' && expertDetails?.organization && (
+        <p className="archivo text-right">{expertDetails.organization}</p>
+      )}
+
       {event && (
         <h3 className="archivo mt-2 text-sm opacity-50 text-end hover:underline cursor-pointer">{event}</h3>
       )}
