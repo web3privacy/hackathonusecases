@@ -42,6 +42,7 @@
       "event": "ETHDam",
       "github": "https://github.com/kevincharm/i_lost_my_eth_in_a_boating_accident",
       "website": "https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/cluz5su4e015uz3016zl2wio0/idea"
+      "featured": true
     },
     {
       "name": "Stealth Keystore",
@@ -50,6 +51,7 @@
       "event": "ETHDam",
       "github": "https://github.com/fluidkey/ethdam-2024",
       "website": "https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/cluyvpci0014zvq01b9ux91sp/idea"
+        "featured": true
     },
     {
       "name": "StealthAlloc",
@@ -58,6 +60,7 @@
       "event": "ETHDam",
       "github": "https://github.com/tse-lao/ethdam24",
       "website": "https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/cluxse8cz00pjz3010wbq3thf/idea"
+        "featured": true
     },
     {
       "name": "NEVO",
@@ -66,6 +69,7 @@
       "event": "ETHDam",
       "github": "https://github.com/atahanyild/NEVO",
       "website": "https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/cluz9746q01c2z301tupriiuq/idea"
+        "featured": true
     },
     {
       "name": "munus",
@@ -74,6 +78,7 @@
       "event": "ETHDam",
       "github": "https://github.com/hackaugusto/munus",
       "website": "https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/cluwhh6om00a8yz01gsluxt2g/idea"
+        "featured": true
     },
     {
       "name": "BrickWall",
@@ -82,6 +87,7 @@
       "event": "ETHDam",
       "github": "https://github.com/Eugenumber1/BrickWall",
       "website": "https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/cluz8gb2701a9z301ptjuvhlo/idea"
+        "featured": true
     },
     {
       "name": "Browser socket MPC",
@@ -90,6 +96,7 @@
       "event": "ETHDam",
       "github": "https://github.com/maceip/tlsnotary-direct",
       "website": "https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/cluzbu4lm01e6yz01eovzk5k8/idea"
+        "featured": true
     },
     {
       "name": "AUDIT-TRAIL",
@@ -98,6 +105,7 @@
       "event": "ETHDam",
       "github": "",
       "website": "https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/cluzaxmnf01h6vq01t9b5o7cd/idea"
+        "featured": true
     },
     {
       "name": "ｗｈｉｓｐｅｒ",
@@ -106,6 +114,7 @@
       "event": "ETHDam",
       "github": "https://github.com/ethdam24-quadratic/secret-repo",
       "website": "https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/cluxtb3ci00qaz301yt806bvw/idea"
+        "featured": true
     },
     {
       "name": "Football",
@@ -114,6 +123,7 @@
       "event": "SCALING ETHEREUM 2024",
       "github": "https://github.com/Akhil-2310/Scaling-ethereum",
       "website": "https://ethglobal.com/showcase/football-gvaa8"
+        "featured": true
     },
     {
       "name": "z0Wallet",
@@ -122,6 +132,7 @@
       "event": "SCALING ETHEREUM 2024",
       "github": "https://github.com/rahul0tripathi/z0wallet",
       "website": "https://ethglobal.com/showcase/z0wallet-8hj73"
+        "featured": true
     },
     {
       "name": "VerifyLearning",
@@ -130,6 +141,7 @@
       "event": "SCALING ETHEREUM 2024",
       "github": "https://github.com/deepshah9696/ScalingWeb3",
       "website": "https://ethglobal.com/showcase/verifylearning-orhg3"
+        "featured": true
     },
     {
       "name": "AuthChain:FHE Auth",
@@ -138,6 +150,7 @@
       "event": "SCALING ETHEREUM 2024",
       "github": "https://github.com/pratham-bhatnagar/fhe-2fa",
       "website": "https://ethglobal.com/showcase/authchain-fhe-auth-61m9b"
+        "featured": true
     },
     {
       "name": "zkSocial",
@@ -146,6 +159,7 @@
       "event": "SCALING ETHEREUM 2024",
       "github": "https://github.com/star-gazer111/zkSocial",
       "website": "https://ethglobal.com/showcase/zksocial-q1b7z"
+        "featured": true
     },
     {
       "name": "Shadow Pay",
@@ -154,6 +168,7 @@
       "event": "SCALING ETHEREUM 2024",
       "github": "https://github.com/Ankush523/shadow-pay",
       "website": "https://ethglobal.com/showcase/shadow-pay-ke4se"
+        "featured": true
     },
     {
       "name": "FHE Vickrey Auction",
@@ -162,6 +177,7 @@
       "event": "SCALING ETHEREUM 2024",
       "github": "https://github.com/tnkshuuhei/fhe-vickrey",
       "website": "https://ethglobal.com/showcase/fhe-vickrey-auction-3iyxh"
+        "featured": true
     },
     {
       "name": "PrivPay",
@@ -170,6 +186,7 @@
       "event": "SCALING ETHEREUM 2024",
       "github": "https://github.com/marotipatre/Priv-Pay",
       "website": "https://ethglobal.com/showcase/privpay-krzdn"
+        "featured": true
     },
     {
       "name": "GhostPay",
@@ -178,6 +195,7 @@
       "event": "SCALING ETHEREUM 2024",
       "github": "https://github.com/porco-rosso-j/eth-rome-2023",
       "website": "https://ethglobal.com/showcase/ghostpay-9vs0x"
+        "featured": true
     },
     {
       "name": "zkbiometric",
@@ -186,6 +204,7 @@
       "event": "SCALING ETHEREUM 2024",
       "github": "https://github.com/aridder/zkbiometric",
       "website": "https://ethglobal.com/showcase/zkbiometric-p8nva"
+        "featured": true
     },
     {
       "name": "nfl",
@@ -194,6 +213,7 @@
       "event": "SCALING ETHEREUM 2024",
       "github": "https://github.com/bowenyou/nillion-federated-learning",
       "website": "https://ethglobal.com/showcase/nfl-w7yg3"
+        "featured": true
     },
     {
       "name": "Monadic DNA",
@@ -202,6 +222,7 @@
       "event": "SCALING ETHEREUM 2024",
       "github": "https://github.com/Cryptonomic/MonadicDNA",
       "website": "https://ethglobal.com/showcase/monadic-dna-h7k7q"
+        "featured": true
     },
     {
       "name": "zkWarden",
@@ -210,6 +231,7 @@
       "event": "SCALING ETHEREUM 2024",
       "github": "https://github.com/fabianferno/zkwarden",
       "website": "https://ethglobal.com/showcase/zkwarden-nka1v"
+        "featured": true
     },
     {
       "name": "AddressMe",
@@ -218,6 +240,7 @@
       "event": "SCALING ETHEREUM 2024",
       "github": "https://github.com/MikePawel/AddressMe",
       "website": "https://ethglobal.com/showcase/addressme-5urum"
+        "featured": true
     },
     {
       "name": "Staked Steps",
@@ -226,6 +249,7 @@
       "event": "SCALING ETHEREUM 2024",
       "github": "https://github.com/mohanvaddi/staked-steps",
       "website": "https://ethglobal.com/showcase/staked-steps-euwx0"
+        "featured": true
     },
     {
       "name": "Thumper",
@@ -234,6 +258,7 @@
       "event": "SCALING ETHEREUM 2024",
       "github": "https://github.com/justinfrevert/thumper",
       "website": "https://ethglobal.com/showcase/thumper-dbvy2"
+        "featured": true
     },
     {
       "name": "Polar",
@@ -242,6 +267,7 @@
       "event": "SCALING ETHEREUM 2024",
       "github": "https://github.com/Complexia/polar",
       "website": "https://ethglobal.com/showcase/polar-p0f2b"
+        "featured": true
     },
     {
       "name": "zK-Vote",
@@ -250,6 +276,7 @@
       "event": "ETHBucharest",
       "github": "https://github.com/Akhil-2310/Eth-Bucharest",
       "website": "https://dorahacks.io/buidl/10887"
+        "featured": true
     },
     {
       "name": "stray",
@@ -258,6 +285,7 @@
       "event": "ETHBucharest",
       "github": "https://github.com/Enrypase/stray",
       "website": "https://dorahacks.io/buidl/10859"
+        "featured": true
     }
     ,
     {
@@ -267,6 +295,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/Ferossgp/mfkdf-wallet",
       "website": "https://projects.ethberlin.org/submissions/339"
+        "featured": true
     }
      ,
     {
@@ -276,6 +305,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/sembrestels/zkStealth/",
       "website": "https://projects.ethberlin.org/submissions/340"
+        "featured": true
     }
      ,
     {
@@ -285,6 +315,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/cduchinois/ethberlin_cr3dential",
       "website": "https://projects.ethberlin.org/submissions/342"
+        "featured": true
     }
      ,
     {
@@ -294,6 +325,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/swissDAO-labs/KinkLink",
       "website": "https://projects.ethberlin.org/submissions/345"
+        "featured": true
     }
     ,
     {
@@ -303,6 +335,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/hackyguru/ethberlin",
       "website": "https://projects.ethberlin.org/submissions/347"
+        "featured": true
     },
     {
       "name": "shovel-bootstrap",
@@ -311,6 +344,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/jalbritt/ETHBerlin-shovel-bootstrap",
       "website": "https://projects.ethberlin.org/submissions/349"
+        "featured": true
     },
     {
       "name": "BlockWhisper",
@@ -319,6 +353,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/itsmeyaw/ethberlin4/tree/main",
       "website": "https://projects.ethberlin.org/submissions/351"
+        "featured": true
     }
      ,
     {
@@ -328,6 +363,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/shuklaayush/zukofi",
       "website": "https://projects.ethberlin.org/submissions/352"
+        "featured": true
     }
      ,
     {
@@ -337,6 +373,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/dvboost/cypher-smith",
       "website": "https://projects.ethberlin.org/submissions/353"
+        "featured": true
     }
      ,
     {
@@ -346,6 +383,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/vijaykrishnavanshi/ethberlin04",
       "website": "https://projects.ethberlin.org/submissions/354"
+        "featured": true
     } 
      ,
     {
@@ -355,6 +393,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/hooperben/zkOfficer",
       "website": "https://projects.ethberlin.org/submissions/355"
+        "featured": true
     }
      ,
     {
@@ -364,6 +403,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/onyb/cloakmyfox",
       "website": "https://projects.ethberlin.org/submissions/356"
+        "featured": true
     }
      ,
     {
@@ -373,6 +413,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/HumptyDumptyDevs/chainmail/tree/main",
       "website": "https://projects.ethberlin.org/submissions/358"
+        "featured": true
     }
      ,
     {
@@ -382,6 +423,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/TriggerWard/catacombs",
       "website": "https://projects.ethberlin.org/submissions/361"
+        "featured": true
     }
       ,
     {
@@ -391,6 +433,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/ichub/zk-twitter",
       "website": "https://projects.ethberlin.org/submissions/363"
+        "featured": true
     }
       ,
     {
@@ -400,6 +443,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/Tranquil-Flow/carnation-radio/tree/main",
       "website": "https://projects.ethberlin.org/submissions/364"
+        "featured": true
     }
       ,
     {
@@ -409,6 +453,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/obernardovieira/ethberlin4",
       "website": "https://projects.ethberlin.org/submissions/365"
+        "featured": true
     }
      ,
     {
@@ -418,6 +463,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/savchart/eth_vote_module",
       "website": "https://projects.ethberlin.org/submissions/366"
+        "featured": true
     }
      ,
     {
@@ -427,6 +473,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/BeyondDimensions/PeerPack",
       "website": "https://projects.ethberlin.org/submissions/370"
+        "featured": true
     }
      ,
     {
@@ -436,6 +483,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/CodeByNikolas/ETHBerlinPriMacyBigRepo",
       "website": "https://projects.ethberlin.org/submissions/376"
+        "featured": true
     }
      ,
     {
@@ -445,6 +493,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/chrdamico/ETHBerlin2024/tree/main",
       "website": "https://projects.ethberlin.org/submissions/379"
+        "featured": true
     }
      ,
     {
@@ -454,6 +503,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/mfahampshire/CFRWebExtension",
       "website": "https://projects.ethberlin.org/submissions/380"
+        "featured": true
     }
      ,
     {
@@ -463,6 +513,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/tripster-hackers/zkTripster",
       "website": "https://projects.ethberlin.org/submissions/381"
+        "featured": true
     }
      ,
     {
@@ -472,6 +523,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/itublockchain/ETHBerlin-Ezytrax/tree/main",
       "website": "https://projects.ethberlin.org/submissions/383"
+        "featured": true
     }
      ,
     {
@@ -481,6 +533,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/voboda/zKal",
       "website": "https://projects.ethberlin.org/submissions/387"
+        "featured": true
     }
      ,
     {
@@ -490,6 +543,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/4turkuaz/eth-berlin",
       "website": "https://projects.ethberlin.org/submissions/311"
+        "featured": true
      }
      ,
     {
@@ -499,6 +553,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/olehmisar/six-dos",
       "website": "https://projects.ethberlin.org/submissions/314"
+        "featured": true
      }
      ,
     {
@@ -508,6 +563,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/cspr-rad/acropolis",
       "website": "https://projects.ethberlin.org/submissions/316"
+        "featured": true
      }
      ,
     {
@@ -517,6 +573,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/VMLVaske/Kabuso",
       "website": "https://projects.ethberlin.org/submissions/321"
+        "featured": true
      }
      ,
     {
@@ -526,6 +583,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/valle-xyz/ZkUbi",
       "website": "https://projects.ethberlin.org/submissions/325"
+        "featured": true
      }
      ,
     {
@@ -535,6 +593,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/sztok7/zu-git-proofs",
       "website": "https://projects.ethberlin.org/submissions/326"
+        "featured": true
      }
      ,
     {
@@ -544,6 +603,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/TUM-Blockchain-Club/ethberlin-schufher",
       "website": "https://projects.ethberlin.org/submissions/327"
+        "featured": true
      }
      ,
     {
@@ -553,6 +613,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/nodestarQ/InclusionBribes",
       "website": "https://projects.ethberlin.org/submissions/328"
+        "featured": true
      }
      ,
     {
@@ -562,6 +623,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/kevincharm/rageagainst/",
       "website": "https://projects.ethberlin.org/submissions/329"
+        "featured": true
      }
      ,
     {
@@ -571,6 +633,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/gedithejedi/secret-talk",
       "website": "https://projects.ethberlin.org/submissions/331"
+        "featured": true
      }
      ,
     {
@@ -580,6 +643,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/gedithejedi/secret-talk",
       "website": "https://projects.ethberlin.org/submissions/331"
+        "featured": true
      }
      ,
     {
@@ -589,6 +653,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/nlordell/shadowlings",
       "website": "https://projects.ethberlin.org/submissions/335"
+        "featured": true
      }
      ,
     {
@@ -598,6 +663,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/TrungNguyen1409/ethberlin24_coinguard",
       "website": "https://projects.ethberlin.org/submissions/336"
+        "featured": true
      }
      ,
     {
@@ -607,6 +673,7 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/grmkris/eth-berlin-2024",
       "website": "https://projects.ethberlin.org/submissions/337"
+        "featured": true
      }
      ,
     {
@@ -616,5 +683,6 @@
       "event": "ETHBerlin 2024",
       "github": "https://github.com/aatifsyed/c2pa4a/",
       "website": "https://projects.ethberlin.org/submissions/338"
+        "featured": true
      }
   ]
