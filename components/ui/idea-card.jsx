@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Share2, Github, Globe, Copy, Check } from 'lucide-react';
 import { Badge } from "@/components/ui/badge";
@@ -29,6 +29,7 @@ const IdeaCard = ({
   features = []
 }) => {
   const [copied, setCopied] = useState(false);
+  const [avatarLoaded, setAvatarLoaded] = useState(false);
   const shareUrl = typeof window !== 'undefined' ? `${window.location.origin}/idea/${id}` : '';
 
   const handleCopyLink = async () => {
@@ -114,12 +115,18 @@ const IdeaCard = ({
                 href={expertDetails.twitterUrl || '#'}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-10 h-10 rounded-full overflow-hidden"
+                className="block w-10 h-10 rounded-full overflow-hidden relative"
               >
+                {!avatarLoaded && (
+                  <div className="absolute inset-0 bg-zinc-800 animate-pulse rounded-full" />
+                )}
                 <img
                   src={expertDetails.avatar}
                   alt={expertDetails.displayName}
-                  className="w-full h-full object-cover"
+                  className={`w-full h-full object-cover transition-opacity duration-300 ${
+                    avatarLoaded ? 'opacity-100' : 'opacity-0'
+                  }`}
+                  onLoad={() => setAvatarLoaded(true)}
                 />
               </a>
             </div>
