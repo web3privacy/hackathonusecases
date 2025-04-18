@@ -4,6 +4,8 @@
       "categories": ["Wallet", "DeFi"],
       "description": "build a wallet that does one account per dapp and makes send-to-others and send-to-self go through a pool by default",
       "author": "https://x.com/VitalikButerin",
+      "avatar": "",
+      "organization": "Ethereum",
       "featured": true
     },
     {
@@ -11,6 +13,8 @@
       "categories": ["Wallet", "DeFi"],
       "description": "minimal LoC ethereum wallet",
       "author": "https://x.com/VitalikButerin",
+      "avatar": "",
+      "organization": "Ethereum",
       "featured": true
     },
     {
@@ -18,6 +22,8 @@
       "categories": ["Communications", "Privacy"],
       "description": "minimal LoC signal client",
       "author": "https://x.com/VitalikButerin",
+      "avatar": "",
+      "organization": "Ethereum",
       "featured": true
     },
     {
@@ -25,6 +31,8 @@
       "categories": ["Privacy", "AI"],
       "description": "minimal LoC local AI agent thing",
       "author": "https://x.com/VitalikButerin",
+      "avatar": "",
+      "organization": "Ethereum",
       "featured": true
     },
     {
@@ -32,6 +40,8 @@
       "categories": ["Infrastructure"],
       "description": "How do you know that the thing you're running that claims to have some guarantees actually has those guarantees",
       "author": "https://x.com/VitalikButerin",
+      "avatar": "",
+      "organization": "Ethereum",
       "featured": true
     },
     {
@@ -39,6 +49,8 @@
       "categories": ["DeFi"],
       "description": "Permissionless private prediction markets",
       "author": "https://twitter.com/Msiusko",
+      "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -46,6 +58,8 @@
       "categories": ["Identity"],
       "description": "hide-my-address aliases for sign-ins; similar to emails, you use a random address for sign-in that is tied to your main wallet address in a zk-way",
       "author": "https://twitter.com/pcaversaccio",
+        "avatar": "",
+      "organization": "Seal911",
       "featured": true
     },
     {
@@ -53,6 +67,8 @@
       "categories": ["Security"],
       "description": "can be a browser extension to start with that shows and warns each user whenever he interacts with a certain website, tool etc. what he currently leaks. People will get annoyed after a while but might also understand what they constantly leak",
       "author": "https://twitter.com/pcaversaccio",
+        "avatar": "",
+      "organization": "Seal911",
       "featured": true
     },
     {
@@ -60,6 +76,8 @@
       "categories": ["Identity", "Retupation"],
       "description": "Submissions and feedback are encrypted, and decrypted once a threshold of reviewers have submitted their input. (can use threshold encryption e.g. via Shutter API). private state: reviews, reviewer identity",
       "author": "https://x.com/bezzenberger",
+        "avatar": "",
+      "organization": "Shutter",
       "featured": true
     },
     {
@@ -67,6 +85,8 @@
       "categories": ["Identity"],
       "description": "Contacts are encrypted. Discovery (e.g., “do we both know Alice?”) requires threshold approval, preserving privacy. (can use threshold encryption e.g. via Shutter API, or more complext FHE/MPC scheme). private state: contact lists, shared contacts" ",
       "author": "https://x.com/bezzenberger",
+        "avatar": "",
+      "organization": "Shutter",
       "featured": true
     },
     {
@@ -74,6 +94,8 @@
       "categories": ["DeFi"],
       "description": "FHE-encrypted trading with an iO-obfuscated proxy re-encryption program replacing trusted decryption parties. Users prove access and receive re-encrypted results without exposing keys or logic. Private state: encrypted orders, balances",
       "author": "https://x.com/bezzenberger",
+        "avatar": "",
+      "organization": "Shutter",
       "featured": true
     },
     {
@@ -81,6 +103,8 @@
       "categories": ["Music"],
       "description": "p2p music file share over a mixnet",
       "author": "https://x.com/hxrts",
+        "avatar": "",
+      "organization": "Skip Protocol",
       "featured": true
     },
     {
@@ -88,6 +112,8 @@
       "categories": ["DeFi", "Identity"],
       "description": "a service that combines trust based credit with private payments, ie: any user can apply for a non-collateralized credit line and if it’s granted, they can then send up to the max amount of free credit to a new, anon wallet of which nobody knows they control it. from there they can then transact anonymously in order to apply for credit you have to show some onchain score, lets say for simplicity your gitcoin passport score",
       "author": "https://x.com/heckerhut",
+      "avatar": "",
+      "organization": "Common Ground",
       "featured": true
     },
     {
@@ -95,6 +121,8 @@
       "categories": ["ZK", "Identity"],
       "description": "IDs and image vectors. Proof of liveness that works directly on the user's device and is able to generate a liveness proof (verifiable on-chain) without specialized hardware, or need to share biometrics to external servers. Client side ZK-image recognition is required by Rarimo."",
       "author": "https://x.com/LashaAntadze",
+      "avatar": "",
+      "organization": "Rarimo",
       "featured": true
     },
     {
@@ -102,6 +130,8 @@
       "categories": ["DeFi"],
       "description": "A private version of the original trustlines network idea: A decentralized payment system that enables users to create mutual credit lines with trusted peers, facilitating transactions through interconnected networks of trust relationships without requiring traditional banking infrastructure.  Private state: connections, capacities and transfers should be private",
       "author": "https://x.com/_czepluch",
+        "avatar": "",
+      "organization": "Phylax Systems",
       "featured": true
     },
     {
@@ -109,6 +139,8 @@
       "categories": ["Identity", "Coordination"],
       "description": "You should be able to sign up for events as easily as with luma, but you shouldn't get spammed by random projects because you shared your email or other information after. Using the zupass API to create a luma experience that is fully private! Private state: user information",
       "author": "https://x.com/_czepluch",
+        "avatar": "",
+      "organization": "Phylax Systems",
       "featured": true
     },
     {
@@ -116,6 +148,8 @@
       "categories": ["DeFi"],
       "description": "There should be a template of how to engage with a contract in order to exchange coins for a set of https://privacypass.github.io/ blinded tokens, that can be later used to access a service without linking back to which users/authorization is making the access Private state: who got the tokens",
       "author": "https://x.com/willscott",
+        "avatar": "",
+      "organization": "Filecoin",
       "featured": true
     },
     {
@@ -123,6 +157,8 @@
       "categories": ["Email", "Communication"],
       "description": "ProtonMail stores users' recovery emails in plaintext, and recently had to hand over an activist's recovery email (iCloud) to the Spanish authorities. Instead, it could store some seeded hash of the recovery email, send the seed to the recovery email, and require a zkEmail proof to prove knowledge of preimage + control of the recovery email. Private state: plaintext recovery email address",
       "author": "https://x.com/therealyingtong",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -130,6 +166,8 @@
       "categories": ["Identity"],
       "description": "The ProofMode app does not seem to natively support photo edits (e.g. cropping, rotation). Let's integrate a zk image editor (e.g. https://github.com/Sofianel5/zk-img-editor) with ProofMode, to get private verifiable edits private state: original photograph",
       "author": "https://x.com/therealyingtong",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -137,6 +175,8 @@
       "categories": ["GDPR", "eDiscovery"],
       "description": "eDiscovery is a multi-billion dollar industry, but often requires organisations to hand over their data to a third-party service (which may not always be GDPR complaint). Instead, organisations could verifiably run the software client-side and produce a zk proof that they did so correctly. private state: org database",
       "author": "https://x.com/therealyingtong",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -144,6 +184,8 @@
       "categories": ["Collaboration"],
       "description": "Real-world use-cases using huge anonimity sets (anon groups)",
       "author": "https://twitter.com/Msiusko",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -151,6 +193,8 @@
       "categories": ["R&D"],
       "description": "Mpc or Fhe on-chain primitives (e.g., float32)",
       "author": "https://twitter.com/Msiusko",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -158,6 +202,8 @@
       "categories": ["R&D"],
       "description": "Combinations of MPC + FHE or ZK + FHE (+ ML)",
       "author": "https://twitter.com/Msiusko",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -165,6 +211,8 @@
       "categories": ["DeFi"],
       "description": "Subscription SDK based on semaphore or so (i.e. provable that I paid some monthly fee without revealing who I am out of the subscribers)",
       "author": "https://twitter.com/Msiusko",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -172,6 +220,8 @@
       "categories": ["DeFi"],
       "description": "Private batch/multi-send transaction (so being able to send payment to many people at once privately) this could be for payroll",
       "author": "https://twitter.com/Msiusko",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -179,6 +229,8 @@
       "categories": ["Communication"],
       "description": "private messenger protocol (having the possibility of multiple UIs: cli, web, mobile app).",
       "author": "https://twitter.com/Msiusko",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -186,6 +238,8 @@
       "categories": ["Storage"],
       "description": "Filesharing (similar to ipfs)",
       "author": "https://twitter.com/Msiusko",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -193,6 +247,8 @@
       "categories": ["Storage"],
       "description": "Anon torrenting + media service like plex",
       "author": "https://twitter.com/Msiusko",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -200,6 +256,8 @@
       "categories": ["Collaboration"],
       "description": "Private collab tools (like doc collab, collab pixel drawing)",
       "author": "https://twitter.com/Msiusko",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -207,6 +265,8 @@
       "categories": ["Collaboration"],
       "description": "audio chat",
       "author": "https://twitter.com/Msiusko",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -214,6 +274,8 @@
       "categories": ["Domain"],
       "description": "dns system within NYM, which can allow for a new darknet to exist",
       "author": "https://twitter.com/Msiusko",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -221,6 +283,8 @@
       "categories": ["Socials"],
       "description": "anon/decentralised twitter spaces",
       "author": "https://twitter.com/Msiusko",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -228,6 +292,8 @@
       "categories": ["Nodes"],
       "description": "Validator privacy: IPs & other public data",
       "author": "https://twitter.com/Msiusko",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -235,6 +301,8 @@
       "categories": ["DeFi"],
       "description": "Vprivacy-centric simple swamp or atomic swap protocol",
       "author": "https://twitter.com/Msiusko",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -242,6 +310,8 @@
       "categories": ["DeFi"],
       "description": "Vprivacy-centric simple swamp or atomic swap protocol",
       "author": "https://twitter.com/Msiusko",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -249,6 +319,8 @@
       "categories": ["DeFi"],
       "description": "can be used later for credit scores",
       "author": "https://x.com/omw_to_the_moon",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -256,6 +328,8 @@
       "categories": ["DeFi"],
       "description": "fix the constitution dao issues",
       "author": "https://x.com/omw_to_the_moon",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -263,6 +337,8 @@
       "categories": ["Collaboration"],
       "description": "each doc is encrypted with keys that are shared among a group",
       "author": "https://x.com/web3privacy",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -270,6 +346,8 @@
       "categories": ["Health"],
       "description": "local-first biometrics app to keep track of weight, heartrate, etc",
       "author": "https://x.com/web3privacy",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -277,6 +355,8 @@
       "categories": ["Health"],
       "description": "Strava app that doesn't leak your location to outside observers",
       "author": "https://x.com/web3privacy",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -284,6 +364,8 @@
       "categories": ["Coordination"],
       "description": "Private and secure location sharing",
       "author": "https://x.com/web3privacy",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -291,6 +373,8 @@
       "categories": ["Coordination"],
       "description": "Tools that facilitate anon disclosures and rewards",
       "author": "https://x.com/web3privacy",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -298,6 +382,8 @@
       "categories": ["Socials"],
       "description": "Private XMTP messaging functionality especially for web3 social apps",
       "author": "https://x.com/BenWest",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -305,6 +391,8 @@
       "categories": ["Wallets"],
       "description": "password manager that encrypts each password with a different key. The encryption/decryption is faciliatated by a hardware wallet (Trezor, Ledger, Jade), possibly using their GPG support",
       "author": "https://x.com/jurbed",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -312,6 +400,8 @@
       "categories": ["Home security"],
       "description": "Private and encrypted facial recognition for building access cameras (local non-Internet system)",
       "author": "https://x.com/web3privacy",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -319,6 +409,8 @@
       "categories": ["Identity"],
       "description": "Private and encrypted database verification system for building access that requires ID for security purposes",
       "author": "https://x.com/web3privacy",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -326,6 +418,8 @@
       "categories": ["Identity"],
       "description": "Client-side scanning of sensitive documents, for use in litigation",
       "author": "https://x.com/web3privacy",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -333,6 +427,8 @@
       "categories": ["Indexing"],
       "description": "Like TheGraph but it uses homomorphic encryption to index encrypted data on the blockchain, only the client can decrypt it",
       "author": "https://x.com/web3privacy",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -340,6 +436,8 @@
       "categories": ["Collaboration"],
       "description": "ownership in git organisations / across repos ('the same person who made this anon repo also published this other one) ",
       "author": "https://x.com/web3privacy",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -347,6 +445,8 @@
       "categories": ["Collaboration"],
       "description": "-",
       "author": "https://x.com/web3privacy",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -354,6 +454,8 @@
       "categories": ["Collaboration"],
       "description": "with selective disclosure for linking selected prev sent messages ",
       "author": "https://x.com/web3privacy",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -361,6 +463,8 @@
       "categories": ["Collaboration"],
       "description": "resilient pseudo or anon publishing hosting for blogs - can you have a NoBlogs that is hosted on IPFS / something resilient for e.g. anarcho orgs.",
       "author": "https://x.com/web3privacy",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -368,6 +472,8 @@
       "categories": ["Collaboration"],
       "description": "The page list latest meme and potentially attached comments. Meme can be curated, preferably using zero-knowledge technology for anonymous yet on-chain backed curation",
       "author": "https://x.com/web3privacy",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -375,6 +481,8 @@
       "categories": ["Health"],
       "description": "Upload DNA profile and store privately in cloud. Analysis tools run under MPC to deliver insights with maximum privacy guarantees",
       "author": "https://x.com/web3privacy",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -382,6 +490,8 @@
       "categories": ["Security"],
       "description": "Privacy-focused/local-first home security",
       "author": "https://x.com/web3privacy",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -389,6 +499,8 @@
       "categories": ["RPC"],
       "description": "a localhost service which exposes normal node RPC and relays it through tor. user should be able to just put localhost/smth in their RPC and use their wallet normally b) a listener implemented as a tor hidden service, which relays the calls to the node caveats",
       "author": "https://x.com/web3privacy",
+        "avatar": "",
+      "organization": "",
       "featured": true
     },
     {
@@ -396,6 +508,8 @@
       "categories": ["Wallet"],
       "description": "normal wallet, such as metamask, which, upon prompting a transaction, will expose an unsigned tx (through system output, or, optionally, as a string that can be copied / QR code)",
       "author": "https://x.com/web3privacy",
+        "avatar": "",
+      "organization": "",
       "featured": true
     }
   ]
