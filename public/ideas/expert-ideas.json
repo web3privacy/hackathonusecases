@@ -59,7 +59,7 @@
       "DeFi"
     ],
     "description": "Permissionless private prediction markets",
-    "author": "https://twitter.com/Msiusko",
+    "author": "https://twitter.com/web3privacy",
     "organization": "",
     "featured": true
   },
@@ -215,7 +215,7 @@
       "Collaboration"
     ],
     "description": "Real-world use-cases using huge anonimity sets (anon groups)",
-    "author": "https://twitter.com/Msiusko",
+    "author": "https://twitter.com/web3privacy",
     "organization": "",
     "featured": true
   },
@@ -225,7 +225,7 @@
       "R&D"
     ],
     "description": "Mpc or Fhe on-chain primitives (e.g., float32)",
-    "author": "https://twitter.com/Msiusko",
+    "author": "https://twitter.com/web3privacy",
     "organization": "",
     "featured": true
   },
@@ -235,7 +235,7 @@
       "R&D"
     ],
     "description": "Combinations of MPC + FHE or ZK + FHE (+ ML)",
-    "author": "https://twitter.com/Msiusko",
+    "author": "https://twitter.com/web3privacy",
     "organization": "",
     "featured": true
   },
@@ -245,7 +245,7 @@
       "DeFi"
     ],
     "description": "Subscription SDK based on semaphore or so (i.e. provable that I paid some monthly fee without revealing who I am out of the subscribers)",
-    "author": "https://twitter.com/Msiusko",
+    "author": "https://twitter.com/web3privacy",
     "organization": "",
     "featured": true
   },
@@ -255,7 +255,7 @@
       "DeFi"
     ],
     "description": "Private batch/multi-send transaction (so being able to send payment to many people at once privately) this could be for payroll",
-    "author": "https://twitter.com/Msiusko",
+    "author": "https://twitter.com/web3privacy",
     "organization": "",
     "featured": true
   },
@@ -265,7 +265,7 @@
       "Communication"
     ],
     "description": "private messenger protocol (having the possibility of multiple UIs: cli, web, mobile app).",
-    "author": "https://twitter.com/Msiusko",
+    "author": "https://twitter.com/web3privacy",
     "organization": "",
     "featured": true
   },
@@ -275,7 +275,7 @@
       "Storage"
     ],
     "description": "Filesharing (similar to ipfs)",
-    "author": "https://twitter.com/Msiusko",
+    "author": "https://twitter.com/web3privacy",
     "organization": "",
     "featured": true
   },
@@ -285,7 +285,7 @@
       "Storage"
     ],
     "description": "Anon torrenting + media service like plex",
-    "author": "https://twitter.com/Msiusko",
+    "author": "https://twitter.com/web3privacy",
     "organization": "",
     "featured": true
   },
@@ -295,7 +295,7 @@
       "Collaboration"
     ],
     "description": "Private collab tools (like doc collab, collab pixel drawing)",
-    "author": "https://twitter.com/Msiusko",
+    "author": "https://twitter.com/web3privacy",
     "organization": "",
     "featured": true
   },
@@ -305,7 +305,7 @@
       "Collaboration"
     ],
     "description": "audio chat",
-    "author": "https://twitter.com/Msiusko",
+    "author": "https://twitter.com/web3privacy",
     "organization": "",
     "featured": true
   },
@@ -315,7 +315,7 @@
       "Domain"
     ],
     "description": "dns system within NYM, which can allow for a new darknet to exist",
-    "author": "https://twitter.com/Msiusko",
+    "author": "https://twitter.com/web3privacy",
     "organization": "",
     "featured": true
   },
@@ -325,7 +325,7 @@
       "Socials"
     ],
     "description": "anon/decentralised twitter spaces",
-    "author": "https://twitter.com/Msiusko",
+    "author": "https://twitter.com/web3privacy",
     "organization": "",
     "featured": true
   },
@@ -335,7 +335,7 @@
       "Nodes"
     ],
     "description": "Validator privacy: IPs & other public data",
-    "author": "https://twitter.com/Msiusko",
+    "author": "https://twitter.com/web3privacy",
     "organization": "",
     "featured": true
   },
@@ -345,7 +345,7 @@
       "DeFi"
     ],
     "description": "Vprivacy-centric simple swamp or atomic swap protocol",
-    "author": "https://twitter.com/Msiusko",
+    "author": "https://twitter.com/web3privacy",
     "organization": "",
     "featured": true
   },
@@ -355,7 +355,7 @@
       "DeFi"
     ],
     "description": "Vprivacy-centric simple swamp or atomic swap protocol",
-    "author": "https://twitter.com/Msiusko",
+    "author": "https://twitter.com/web3privacy",
     "organization": "",
     "featured": true
   },
