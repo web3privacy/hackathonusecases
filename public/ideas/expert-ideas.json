@@ -224,9 +224,9 @@
     "categories": [
       "R&D"
     ],
-    "description": "Mpc or Fhe on-chain primitives (e.g., float32)",
-    "author": "https://twitter.com/web3privacy",
-    "organization": "",
+    "description": "Encrypted Group Chat with Onchain Permissions. Membership lists, messages, channel keys",
+    "author": "https://x.com/crispzlegion",
+    "organization": "FairBlock",
     "featured": true
   },
   {
