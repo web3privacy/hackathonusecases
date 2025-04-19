@@ -178,6 +178,26 @@
     "featured": true
   },
   {
+    "name": "Private Social Media",
+    "categories": [
+      "Socials"
+    ],
+    "description": "Re-think family and friends oriented social media in a form where you can keep in touch with your loved ones while keeping control on your data. Private State: photos, updates. ",
+    "author": "https://x.com/fryorcraken",
+    "organization": "Waku",
+    "featured": true
+  },
+   {
+    "name": "Idea Marketplace",
+    "categories": [
+      "Marketplace"
+    ],
+    "description": "A public forum where ideas are truly judged on their merit and not their author. Where reputation and algorithmic filtering are not based on agreement but acknowledged quality. Private State: identity and correlation.",
+    "author": "https://x.com/fryorcraken",
+    "organization": "Waku",
+    "featured": true
+  },
+  {
     "name": "Private email recovery",
     "categories": [
       "Email",
