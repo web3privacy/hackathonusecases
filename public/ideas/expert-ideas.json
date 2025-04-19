@@ -224,8 +224,28 @@
     "categories": [
       "R&D"
     ],
-    "description": "Encrypted Group Chat with Onchain Permissions. Membership lists, messages, channel keys",
-    "author": "https://x.com/crispzlegion",
+    "description": "",
+    "author": "https://x.com/web3privacy",
+    "organization": "",
+    "featured": true
+  },
+  {
+    "name": "Encrypted Group Chat with Onchain Permissions",
+    "categories": [
+      "Communication"
+    ],
+    "description": "A  Signal-like UX with onchain-controlled access and membership gating — perfect for DAOs, squads, or gated alpha groups. Private state: membership lists, messages, channel keys",
+    "author": "https://x.com/crispzlegiony",
+    "organization": "FairBlock",
+    "featured": true
+  },
+   {
+    "name": "Private DeFi Positions",
+    "categories": [
+      "DeFi"
+    ],
+    "description": "Traders want to hide their alpha. Enable them to take positions without exposing strategies to the mempool or competitors. Private state:  LP positions, leveraged trades, P&L",
+    "author": "https://x.com/crispzlegiony",
     "organization": "FairBlock",
     "featured": true
   },
