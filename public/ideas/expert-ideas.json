@@ -229,6 +229,26 @@
     "organization": "",
     "featured": true
   },
+   {
+    "name": "Make some noise",
+    "categories": [
+      "DeFi",
+    ],
+    "description": "Automated program that sends small amount of funds back and forth between addresses owned or trusted by you, so that bad actors cannot tell if a particular address is actually related to you. Timing (~geographic) analysis is also foiled. It's like the anti-tracker plugin, Make Some Noise, that opens random web pages so your profile is garbase to trackers",
+    "author": "https://x.com/ml_sudo",
+    "organization": "",
+    "featured": true
+  },
+    {
+    "name": "Privacy-focused Cryptozombies",
+    "categories": [
+      "DeFi",
+    ],
+    "description": "An interactive tutorial to show people where they leak data as they transact",
+    "author": "https://x.com/ml_sudo",
+    "organization": "",
+    "featured": true
+  },
   {
     "name": "Anonimity sets based on a real-world use-cases",
     "categories": [
