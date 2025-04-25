@@ -208,6 +208,16 @@
     "organization": "",
     "featured": true
   },
+    {
+    "name": "verifiably ephemeral messenger",
+    "categories": [
+      "Communication"
+    ],
+    "description": "Person sends a message - you read it. Message exists for a day and with verifiable computation (maybe a TEE?). You can prove there is no stored metadata or data on either device",
+    "author": "https://x.com/_wjth",
+    "organization": "Nym",
+    "featured": true
+  },
   {
     "name": "Private & verifiable edits in ProofMode",
     "categories": [
