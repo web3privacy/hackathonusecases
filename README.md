@@ -2,7 +2,7 @@
 
 > **Curated privacy-focused project ideas for Web3 hackathons and events**
 
-[![Build Status](https://github.com/web3privacy/hackathonusecases/workflows/CI/badge.svg)](https://github.com/web3privacy/hackathonusecases/actions)
+[![Build Status](https://github.com/web3privacy/privacy-idea-generator/workflows/CI/badge.svg)](https://github.com/web3privacy/privacy-idea-generator/actions)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -27,8 +27,8 @@ A dynamic web application that display and generates privacy-focused project ide
 
 ```bash
 # Clone the repository
-git clone https://github.com/web3privacy/hackathonusecases.git
-cd hackathonusecases
+git clone https://github.com/web3privacy/privacy-idea-generator.git
+cd privacy-idea-generator
 
 # Install dependencies
 pnpm install
