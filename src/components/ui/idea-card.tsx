@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { Share2, Github, Globe, Copy, Check } from 'lucide-react'
-import { Badge } from '@/components/ui/badge'
+import { Badge } from '@/src/components/ui/badge'
 import {
   Dialog,
   DialogContent,
@@ -9,10 +9,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog'
-import { Button } from '@/components/ui/button'
+} from '@/src/components/ui/dialog'
+import { Button } from '@/src/components/ui/button'
 import ReactMarkdown from 'react-markdown'
-import type { IdeaCardProps, ExpertDetails, AuthorObject } from '@/types'
+import type { IdeaCardProps, ExpertDetails, AuthorObject } from '@/src/types'
 
 const IdeaCard: React.FC<IdeaCardProps> = ({
   id = '',

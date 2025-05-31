@@ -1,17 +1,26 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { Filter, Github, Globe, Share2, ChevronLeft, ChevronRight } from 'lucide-react'
-import { Badge } from '@/components/ui/badge'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import IdeaCard from '@/components/ui/idea-card'
+
+// Updated imports using our improved structure
+import { useIdeas } from '@/src/lib/hooks/use-ideas'
+import { useIdeaFilters } from '@/src/lib/hooks/use-idea-filters'
+import { usePagination } from '@/src/lib/hooks/use-pagination'
+import { APP_CONFIG } from '@/src/lib/constants/config'
+import { generateOrganizationSlug } from '@/src/lib/utils/id-generator'
+
+// UI Components with correct paths
+import { Badge } from '@/src/components/ui/badge'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/src/components/ui/tabs'
+import IdeaCard from '@/src/components/ui/idea-card'
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTrigger,
-} from '@/components/ui/dialog'
+} from '@/src/components/ui/dialog'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -22,63 +31,10 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuPortal,
   DropdownMenuSubContent,
-} from '@/components/ui/dropdown-menu'
-import bgCover from '../assets/generator.jpg'
-import type { Idea, IdeaCardType, Organization, PaginationProps } from '@/types'
+} from '@/src/components/ui/dropdown-menu'
 
-// Function to read and parse the JSON file
-const readIdeasFile = async (filename: string): Promise<Idea[]> => {
-  try {
-    const response = await fetch(`/ideas/${filename}`)
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`)
-    }
-    const data = await response.json()
-
-    // Add IDs to ideas if they don't have them
-    const processedData = data.map((idea: Idea, index: number) => {
-      if (!idea.id) {
-        const filePrefix = filename.includes('community')
-          ? 'community'
-          : filename.includes('expert')
-            ? 'expert'
-            : 'organization'
-        const generatedId = `${filePrefix}-${idea.name
-          .toLowerCase()
-          .replace(/[^\w\s-]/g, '')
-          .replace(/[\s_-]+/g, '-')
-          .replace(/^-+|-+$/g, '')}-${index}`
-        return { ...idea, id: generatedId }
-      }
-      return idea
-    })
-
-    console.log(`Data fetched from ${filename}:`, processedData)
-    return processedData
-  } catch (error) {
-    console.error(`Error fetching ${filename}:`, error)
-    return []
-  }
-}
-
-// Function to select a random idea
-const getRandomIdea = (ideas: Idea[], selectedTags: string[]): Idea | null => {
-  if (ideas.length === 0) return null
-  const filteredIdeas =
-    selectedTags.length > 0
-      ? ideas.filter(idea => idea.categories?.some(cat => selectedTags.includes(cat)))
-      : ideas
-  if (filteredIdeas.length === 0) return null
-  const randomIndex = Math.floor(Math.random() * filteredIdeas.length)
-  return filteredIdeas[randomIndex] || null
-}
-
-// Function to get all unique tags from ideas
-const getAllTags = (ideas: Idea[]): string[] => {
-  const tagSet = new Set<string>()
-  ideas.forEach(idea => idea.categories?.forEach(cat => tagSet.add(cat)))
-  return Array.from(tagSet)
-}
+// Types
+import type { Idea, Organization, PaginationProps } from '@/src/types'
 
 const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
   return (
@@ -110,138 +66,46 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
 
 export default function Home() {
   const router = useRouter()
-  const contributeIdeaTo =
-    'https://github.com/web3privacy/docs/blob/main/src/content/docs/projects/hackathon-use-cases-generator.md'
-  const [communityIdeas, setCommunityIdeas] = useState<Idea[]>([])
-  const [expertIdeas, setExpertIdeas] = useState<Idea[]>([])
-  const [organizationIdeas, setOrganizationIdeas] = useState<Idea[]>([])
-  const [selectedIdeaType, setSelectedIdeaType] = useState<IdeaCardType>('community')
   const [generatedIdea, setGeneratedIdea] = useState<Idea | null>(null)
-  const [isLoading, setIsLoading] = useState<boolean>(true)
-  const [error, setError] = useState<string | null>(null)
-  const [allTags, setAllTags] = useState<string[]>([])
-  const [selectedTags, setSelectedTags] = useState<string[]>([])
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [filteredTags, setFilteredTags] = useState<string[]>([])
-  const [featuredCommunityIdeas, setFeaturedCommunityIdeas] = useState<Idea[]>([])
-  const [featuredExpertIdeas, setFeaturedExpertIdeas] = useState<Idea[]>([])
-  const [featuredOrganizationIdeas, setFeaturedOrganizationIdeas] = useState<Idea[]>([])
-  const [uniqueOrganizations, setUniqueOrganizations] = useState<Organization[]>([])
 
-  // Pagination states
-  const [communityPage, setCommunityPage] = useState<number>(1)
-  const [expertPage, setExpertPage] = useState<number>(1)
-  const [organizationPage, setOrganizationPage] = useState<number>(1)
-  const ideasPerPage = 4
+  // Use our new custom hooks
+  const { communityIdeas, expertIdeas, organizationIdeas, isLoading, error } = useIdeas()
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true)
-      try {
-        const communityData = await readIdeasFile('community-ideas.json')
-        const expertData = await readIdeasFile('expert-ideas.json')
+  const { selectedIdeaType, selectedTags, allTags, setSelectedIdeaType, toggleTag, getRandomIdea } =
+    useIdeaFilters({ communityIdeas, expertIdeas, organizationIdeas })
 
-        // Try to fetch organization ideas, but don't fail if they don't exist
-        let organizationData: Idea[] = []
-        try {
-          organizationData = await readIdeasFile('organization-ideas.json')
-        } catch (err) {
-          console.warn('No organization ideas found:', err)
-        }
+  // Get featured ideas
+  const featuredCommunityIdeas = communityIdeas.filter(idea => idea.featured === true)
+  const featuredExpertIdeas = expertIdeas.filter(idea => idea.featured === true)
+  const featuredOrganizationIdeas = organizationIdeas.filter(idea => idea.featured === true)
 
-        setCommunityIdeas(communityData)
-        setExpertIdeas(expertData)
-        setOrganizationIdeas(organizationData)
+  // Pagination hooks for each type
+  const communityPagination = usePagination({ items: featuredCommunityIdeas })
+  const expertPagination = usePagination({ items: featuredExpertIdeas })
+  const organizationPagination = usePagination({ items: featuredOrganizationIdeas })
 
-        const uniqueTags = getAllTags([...communityData, ...expertData, ...organizationData])
-        setAllTags(uniqueTags)
-        setFilteredTags(uniqueTags)
-
-        const communityFeatured = communityData.filter(idea => idea.featured === true)
-        const expertFeatured = expertData.filter(idea => idea.featured === true)
-        const organizationFeatured = organizationData.filter(idea => idea.featured === true)
-
-        setFeaturedCommunityIdeas(communityFeatured)
-        setFeaturedExpertIdeas(expertFeatured)
-        setFeaturedOrganizationIdeas(organizationFeatured)
-
-        // Extract unique organizations for the organization links section
-        if (organizationData.length > 0) {
-          const orgs = Array.from(
-            new Set(
-              organizationData
-                .filter(idea => idea.organizationName)
-                .map(idea => idea.organizationName!)
-            )
-          ).map(orgName => {
-            const orgIdea = organizationData.find(idea => idea.organizationName === orgName)
-            return {
-              name: orgName,
-              logo: orgIdea?.organizationLogo || null,
-              slug: orgName
-                .toLowerCase()
-                .replace(/[^\w\s-]/g, '')
-                .replace(/[\s_-]+/g, '-')
-                .replace(/^-+|-+$/g, ''),
-            }
-          })
-          setUniqueOrganizations(orgs)
-        }
-
-        setError(null)
-      } catch (err) {
-        setError('Failed to load ideas. Please try again later.')
-        console.error('Error loading ideas:', err)
-      } finally {
-        setIsLoading(false)
-      }
+  // Extract unique organizations
+  const uniqueOrganizations: Organization[] = Array.from(
+    new Set(
+      organizationIdeas.filter(idea => idea.organizationName).map(idea => idea.organizationName!)
+    )
+  ).map(orgName => {
+    const orgIdea = organizationIdeas.find(idea => idea.organizationName === orgName)
+    return {
+      name: orgName,
+      logo: orgIdea?.organizationLogo || null,
+      slug: generateOrganizationSlug(orgName),
     }
-
-    fetchData()
-  }, [])
-
-  const communityTotalPages = Math.max(1, Math.ceil(featuredCommunityIdeas.length / ideasPerPage))
-  const expertTotalPages = Math.max(1, Math.ceil(featuredExpertIdeas.length / ideasPerPage))
-  const organizationTotalPages = Math.max(
-    1,
-    Math.ceil(featuredOrganizationIdeas.length / ideasPerPage)
-  )
+  })
 
   const handleGenerateIdea = (): void => {
-    let ideas: Idea[]
-    switch (selectedIdeaType) {
-      case 'community':
-        ideas = communityIdeas
-        break
-      case 'expert':
-        ideas = expertIdeas
-        break
-      case 'organization':
-        ideas = organizationIdeas
-        break
-      default:
-        ideas = [...communityIdeas, ...expertIdeas, ...organizationIdeas]
-    }
-
-    const newIdea = getRandomIdea(ideas, selectedTags)
+    const newIdea = getRandomIdea()
     setGeneratedIdea(newIdea)
     console.log('Generated idea:', newIdea)
   }
 
-  const handleTagToggle = (tag: string): void => {
-    setSelectedTags(prev => (prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]))
-  }
-
-  // Get paginated ideas for the current tab
-  const getPaginatedIdeas = (ideas: Idea[], page: number): Idea[] => {
-    const startIndex = (page - 1) * ideasPerPage
-    const endIndex = startIndex + ideasPerPage
-    return ideas.slice(startIndex, endIndex)
-  }
-
-  // Handle tab change
   const handleTabChange = (value: string): void => {
-    setSelectedIdeaType(value as IdeaCardType)
+    setSelectedIdeaType(value as any)
   }
 
   return (
@@ -249,7 +113,7 @@ export default function Home() {
       <div
         className="bg-image-class p-5"
         style={{
-          backgroundImage: `url(${bgCover.src})`,
+          backgroundImage: `url(/images/generator.jpg)`,
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
@@ -259,20 +123,22 @@ export default function Home() {
           <img
             className="inline-flex justify-center w-40"
             alt="Web3PrivacyNow"
-            src="https://web3privacy.info/logo.svg"
+            src={APP_CONFIG.LOGO_URL}
           />
-          <a href={contributeIdeaTo} target="_blank" rel="noopener noreferrer">
+          <a href={APP_CONFIG.CONTRIBUTE_URL} target="_blank" rel="noopener noreferrer">
             <button className="border archivo text-xs flex space-x-3 items-center p-2">
               <h3>CONTRIBUTE AN IDEA</h3>
               <Github className="w-4" />
             </button>
           </a>
         </nav>
+
         <div>
           <h1 className="major text-center text-3xl md:text-5xl">privacy idea generator</h1>
           <h3 className="archivo text-center text-[#4c4c4c] mt-5 px-5 md:text-xl">
             Generate ideas curated by the Web3Privacy Now community and experts
           </h3>
+
           <div className="flex justify-center mt-10 md:mt-20 space-x-4">
             <Dialog>
               <DialogTrigger>
@@ -285,7 +151,7 @@ export default function Home() {
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
-                  <DialogDescription className="">
+                  <DialogDescription>
                     {isLoading ? (
                       <p>Loading ideas...</p>
                     ) : error ? (
@@ -421,6 +287,7 @@ export default function Home() {
                 </DialogHeader>
               </DialogContent>
             </Dialog>
+
             <DropdownMenu>
               <DropdownMenuTrigger className="archivo text-sm flex space-x-3 items-center p-2">
                 <Filter className="text-white" />
@@ -460,7 +327,7 @@ export default function Home() {
                         <DropdownMenuCheckboxItem
                           key={tag}
                           checked={selectedTags.includes(tag)}
-                          onCheckedChange={() => handleTagToggle(tag)}
+                          onCheckedChange={() => toggleTag(tag)}
                         >
                           {tag}
                         </DropdownMenuCheckboxItem>
@@ -474,7 +341,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Organizations section styled like the screenshot */}
+      {/* Organizations section */}
       {uniqueOrganizations.length > 0 && (
         <div className="container mx-auto max-w-6xl px-4 mt-16 mb-12">
           <h1 className="major text-center text-4xl mb-12 uppercase">ORGANIZATIONS</h1>
@@ -496,6 +363,8 @@ export default function Home() {
           </div>
         </div>
       )}
+
+      {/* Featured Ideas section */}
       <div className="container mx-auto max-w-6xl px-4 mt-16">
         <h1 className="major text-center text-4xl uppercase mb-12">FEATURED IDEAS</h1>
         <Tabs defaultValue="community" className="mt-5" onValueChange={handleTabChange}>
@@ -512,10 +381,11 @@ export default function Home() {
               </TabsTrigger>
             </TabsList>
           </div>
+
           <div className="mt-10 w-full text-left">
             <TabsContent value="community">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-                {getPaginatedIdeas(featuredCommunityIdeas, communityPage).map((idea, index) => (
+                {communityPagination.paginatedItems.map((idea, index) => (
                   <IdeaCard
                     key={index}
                     id={idea.id}
@@ -530,14 +400,15 @@ export default function Home() {
                 ))}
               </div>
               <Pagination
-                currentPage={communityPage}
-                totalPages={communityTotalPages}
-                onPageChange={setCommunityPage}
+                currentPage={communityPagination.currentPage}
+                totalPages={communityPagination.totalPages}
+                onPageChange={communityPagination.setCurrentPage}
               />
             </TabsContent>
+
             <TabsContent value="expert">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-                {getPaginatedIdeas(featuredExpertIdeas, expertPage).map((idea, index) => (
+                {expertPagination.paginatedItems.map((idea, index) => (
                   <IdeaCard
                     key={index}
                     id={idea.id}
@@ -554,35 +425,34 @@ export default function Home() {
                 ))}
               </div>
               <Pagination
-                currentPage={expertPage}
-                totalPages={expertTotalPages}
-                onPageChange={setExpertPage}
+                currentPage={expertPagination.currentPage}
+                totalPages={expertPagination.totalPages}
+                onPageChange={expertPagination.setCurrentPage}
               />
             </TabsContent>
+
             <TabsContent value="organization">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-                {getPaginatedIdeas(featuredOrganizationIdeas, organizationPage).map(
-                  (idea, index) => (
-                    <IdeaCard
-                      key={index}
-                      id={idea.id}
-                      name={idea.name}
-                      description={idea.description}
-                      categories={idea.categories}
-                      github={idea.github}
-                      website={idea.website}
-                      organizationLogo={idea.organizationLogo}
-                      organizationName={idea.organizationName}
-                      features={idea.features}
-                      type="organization"
-                    />
-                  )
-                )}
+                {organizationPagination.paginatedItems.map((idea, index) => (
+                  <IdeaCard
+                    key={index}
+                    id={idea.id}
+                    name={idea.name}
+                    description={idea.description}
+                    categories={idea.categories}
+                    github={idea.github}
+                    website={idea.website}
+                    organizationLogo={idea.organizationLogo}
+                    organizationName={idea.organizationName}
+                    features={idea.features}
+                    type="organization"
+                  />
+                ))}
               </div>
               <Pagination
-                currentPage={organizationPage}
-                totalPages={organizationTotalPages}
-                onPageChange={setOrganizationPage}
+                currentPage={organizationPagination.currentPage}
+                totalPages={organizationPagination.totalPages}
+                onPageChange={organizationPagination.setCurrentPage}
               />
             </TabsContent>
           </div>
