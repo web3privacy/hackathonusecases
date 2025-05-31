@@ -1,3 +1,7 @@
+// Experimental feature: AI integration for the idea generation - for more information see: https://github.com/web3privacy/privacy-idea-generator/issues/3
+// note: requires user to have either a commercial AI token or their own local one running as well as own deployment of the webapp
+// the front-end deployed at ideas.web3privacy.info will not provide AI integration or offer free token for requests
+
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 interface AIIdeaRequest {
