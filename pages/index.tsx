@@ -476,7 +476,7 @@ export default function Home() {
 
       {/* Organizations section styled like the screenshot */}
       {uniqueOrganizations.length > 0 && (
-        <div className="mt-16 mb-12">
+        <div className="container mx-auto max-w-6xl px-4 mt-16 mb-12">
           <h1 className="major text-center text-4xl mb-12 uppercase">ORGANIZATIONS</h1>
           <div className="flex flex-wrap justify-center gap-8">
             {uniqueOrganizations.map((org, index) => (
@@ -496,8 +496,7 @@ export default function Home() {
           </div>
         </div>
       )}
-
-      <div className="mt-16">
+      <div className="container mx-auto max-w-6xl px-4 mt-16">
         <h1 className="major text-center text-4xl uppercase mb-12">FEATURED IDEAS</h1>
         <Tabs defaultValue="community" className="mt-5" onValueChange={handleTabChange}>
           <div className="flex justify-center w-full">
@@ -515,7 +514,7 @@ export default function Home() {
           </div>
           <div className="mt-10 w-full text-left">
             <TabsContent value="community">
-              <div className="md:flex flex-wrap md:justify-center justify-start px-5 gap-5 space-y-5 md:space-y-0">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
                 {getPaginatedIdeas(featuredCommunityIdeas, communityPage).map((idea, index) => (
                   <IdeaCard
                     key={index}
@@ -537,7 +536,7 @@ export default function Home() {
               />
             </TabsContent>
             <TabsContent value="expert">
-              <div className="md:flex flex-wrap md:justify-center justify-start px-5 gap-5 space-y-5 md:space-y-0">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
                 {getPaginatedIdeas(featuredExpertIdeas, expertPage).map((idea, index) => (
                   <IdeaCard
                     key={index}
@@ -561,7 +560,7 @@ export default function Home() {
               />
             </TabsContent>
             <TabsContent value="organization">
-              <div className="md:flex flex-wrap md:justify-center justify-start px-5 gap-5 space-y-5 md:space-y-0">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
                 {getPaginatedIdeas(featuredOrganizationIdeas, organizationPage).map(
                   (idea, index) => (
                     <IdeaCard

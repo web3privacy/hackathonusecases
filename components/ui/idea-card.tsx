@@ -185,7 +185,7 @@ const IdeaCard: React.FC<IdeaCardProps> = ({
   }
 
   return (
-    <div className="bg-[#0d0d0d] md:w-1/3 w-full p-6 relative">
+    <div className="bg-[#0d0d0d] w-full p-4 relative">
       {renderCardHeader()}
 
       {type === 'organization' && organizationName && name !== organizationName && (

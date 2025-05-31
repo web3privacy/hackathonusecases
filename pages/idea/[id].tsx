@@ -151,21 +151,25 @@ export default function IdeaPage() {
               : 'Community Idea'}
         </h1>
 
-        <IdeaCard
-          id={idea.id}
-          name={idea.name}
-          description={idea.description}
-          categories={idea.categories}
-          github={idea.github}
-          website={idea.website}
-          event={idea.event}
-          author={idea.author}
-          type={ideaType}
-          organization={idea.organization}
-          organizationLogo={idea.organizationLogo}
-          organizationName={idea.organizationName}
-          features={idea.features}
-        />
+        <div className="flex justify-center">
+          <div className="w-full max-w-2xl">
+            <IdeaCard
+              id={idea.id}
+              name={idea.name}
+              description={idea.description}
+              categories={idea.categories}
+              github={idea.github}
+              website={idea.website}
+              event={idea.event}
+              author={idea.author}
+              type={ideaType}
+              organization={idea.organization}
+              organizationLogo={idea.organizationLogo}
+              organizationName={idea.organizationName}
+              features={idea.features}
+            />
+          </div>
+        </div>
 
         <div className="mt-8">
           <button
