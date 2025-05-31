@@ -1,101 +1,102 @@
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import IdeaCard from "@/components/ui/idea-card";
+import { useState, useEffect } from "react"
+import { useRouter } from "next/router"
+import IdeaCard from "@/components/ui/idea-card"
+import type { Idea, IdeaCardType } from "@/types"
 
 // Function to read and parse the JSON files
-const readIdeasFile = async (filename) => {
+const readIdeasFile = async (filename: string): Promise<Idea[]> => {
   try {
-    const response = await fetch(`/ideas/${filename}`);
+    const response = await fetch(`/ideas/${filename}`)
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(`HTTP error! status: ${response.status}`)
     }
-    const data = await response.json();
+    const data = await response.json()
     
     // Add IDs to ideas if they don't have them
-    return data.map((idea, index) => {
+    return data.map((idea: Idea, index: number) => {
       if (!idea.id) {
         const filePrefix = filename.includes("community") ? "community" : 
-                         filename.includes("expert") ? "expert" : "organization";
-        const generatedId = `${filePrefix}-${idea.name.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')}-${index}`;
-        return { ...idea, id: generatedId };
+                         filename.includes("expert") ? "expert" : "organization"
+        const generatedId = `${filePrefix}-${idea.name.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')}-${index}`
+        return { ...idea, id: generatedId }
       }
-      return idea;
-    });
+      return idea
+    })
   } catch (error) {
-    console.error(`Error fetching ${filename}:`, error);
-    return [];
+    console.error(`Error fetching ${filename}:`, error)
+    return []
   }
-};
+}
 
 // Function to determine card type based on idea properties
-const getIdeaType = (idea) => {
+const getIdeaType = (idea: Idea): IdeaCardType => {
   if (idea.organizationName || idea.organizationLogo || idea.features) {
-    return 'organization';
+    return 'organization'
   } else if (idea.author) {
-    return 'expert';
+    return 'expert'
   }
-  return 'community';
-};
+  return 'community'
+}
 
 export default function IdeaPage() {
-  const router = useRouter();
-  const { id } = router.query;
-  const [idea, setIdea] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const router = useRouter()
+  const { id } = router.query
+  const [idea, setIdea] = useState<Idea | null>(null)
+  const [isLoading, setIsLoading] = useState<boolean>(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     const fetchIdea = async () => {
-      if (!id) return;
+      if (!id || typeof id !== 'string') return
       
-      setIsLoading(true);
+      setIsLoading(true)
       try {
         // Fetch from all sources and find the matching idea
-        const communityIdeas = await readIdeasFile("community-ideas.json");
-        const expertIdeas = await readIdeasFile("expert-ideas.json");
+        const communityIdeas = await readIdeasFile("community-ideas.json")
+        const expertIdeas = await readIdeasFile("expert-ideas.json")
         
         // Try to fetch organization ideas, but don't fail if they don't exist
-        let organizationIdeas = [];
+        let organizationIdeas: Idea[] = []
         try {
-          organizationIdeas = await readIdeasFile("organization-ideas.json");
+          organizationIdeas = await readIdeasFile("organization-ideas.json")
         } catch (err) {
-          console.warn("No organization ideas found:", err);
+          console.warn("No organization ideas found:", err)
         }
         
         // Try to find by id
-        const allIdeas = [...communityIdeas, ...expertIdeas, ...organizationIdeas];
-        let foundIdea = allIdeas.find(idea => idea.id === id);
+        const allIdeas = [...communityIdeas, ...expertIdeas, ...organizationIdeas]
+        let foundIdea = allIdeas.find(idea => idea.id === id)
         
         // If not found by id, try finding by name converted to id format
         if (!foundIdea) {
           foundIdea = allIdeas.find(idea => {
-            const nameAsId = idea.name.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '');
-            return nameAsId === id || `${nameAsId}-0` === id;
-          });
+            const nameAsId = idea.name.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')
+            return nameAsId === id || `${nameAsId}-0` === id
+          })
         }
         
         if (foundIdea) {
-          setIdea(foundIdea);
+          setIdea(foundIdea)
         } else {
-          setError("Idea not found");
+          setError("Idea not found")
         }
       } catch (err) {
-        console.error("Error fetching idea:", err);
-        setError("Failed to load this idea");
+        console.error("Error fetching idea:", err)
+        setError("Failed to load this idea")
       } finally {
-        setIsLoading(false);
+        setIsLoading(false)
       }
-    };
+    }
 
-    fetchIdea();
-  }, [id]);
+    fetchIdea()
+  }, [id])
 
   if (isLoading) {
     return (
       <main className="bg-black w-full min-h-screen flex items-center justify-center">
         <div className="text-white">Loading...</div>
       </main>
-    );
+    )
   }
 
   if (error || !idea) {
@@ -109,11 +110,11 @@ export default function IdeaPage() {
           Return to Home
         </button>
       </main>
-    );
+    )
   }
 
   // Determine the type of idea
-  const ideaType = getIdeaType(idea);
+  const ideaType = getIdeaType(idea)
 
   return (
     <main className="bg-black w-full min-h-screen pb-10">
@@ -163,5 +164,5 @@ export default function IdeaPage() {
         </div>
       </div>
     </main>
-  );
-}
+  )
+} 

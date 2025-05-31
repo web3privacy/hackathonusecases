@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
-import { Filter, Github, Globe, Share2, ChevronLeft, ChevronRight } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import IdeaCard from "@/components/ui/idea-card";
+import { useState, useEffect } from "react"
+import { useRouter } from "next/router"
+import Link from "next/link"
+import { Filter, Github, Globe, Share2, ChevronLeft, ChevronRight } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import IdeaCard from "@/components/ui/idea-card"
 import {
   Dialog,
   DialogContent,
@@ -12,7 +12,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "@/components/ui/dialog"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -23,69 +23,70 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuPortal,
   DropdownMenuSubContent,
-} from "@/components/ui/dropdown-menu";
-import bgCover from "../assets/generator.jpg";
+} from "@/components/ui/dropdown-menu"
+import bgCover from "../assets/generator.jpg"
+import type { Idea, IdeaCardType, Organization, PaginationProps } from "@/types"
 
 // Function to read and parse the JSON file
-const readIdeasFile = async (filename) => {
+const readIdeasFile = async (filename: string): Promise<Idea[]> => {
   try {
-    const response = await fetch(`/ideas/${filename}`);
+    const response = await fetch(`/ideas/${filename}`)
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(`HTTP error! status: ${response.status}`)
     }
-    const data = await response.json();
+    const data = await response.json()
     
     // Add IDs to ideas if they don't have them
-    const processedData = data.map((idea, index) => {
+    const processedData = data.map((idea: Idea, index: number) => {
       if (!idea.id) {
         const filePrefix = filename.includes("community") ? "community" : 
-                          filename.includes("expert") ? "expert" : "organization";
-        const generatedId = `${filePrefix}-${idea.name.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')}-${index}`;
-        return { ...idea, id: generatedId };
+                          filename.includes("expert") ? "expert" : "organization"
+        const generatedId = `${filePrefix}-${idea.name.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')}-${index}`
+        return { ...idea, id: generatedId }
       }
-      return idea;
-    });
+      return idea
+    })
     
-    console.log(`Data fetched from ${filename}:`, processedData);
-    return processedData;
+    console.log(`Data fetched from ${filename}:`, processedData)
+    return processedData
   } catch (error) {
-    console.error(`Error fetching ${filename}:`, error);
-    return [];
+    console.error(`Error fetching ${filename}:`, error)
+    return []
   }
-};
+}
 
 // Function to select a random idea
-const getRandomIdea = (ideas, selectedTags) => {
-  if (ideas.length === 0) return null;
+const getRandomIdea = (ideas: Idea[], selectedTags: string[]): Idea | null => {
+  if (ideas.length === 0) return null
   const filteredIdeas =
     selectedTags.length > 0
       ? ideas.filter((idea) =>
-        idea.categories.some((cat) => selectedTags.includes(cat))
+        idea.categories?.some((cat) => selectedTags.includes(cat))
       )
-      : ideas;
-  if (filteredIdeas.length === 0) return null;
-  const randomIndex = Math.floor(Math.random() * filteredIdeas.length);
-  return filteredIdeas[randomIndex];
-};
+      : ideas
+  if (filteredIdeas.length === 0) return null
+  const randomIndex = Math.floor(Math.random() * filteredIdeas.length)
+  return filteredIdeas[randomIndex]
+}
 
 // Function to get all unique tags from ideas
-const getAllTags = (ideas) => {
-  const tagSet = new Set();
-  ideas.forEach((idea) => idea.categories.forEach((cat) => tagSet.add(cat)));
-  return Array.from(tagSet);
-};
+const getAllTags = (ideas: Idea[]): string[] => {
+  const tagSet = new Set<string>()
+  ideas.forEach((idea) => idea.categories?.forEach((cat) => tagSet.add(cat)))
+  return Array.from(tagSet)
+}
 
 // Function to determine card type based on idea properties
-const getIdeaType = (idea) => {
+const getIdeaType = (idea: Idea): IdeaCardType => {
   if (idea.organizationName || idea.organizationLogo || idea.features) {
-    return 'organization';
+    return 'organization'
   } else if (idea.author) {
-    return 'expert';
+    return 'expert'
   }
-  return 'community';
-};
+  return 'community'
+}
 
-const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
   return (
     <div className="flex justify-center items-center space-x-4 mt-8 mb-8">
       <button 
@@ -108,64 +109,64 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         <ChevronRight className="w-5 h-5" />
       </button>
     </div>
-  );
-};
+  )
+}
 
 export default function Home() {
-  const router = useRouter();
+  const router = useRouter()
   const contributeIdeaTo =
-    "https://github.com/web3privacy/docs/blob/main/src/content/docs/projects/hackathon-use-cases-generator.md";
-  const [communityIdeas, setCommunityIdeas] = useState([]);
-  const [expertIdeas, setExpertIdeas] = useState([]);
-  const [organizationIdeas, setOrganizationIdeas] = useState([]);
-  const [selectedIdeaType, setSelectedIdeaType] = useState("community");
-  const [generatedIdea, setGeneratedIdea] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [allTags, setAllTags] = useState([]);
-  const [selectedTags, setSelectedTags] = useState([]);
-  const [filteredTags, setFilteredTags] = useState([]);
-  const [featuredCommunityIdeas, setFeaturedCommunityIdeas] = useState([]);
-  const [featuredExpertIdeas, setFeaturedExpertIdeas] = useState([]);
-  const [featuredOrganizationIdeas, setFeaturedOrganizationIdeas] = useState([]);
-  const [uniqueOrganizations, setUniqueOrganizations] = useState([]);
+    "https://github.com/web3privacy/docs/blob/main/src/content/docs/projects/hackathon-use-cases-generator.md"
+  const [communityIdeas, setCommunityIdeas] = useState<Idea[]>([])
+  const [expertIdeas, setExpertIdeas] = useState<Idea[]>([])
+  const [organizationIdeas, setOrganizationIdeas] = useState<Idea[]>([])
+  const [selectedIdeaType, setSelectedIdeaType] = useState<IdeaCardType>("community")
+  const [generatedIdea, setGeneratedIdea] = useState<Idea | null>(null)
+  const [isLoading, setIsLoading] = useState<boolean>(true)
+  const [error, setError] = useState<string | null>(null)
+  const [allTags, setAllTags] = useState<string[]>([])
+  const [selectedTags, setSelectedTags] = useState<string[]>([])
+  const [filteredTags, setFilteredTags] = useState<string[]>([])
+  const [featuredCommunityIdeas, setFeaturedCommunityIdeas] = useState<Idea[]>([])
+  const [featuredExpertIdeas, setFeaturedExpertIdeas] = useState<Idea[]>([])
+  const [featuredOrganizationIdeas, setFeaturedOrganizationIdeas] = useState<Idea[]>([])
+  const [uniqueOrganizations, setUniqueOrganizations] = useState<Organization[]>([])
   
   // Pagination states
-  const [communityPage, setCommunityPage] = useState(1);
-  const [expertPage, setExpertPage] = useState(1);
-  const [organizationPage, setOrganizationPage] = useState(1);
-  const ideasPerPage = 4;
+  const [communityPage, setCommunityPage] = useState<number>(1)
+  const [expertPage, setExpertPage] = useState<number>(1)
+  const [organizationPage, setOrganizationPage] = useState<number>(1)
+  const ideasPerPage = 4
 
   useEffect(() => {
     const fetchData = async () => {
-      setIsLoading(true);
+      setIsLoading(true)
       try {
-        const communityData = await readIdeasFile("community-ideas.json");
-        const expertData = await readIdeasFile("expert-ideas.json");
+        const communityData = await readIdeasFile("community-ideas.json")
+        const expertData = await readIdeasFile("expert-ideas.json")
         
         // Try to fetch organization ideas, but don't fail if they don't exist
-        let organizationData = [];
+        let organizationData: Idea[] = []
         try {
-          organizationData = await readIdeasFile("organization-ideas.json");
+          organizationData = await readIdeasFile("organization-ideas.json")
         } catch (err) {
-          console.warn("No organization ideas found:", err);
+          console.warn("No organization ideas found:", err)
         }
         
-        setCommunityIdeas(communityData);
-        setExpertIdeas(expertData);
-        setOrganizationIdeas(organizationData);
+        setCommunityIdeas(communityData)
+        setExpertIdeas(expertData)
+        setOrganizationIdeas(organizationData)
         
-        const uniqueTags = getAllTags([...communityData, ...expertData, ...organizationData]);
-        setAllTags(uniqueTags);
-        setFilteredTags(uniqueTags);
+        const uniqueTags = getAllTags([...communityData, ...expertData, ...organizationData])
+        setAllTags(uniqueTags)
+        setFilteredTags(uniqueTags)
         
-        const communityFeatured = communityData.filter((idea) => idea.featured === true);
-        const expertFeatured = expertData.filter((idea) => idea.featured === true);
-        const organizationFeatured = organizationData.filter((idea) => idea.featured === true);
+        const communityFeatured = communityData.filter((idea) => idea.featured === true)
+        const expertFeatured = expertData.filter((idea) => idea.featured === true)
+        const organizationFeatured = organizationData.filter((idea) => idea.featured === true)
         
-        setFeaturedCommunityIdeas(communityFeatured);
-        setFeaturedExpertIdeas(expertFeatured);
-        setFeaturedOrganizationIdeas(organizationFeatured);
+        setFeaturedCommunityIdeas(communityFeatured)
+        setFeaturedExpertIdeas(expertFeatured)
+        setFeaturedOrganizationIdeas(organizationFeatured)
 
         // Extract unique organizations for the organization links section
         if (organizationData.length > 0) {
@@ -173,73 +174,73 @@ export default function Home() {
             new Set(
               organizationData
                 .filter(idea => idea.organizationName)
-                .map(idea => idea.organizationName)
+                .map(idea => idea.organizationName!)
             )
           ).map(orgName => {
-            const orgIdea = organizationData.find(idea => idea.organizationName === orgName);
+            const orgIdea = organizationData.find(idea => idea.organizationName === orgName)
             return {
               name: orgName,
-              logo: orgIdea.organizationLogo || null,
+              logo: orgIdea?.organizationLogo || null,
               slug: orgName.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')
-            };
-          });
-          setUniqueOrganizations(orgs);
+            }
+          })
+          setUniqueOrganizations(orgs)
         }
         
-        setError(null);
+        setError(null)
       } catch (err) {
-        setError("Failed to load ideas. Please try again later.");
-        console.error("Error loading ideas:", err);
+        setError("Failed to load ideas. Please try again later.")
+        console.error("Error loading ideas:", err)
       } finally {
-        setIsLoading(false);
+        setIsLoading(false)
       }
-    };
+    }
 
-    fetchData();
-  }, []);
+    fetchData()
+  }, [])
 
-  const communityTotalPages = Math.max(1, Math.ceil(featuredCommunityIdeas.length / ideasPerPage));
-  const expertTotalPages = Math.max(1, Math.ceil(featuredExpertIdeas.length / ideasPerPage));
-  const organizationTotalPages = Math.max(1, Math.ceil(featuredOrganizationIdeas.length / ideasPerPage));
+  const communityTotalPages = Math.max(1, Math.ceil(featuredCommunityIdeas.length / ideasPerPage))
+  const expertTotalPages = Math.max(1, Math.ceil(featuredExpertIdeas.length / ideasPerPage))
+  const organizationTotalPages = Math.max(1, Math.ceil(featuredOrganizationIdeas.length / ideasPerPage))
 
-  const handleGenerateIdea = () => {
-    let ideas;
+  const handleGenerateIdea = (): void => {
+    let ideas: Idea[]
     switch (selectedIdeaType) {
       case "community":
-        ideas = communityIdeas;
-        break;
+        ideas = communityIdeas
+        break
       case "expert":
-        ideas = expertIdeas;
-        break;
+        ideas = expertIdeas
+        break
       case "organization":
-        ideas = organizationIdeas;
-        break;
+        ideas = organizationIdeas
+        break
       default:
-        ideas = [...communityIdeas, ...expertIdeas, ...organizationIdeas];
+        ideas = [...communityIdeas, ...expertIdeas, ...organizationIdeas]
     }
     
-    const newIdea = getRandomIdea(ideas, selectedTags);
-    setGeneratedIdea(newIdea);
-    console.log("Generated idea:", newIdea);
-  };
+    const newIdea = getRandomIdea(ideas, selectedTags)
+    setGeneratedIdea(newIdea)
+    console.log("Generated idea:", newIdea)
+  }
 
-  const handleTagToggle = (tag) => {
+  const handleTagToggle = (tag: string): void => {
     setSelectedTags((prev) =>
       prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
-    );
-  };
+    )
+  }
 
   // Get paginated ideas for the current tab
-  const getPaginatedIdeas = (ideas, page) => {
-    const startIndex = (page - 1) * ideasPerPage;
-    const endIndex = startIndex + ideasPerPage;
-    return ideas.slice(startIndex, endIndex);
-  };
+  const getPaginatedIdeas = (ideas: Idea[], page: number): Idea[] => {
+    const startIndex = (page - 1) * ideasPerPage
+    const endIndex = startIndex + ideasPerPage
+    return ideas.slice(startIndex, endIndex)
+  }
 
   // Handle tab change
-  const handleTabChange = (value) => {
-    setSelectedIdeaType(value);
-  };
+  const handleTabChange = (value: string): void => {
+    setSelectedIdeaType(value as IdeaCardType)
+  }
 
   return (
     <main className="bg-black w-full min-h-screen pb-10">
@@ -292,8 +293,12 @@ export default function Home() {
                                 alt={generatedIdea.author.name}
                                 className="w-10 h-10 rounded-full mr-3 object-cover"
                                 onError={(e) => {
-                                  e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(generatedIdea.author.name)}&background=random`;
-                                }}
+                                  const target = e.target as HTMLImageElement
+                                  target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(
+                                    generatedIdea.author && typeof generatedIdea.author === 'object' 
+                                      ? generatedIdea.author.name 
+                                      : 'Unknown'
+                                  )}&background=random`                                }}
                               />
                             )}
                             <div>
@@ -351,7 +356,7 @@ export default function Home() {
                         
                         <div className="flex justify-between items-center my-3">
                           <div className="flex space-x-3 w-2/3">
-                            {generatedIdea.categories.map((category, index) => (
+                            {generatedIdea.categories?.map((category, index) => (
                               <Badge key={index} variant="secondary">
                                 {category}
                               </Badge>
@@ -599,5 +604,5 @@ export default function Home() {
         </Tabs>
       </div>
     </main>
-  );
-}
+  )
+} 

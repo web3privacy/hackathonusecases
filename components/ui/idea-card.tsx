@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { Share2, Github, Globe, Copy, Check } from 'lucide-react';
-import { Badge } from "@/components/ui/badge";
+import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { Share2, Github, Globe, Copy, Check } from 'lucide-react'
+import { Badge } from "@/components/ui/badge"
 import {
   Dialog,
   DialogContent,
@@ -9,11 +9,12 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Button } from '@/components/ui/button';
-import ReactMarkdown from 'react-markdown';
+} from "@/components/ui/dialog"
+import { Button } from '@/components/ui/button'
+import ReactMarkdown from 'react-markdown'
+import type { IdeaCardProps, ExpertDetails, AuthorObject } from '@/types'
 
-const IdeaCard = ({
+const IdeaCard: React.FC<IdeaCardProps> = ({
   id = '',
   name,
   description,
@@ -22,44 +23,45 @@ const IdeaCard = ({
   website,
   event,
   author,
-  type = 'community', // 'community', 'expert', or 'organization'
+  type = 'community',
   organization,
   organizationLogo,
   organizationName,
   features = []
 }) => {
-  const [copied, setCopied] = useState(false);
-  const [avatarLoaded, setAvatarLoaded] = useState(false);
-  const shareUrl = typeof window !== 'undefined' ? `${window.location.origin}/idea/${id}` : '';
+  const [copied, setCopied] = useState<boolean>(false)
+  const [avatarLoaded, setAvatarLoaded] = useState<boolean>(false)
+  const shareUrl = typeof window !== 'undefined' ? `${window.location.origin}/idea/${id}` : ''
 
-  const handleCopyLink = async () => {
+  const handleCopyLink = async (): Promise<void> => {
     try {
-      await navigator.clipboard.writeText(shareUrl);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      await navigator.clipboard.writeText(shareUrl)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
     } catch (err) {
-      console.error("Failed to copy: ", err);
+      console.error("Failed to copy: ", err)
     }
-  };
+  }
 
-  const getExpertDetails = () => {
+  const getExpertDetails = (): ExpertDetails | null => {
     if (typeof author === 'object' && author !== null) {
-      const isTwitterUrl = typeof author.name === 'string' &&
-        (author.name.includes('twitter.com/') || author.name.includes('x.com/'));
-      const twitterHandle = isTwitterUrl ? author.name.split('/').pop() : null;
-      const twitterAvatar = twitterHandle ? `https://unavatar.io/twitter/${twitterHandle}` : null;
+      const authorObj = author as AuthorObject
+      const isTwitterUrl = typeof authorObj.name === 'string' &&
+        (authorObj.name.includes('twitter.com/') || authorObj.name.includes('x.com/'))
+      const twitterHandle = isTwitterUrl ? authorObj.name.split('/').pop() : null
+      const twitterAvatar = twitterHandle ? `https://unavatar.io/twitter/${twitterHandle}` : null
 
       return {
-        name: author.name,
+        name: authorObj.name,
         avatar: twitterAvatar,
-        organization: author.organization || organization,
-        displayName: isTwitterUrl ? `@${twitterHandle}` : author.name,
-        twitterUrl: isTwitterUrl ? author.name : null
-      };
+        organization: authorObj.organization || organization,
+        displayName: isTwitterUrl ? `@${twitterHandle}` : authorObj.name,
+        twitterUrl: isTwitterUrl ? authorObj.name : null
+      }
     } else if (typeof author === 'string') {
-      const isTwitterUrl = author.includes('twitter.com/') || author.includes('x.com/');
-      const twitterHandle = isTwitterUrl ? author.split('/').pop() : null;
-      const twitterAvatar = twitterHandle ? `https://unavatar.io/twitter/${twitterHandle}` : null;
+      const isTwitterUrl = author.includes('twitter.com/') || author.includes('x.com/')
+      const twitterHandle = isTwitterUrl ? author.split('/').pop() : null
+      const twitterAvatar = twitterHandle ? `https://unavatar.io/twitter/${twitterHandle}` : null
 
       return {
         name: author,
@@ -67,22 +69,23 @@ const IdeaCard = ({
         organization: organization,
         displayName: isTwitterUrl ? `@${twitterHandle}` : author,
         twitterUrl: isTwitterUrl ? author : null
-      };
+      }
     }
-    return null;
-  };
-  const expertDetails = type === 'expert' ? getExpertDetails() : null;
+    return null
+  }
 
-  const getOrgPathName = () => {
+  const expertDetails = type === 'expert' ? getExpertDetails() : null
+
+  const getOrgPathName = (): string | null => {
     if (organizationName) {
-      return organizationName.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '');
+      return organizationName.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')
     }
-    return null;
-  };
+    return null
+  }
 
-  const renderCardHeader = () => {
+  const renderCardHeader = (): React.JSX.Element => {
     if (type === 'organization') {
-      const orgPath = getOrgPathName();
+      const orgPath = getOrgPathName()
       return (
         <div className="flex items-center mb-4 pb-3 border-b border-zinc-800">
           {organizationLogo && (
@@ -105,7 +108,7 @@ const IdeaCard = ({
             </Link>
           </div>
         </div>
-      );
+      )
     } else if (type === 'expert' && expertDetails) {
       return (
         <div className="flex items-center mb-4 pb-3 border-b border-zinc-800">
@@ -144,16 +147,16 @@ const IdeaCard = ({
             </h3>
           </div>
         </div>
-      );
+      )
     }
     return (
       <div className="h-10">
         <h1 className="archivo text-lg mb-4">{name}</h1>
       </div>
-    );
-  };
+    )
+  }
 
-  const renderFeatures = () => {
+  const renderFeatures = (): React.JSX.Element | null => {
     if (type === 'organization' && features && features.length > 0) {
       return (
         <div className="mt-2 mb-4">
@@ -164,18 +167,18 @@ const IdeaCard = ({
             ))}
           </ul>
         </div>
-      );
+      )
     }
-    return null;
-  };
+    return null
+  }
 
-  const renderDescription = () => {
+  const renderDescription = (): React.JSX.Element => {
     return (
       <div className="mt-4 mb-4 archivo text-sm opacity-70 prose prose-invert prose-sm max-w-none">
         <ReactMarkdown>{description}</ReactMarkdown>
       </div>
-    );
-  };
+    )
+  }
 
   return (
     <div className="bg-[#0d0d0d] md:w-1/3 w-full p-6 relative">
@@ -248,7 +251,7 @@ const IdeaCard = ({
         <h3 className="archivo mt-2 text-sm opacity-50 text-end hover:underline cursor-pointer">{event}</h3>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default IdeaCard;
+export default IdeaCard 

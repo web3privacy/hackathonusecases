@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
-import { ArrowLeft, Github, Globe, Share2, Copy, Check } from "lucide-react";
-import IdeaCard from "@/components/ui/idea-card";
-import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react"
+import { useRouter } from "next/router"
+import Link from "next/link"
+import { ArrowLeft, Github, Globe, Share2, Copy, Check } from "lucide-react"
+import IdeaCard from "@/components/ui/idea-card"
+import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -11,130 +11,131 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "@/components/ui/dialog"
+import type { Idea, OrganizationDetails } from "@/types"
 
 // Function to read and parse the JSON files
-const readIdeasFile = async (filename) => {
+const readIdeasFile = async (filename: string): Promise<Idea[]> => {
   try {
-    const response = await fetch(`/ideas/${filename}`);
+    const response = await fetch(`/ideas/${filename}`)
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(`HTTP error! status: ${response.status}`)
     }
-    const data = await response.json();
+    const data = await response.json()
     
     // Add IDs to ideas if they don't have them
-    return data.map((idea, index) => {
+    return data.map((idea: Idea, index: number) => {
       if (!idea.id) {
         const filePrefix = filename.includes("community") ? "community" : 
-                         filename.includes("expert") ? "expert" : "organization";
-        const generatedId = `${filePrefix}-${idea.name.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')}-${index}`;
-        return { ...idea, id: generatedId };
+                         filename.includes("expert") ? "expert" : "organization"
+        const generatedId = `${filePrefix}-${idea.name.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')}-${index}`
+        return { ...idea, id: generatedId }
       }
-      return idea;
-    });
+      return idea
+    })
   } catch (error) {
-    console.error(`Error fetching ${filename}:`, error);
-    return [];
+    console.error(`Error fetching ${filename}:`, error)
+    return []
   }
-};
+}
 
 export default function OrganizationPage() {
-  const router = useRouter();
-  const { orgName } = router.query;
-  const [organizationIdeas, setOrganizationIdeas] = useState([]);
-  const [organizationDetails, setOrganizationDetails] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [copied, setCopied] = useState(false);
-  const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
+  const router = useRouter()
+  const { orgName } = router.query
+  const [organizationIdeas, setOrganizationIdeas] = useState<Idea[]>([])
+  const [organizationDetails, setOrganizationDetails] = useState<OrganizationDetails | null>(null)
+  const [isLoading, setIsLoading] = useState<boolean>(true)
+  const [error, setError] = useState<string | null>(null)
+  const [copied, setCopied] = useState<boolean>(false)
+  const shareUrl = typeof window !== 'undefined' ? window.location.href : ''
 
-  const handleCopyLink = async () => {
+  const handleCopyLink = async (): Promise<void> => {
     try {
-      await navigator.clipboard.writeText(shareUrl);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      await navigator.clipboard.writeText(shareUrl)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
     } catch (err) {
-      console.error("Failed to copy: ", err);
+      console.error("Failed to copy: ", err)
     }
-  };
+  }
 
   useEffect(() => {
     const fetchOrganizationIdeas = async () => {
-      if (!orgName) return;
+      if (!orgName || typeof orgName !== 'string') return
       
-      setIsLoading(true);
+      setIsLoading(true)
       try {
         // We'll try to fetch from all idea sources to find matching org ideas
-        let allIdeas = [];
+        let allIdeas: Idea[] = []
         
         try {
-          const organizationData = await readIdeasFile("organization-ideas.json");
-          allIdeas = [...allIdeas, ...organizationData];
+          const organizationData = await readIdeasFile("organization-ideas.json")
+          allIdeas = [...allIdeas, ...organizationData]
         } catch (err) {
-          console.warn("Error loading organization ideas:", err);
+          console.warn("Error loading organization ideas:", err)
         }
         
         try {
-          const expertData = await readIdeasFile("expert-ideas.json");
-          allIdeas = [...allIdeas, ...expertData];
+          const expertData = await readIdeasFile("expert-ideas.json")
+          allIdeas = [...allIdeas, ...expertData]
         } catch (err) {
-          console.warn("Error loading expert ideas:", err);
+          console.warn("Error loading expert ideas:", err)
         }
         
         try {
-          const communityData = await readIdeasFile("community-ideas.json");
-          allIdeas = [...allIdeas, ...communityData];
+          const communityData = await readIdeasFile("community-ideas.json")
+          allIdeas = [...allIdeas, ...communityData]
         } catch (err) {
-          console.warn("Error loading community ideas:", err);
+          console.warn("Error loading community ideas:", err)
         }
         
         // Normalize the organization name for comparison
-        const normalizedOrgName = orgName.toLowerCase();
+        const normalizedOrgName = orgName.toLowerCase()
         
         // Filter ideas that belong to this organization
         const filteredIdeas = allIdeas.filter(idea => {
           // For organization ideas, check organizationName
           if (idea.organizationName && 
               idea.organizationName.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '') === normalizedOrgName) {
-            return true;
+            return true
           }
           
-          return false;
-        });
+          return false
+        })
 
         if (filteredIdeas.length === 0) {
-          setError(`No ideas found for ${orgName}`);
+          setError(`No ideas found for ${orgName}`)
         } else {
-          setOrganizationIdeas(filteredIdeas);
+          setOrganizationIdeas(filteredIdeas)
           
           // Find the organization details from the first matching idea
-          const orgIdea = filteredIdeas.find(idea => idea.organizationName);
+          const orgIdea = filteredIdeas.find(idea => idea.organizationName)
           if (orgIdea) {
             setOrganizationDetails({
-              name: orgIdea.organizationName,
+              name: orgIdea.organizationName!,
               logo: orgIdea.organizationLogo,
               github: orgIdea.github,
               website: orgIdea.website
-            });
+            })
           }
         }
       } catch (err) {
-        console.error("Error fetching organization ideas:", err);
-        setError(`Failed to load ideas for ${orgName}. Please try again later.`);
+        console.error("Error fetching organization ideas:", err)
+        setError(`Failed to load ideas for ${orgName}. Please try again later.`)
       } finally {
-        setIsLoading(false);
+        setIsLoading(false)
       }
-    };
+    }
 
-    fetchOrganizationIdeas();
-  }, [orgName]);
+    fetchOrganizationIdeas()
+  }, [orgName])
 
   if (isLoading) {
     return (
       <main className="bg-black w-full min-h-screen flex items-center justify-center text-white">
         <div>Loading ideas for {orgName}...</div>
       </main>
-    );
+    )
   }
 
   if (error) {
@@ -146,7 +147,7 @@ export default function OrganizationPage() {
           Return to Home
         </Link>
       </main>
-    );
+    )
   }
 
   return (
@@ -208,52 +209,53 @@ export default function OrganizationPage() {
                         <input
                           className="flex h-10 w-full rounded-md border border-stone-800 bg-[#0d0d0d] px-3 py-2 text-sm"
                           value={shareUrl}
-                          readOnly/>
-                          <Button size="icon" onClick={handleCopyLink} variant="outline">
-                            {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-                          </Button>
-                        </div>
-                      </DialogContent>
-                    </Dialog>
-                  </div>
+                          readOnly
+                        />
+                        <Button size="icon" onClick={handleCopyLink} variant="outline">
+                          {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                        </Button>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 </div>
               </div>
-            )}
-            
-            {!organizationDetails && (
-              <h1 className="text-4xl font-bold">Ideas from {orgName}</h1>
-            )}
-          </div>
-          
-          {/* Ideas grid */}
-          <div className="mt-12">
-            <h2 className="text-3xl mb-8 archivo">Ideas ({organizationIdeas.length})</h2>
-            <div className="md:flex flex-wrap md:justify-start justify-start gap-6 space-y-5 md:space-y-0">
-              {organizationIdeas.map((idea, index) => {
-                // Determine idea type
-                let ideaType = "organization";
-                
-                return (
-                  <IdeaCard
-                    key={index}
-                    id={idea.id}
-                    name={idea.name}
-                    description={idea.description}
-                    categories={idea.categories}
-                    github={idea.github}
-                    website={idea.website}
-                    event={idea.event}
-                    author={idea.author}
-                    organizationLogo={idea.organizationLogo}
-                    organizationName={idea.organizationName}
-                    features={idea.features}
-                    type={ideaType}
-                  />
-                );
-              })}
             </div>
+          )}
+          
+          {!organizationDetails && (
+            <h1 className="text-4xl font-bold">Ideas from {orgName}</h1>
+          )}
+        </div>
+        
+        {/* Ideas grid */}
+        <div className="mt-12">
+          <h2 className="text-3xl mb-8 archivo">Ideas ({organizationIdeas.length})</h2>
+          <div className="md:flex flex-wrap md:justify-start justify-start gap-6 space-y-5 md:space-y-0">
+            {organizationIdeas.map((idea, index) => {
+              // Determine idea type
+              const ideaType = "organization"
+              
+              return (
+                <IdeaCard
+                  key={index}
+                  id={idea.id}
+                  name={idea.name}
+                  description={idea.description}
+                  categories={idea.categories}
+                  github={idea.github}
+                  website={idea.website}
+                  event={idea.event}
+                  author={idea.author}
+                  organizationLogo={idea.organizationLogo}
+                  organizationName={idea.organizationName}
+                  features={idea.features}
+                  type={ideaType}
+                />
+              )
+            })}
           </div>
         </div>
-      </main>
-    );
-  }
+      </div>
+    </main>
+  )
+} 
