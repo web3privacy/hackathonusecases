@@ -1,69 +1,47 @@
+import { APP_CONFIG, IDEA_TYPES, type IdeaType } from '@/src/lib/constants/config'
+import { generateIdeaId, generateSlug } from '@/src/lib/utils/id-generator'
 import type { Idea } from '@/src/types'
-import { APP_CONFIG } from '@/src/lib/constants/config'
 
 export class IdeasAPI {
   private static async fetchJSON<T>(url: string): Promise<T> {
-    try {
-      const response = await fetch(url)
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`)
-      }
-      return response.json()
-    } catch (error) {
-      console.error(`Error fetching ${url}:`, error)
-      throw error
+    const response = await fetch(url)
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
     }
+    return response.json()
   }
 
-  private static generateId(idea: Idea, index: number, type: string): string {
-    if (idea.id) return idea.id
-
-    const nameSlug = idea.name
-      .toLowerCase()
-      .replace(/[^\w\s-]/g, '')
-      .replace(/[\s_-]+/g, '-')
-      .replace(/^-+|-+$/g, '')
-
-    return `${type}-${nameSlug}-${index}`
+  // Generic fetch function to eliminate repetition
+  private static async fetchIdeasByType(type: IdeaType): Promise<Idea[]> {
+    try {
+      const endpoint =
+        APP_CONFIG.DATA_ENDPOINTS[type.toUpperCase() as keyof typeof APP_CONFIG.DATA_ENDPOINTS]
+      const data = await this.fetchJSON<Idea[]>(endpoint)
+      return data.map((idea, index) => ({
+        ...idea,
+        id: generateIdeaId(idea, index, type),
+      }))
+    } catch (error) {
+      const message = `Error fetching ${type} ideas:`
+      if (type === IDEA_TYPES.ORGANIZATION) {
+        console.warn(message, error)
+      } else {
+        console.error(message, error)
+      }
+      return []
+    }
   }
 
   static async fetchCommunityIdeas(): Promise<Idea[]> {
-    try {
-      const data = await this.fetchJSON<Idea[]>(APP_CONFIG.DATA_ENDPOINTS.COMMUNITY)
-      return data.map((idea, index) => ({
-        ...idea,
-        id: this.generateId(idea, index, 'community'),
-      }))
-    } catch (error) {
-      console.error('Error fetching community ideas:', error)
-      return []
-    }
+    return this.fetchIdeasByType(IDEA_TYPES.COMMUNITY)
   }
 
   static async fetchExpertIdeas(): Promise<Idea[]> {
-    try {
-      const data = await this.fetchJSON<Idea[]>(APP_CONFIG.DATA_ENDPOINTS.EXPERT)
-      return data.map((idea, index) => ({
-        ...idea,
-        id: this.generateId(idea, index, 'expert'),
-      }))
-    } catch (error) {
-      console.error('Error fetching expert ideas:', error)
-      return []
-    }
+    return this.fetchIdeasByType(IDEA_TYPES.EXPERT)
   }
 
   static async fetchOrganizationIdeas(): Promise<Idea[]> {
-    try {
-      const data = await this.fetchJSON<Idea[]>(APP_CONFIG.DATA_ENDPOINTS.ORGANIZATION)
-      return data.map((idea, index) => ({
-        ...idea,
-        id: this.generateId(idea, index, 'organization'),
-      }))
-    } catch (error) {
-      console.warn('No organization ideas found:', error)
-      return []
-    }
+    return this.fetchIdeasByType(IDEA_TYPES.ORGANIZATION)
   }
 
   static async fetchAllIdeas(): Promise<{
@@ -90,11 +68,7 @@ export class IdeasAPI {
     // If not found, try name-based matching
     if (!foundIdea) {
       foundIdea = allIdeas.find(idea => {
-        const nameAsId = idea.name
-          .toLowerCase()
-          .replace(/[^\w\s-]/g, '')
-          .replace(/[\s_-]+/g, '-')
-          .replace(/^-+|-+$/g, '')
+        const nameAsId = generateSlug(idea.name)
         return nameAsId === id || `${nameAsId}-0` === id
       })
     }
