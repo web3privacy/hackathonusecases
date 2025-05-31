@@ -7,7 +7,7 @@
 [![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A dynamic web application that display and generates privacy-focused hackathon project ideas, curated by the [Web3Privacy Now](https://web3privacy.info) community, experts, and partner organizations.
+A dynamic web application that display and generates privacy-focused project ideas, curated by the [Web3Privacy Now](https://web3privacy.info) community, experts, and partner organizations.
 
 ## Features
 

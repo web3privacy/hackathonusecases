@@ -54,18 +54,6 @@ This Code of Conduct applies within all community spaces, and also applies when 
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at:
-
-- **Email**: [conduct@web3privacy.info](mailto:conduct@web3privacy.info)
-- **Discord**: Contact moderators in our [Discord server](https://discord.gg/web3privacy)
-- **GitHub**: Report via GitHub's reporting features
-
-All complaints will be reviewed and investigated promptly and fairly.
-
-All community leaders are obligated to respect the privacy and security of the reporter of any incident.
-
-## Enforcement Guidelines
-
 Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
 
 ### 1. Correction
@@ -92,33 +80,6 @@ Community leaders will follow these Community Impact Guidelines in determining t
 
 **Consequence**: A permanent ban from any sort of public interaction within the community.
 
-## Reporting Guidelines
-
-If you experience or witness unacceptable behavior, or have any other concerns, please report it by contacting the project team. We encourage you to report:
-
-1. **What happened**: A description of the incident
-2. **When it happened**: Date and time
-3. **Where it happened**: Platform or location
-4. **Who was involved**: People involved (you can use usernames or pseudonyms)
-5. **Any supporting evidence**: Screenshots, logs, etc. (optional)
-
-### Privacy in Reporting
-
-We respect the privacy-focused nature of our community:
-
-- Reports can be made pseudonymously
-- We will protect reporter anonymity when requested
-- Personal information will only be shared when necessary for investigation
-- We support the use of privacy tools for communication
-
-## Appeals Process
-
-If you believe you have been falsely or unfairly accused of violating this Code of Conduct, you may appeal by:
-
-1. Sending an email to [conduct@web3privacy.info](mailto:conduct@web3privacy.info) with a description of your appeal
-2. Including any relevant information or evidence
-3. Awaiting review by community leaders not involved in the original decision
-
 ## Attribution
 
 This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html).
@@ -131,9 +92,4 @@ For answers to common questions about this code of conduct, see the FAQ at [http
 
 - **Project Website**: [web3privacy.info](https://web3privacy.info)
 - **GitHub**: [github.com/web3privacy](https://github.com/web3privacy)
-- **Discord**: [Join our community](https://discord.gg/web3privacy)
 - **Twitter**: [@web3privacy](https://twitter.com/web3privacy)
-
----
-
-**Thank you for helping make our community welcoming, inclusive, and focused on building a more private and secure web3 ecosystem.**
