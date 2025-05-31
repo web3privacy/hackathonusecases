@@ -1,84 +1,211 @@
-# Privacy idea generator - use-cases ideation tool from hackathons to the next idea explorations
+# Privacy Idea Generator
 
-Hackathon use-cases generator - generate ideas curated by the Web3Privacy Now community and experts
+> **Curated privacy-focused project ideas for Web3 hackathons and events**
 
-<a href="https://web3privacy.info"><img width="100%" alt="w3pn-website-screen" src="https://github.com/web3privacy/hackathonusecases/blob/main/assets/Privacy%20use-cases%20segmentation.png"></a>
+[![Build Status](https://github.com/web3privacy/hackathonusecases/workflows/CI/badge.svg)](https://github.com/web3privacy/hackathonusecases/actions)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-- **Community ideas** - use-cases delivered through hackathons ([json](https://github.com/web3privacy/hackathonusecases/blob/main/public/ideas/community-ideas.json))
-- **Expert ideas** - use-cases from expert like Vitalik Buterin ([json](https://github.com/web3privacy/hackathonusecases/blob/main/public/ideas/expert-ideas.json))
-- **Organizational ideas** - use-cases from both privacy-focused and web3-native organizations ([json](https://github.com/web3privacy/hackathonusecases/blob/main/public/ideas/organization-ideas.json))
+A dynamic web application that display and generates privacy-focused hackathon project ideas, curated by the [Web3Privacy Now](https://web3privacy.info) community, experts, and partner organizations.
 
-# How to add organizational idea
+## Features
 
-1. Open [Organizational Ideas JSON](https://github.com/web3privacy/hackathonusecases/blob/main/public/ideas/organization-ideas.json).
-2. Follow this Aztec example
+- **Smart Idea Generator** - Get random privacy-focused project suggestions
+- **Advanced Filtering** - Filter by categories, tags, and idea types
+- **Multiple Sources** - Community ideas, expert recommendations, and organization projects
+- **Share & Discover** - Shareable links for individual ideas
 
-```bash
-        "id": "org-zk-stablecoin",
-        "name": "ZK stablecoin",
-        "description": "A stablecoin that allows you to wrap a stablecoin so it can be privately transferred.",
-        "categories": [
-            "DeFi",
-            "Privacy"
-        ],
-        "features": [
-            "private balance (#stablecoins)",
-            "private transfer (receive-send)"
-        ],
-        "organizationName": "Aztec",
-        "organizationLogo": "https://cdn.prod.website-files.com/65804cbd4c37d195e67717e9/65e1af471158ca9d1ae94eac_aztec-iso_dark.svg",
-        "github": "https://github.com/AztecProtocol",
-        "featured": true
-    }
-```
+## Quick Start
 
-3. Add your data (use-cases).
-4. Make a Pull Request.
-5. Our team will review contributions - later they will appear on the front-end.
+### Prerequisites
 
-# Tech specs
+- Node.js 18+ and pnpm 10+
+- Git
 
-Deployed at [https://ideas.web3privacy.info/](https://ideas.web3privacy.info/)
-
-Development instance: [https://hackathonusecases-nu.vercel.app/](https://hackathonusecases-nu.vercel.app/)
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with Vercel's [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Clone the repository
+git clone https://github.com/web3privacy/hackathonusecases.git
+cd hackathonusecases
+
+# Install dependencies
+pnpm install
+
+# Start development server
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000) to see the application.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Commands
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```bash
+pnpm dev          # Development server
+pnpm build        # Build for production
+pnpm start        # Start production server
+pnpm type-check   # Type checking
+pnpm lint         # Linting
+pnpm lint:fix     # Fix linting issues
+pnpm format       # Code formatting
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**Core Technologies**
 
-## Learn More
+- [Next.js 14](https://nextjs.org/) - React framework with App Router
+- [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [shadcn/ui](https://ui.shadcn.com/) - Re-usable UI components
+- [Radix UI](https://www.radix-ui.com/) - Unstyled, accessible UI primitives
 
-To learn more about Next.js, take a look at the following resources:
+**Development Tools**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [ESLint](https://eslint.org/) - Code linting with Airbnb config
+- [Prettier](https://prettier.io/) - Code formatting
+- [Husky](https://typicode.github.io/husky/) - Git hooks
+- [lint-staged](https://github.com/okonet/lint-staged) - Pre-commit linting
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+**Deployment**
 
-## Deploy on Vercel
+- [Vercel](https://vercel.com/) - Hosting and deployment
+- [GitHub Actions](https://github.com/features/actions) - Continuous integration
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+src/
+├── components/ui/      # shadcn/ui components + custom components
+├── lib/               # Utility functions and configuration
+│   ├── api/           # API layer
+│   ├── constants/     # App configuration
+│   ├── hooks/         # Custom React hooks
+│   └── utils/         # Utility functions
+├── pages/             # Next.js pages
+│   ├── api/           # API routes
+│   ├── idea/          # Individual idea pages
+│   └── org/           # Organization pages
+├── styles/            # Global styles
+└── types/             # TypeScript type definitions
+
+public/
+└── data/ideas/        # Static data files (where your ideas goes)
+    ├── community-ideas.json
+    ├── expert-ideas.json
+    └── organization-ideas.json
+```
+
+## Contributing Ideas
+
+### Adding Ideas Manually
+
+1. **Fork the repository**
+2. **Choose the appropriate file:**
+
+   - `public/data/ideas/community-ideas.json` - Community projects
+   - `public/data/ideas/expert-ideas.json` - Expert recommendations
+   - `public/data/ideas/organization-ideas.json` - Organization projects
+
+3. **Add your idea following this structure:**
+
+```json
+{
+  "name": "Your Project Name",
+  "description": "Clear description of the project and its privacy benefits",
+  "categories": ["Privacy", "DeFi", "Identity"],
+  "author": "Your Name or @username",
+  "organization": "Your Organization (optional)",
+  "github": "https://github.com/your-repo (optional)",
+  "website": "https://your-website.com (optional)",
+  "event": "Target Event Name (optional)",
+  "featured": true,
+  "features": ["Privacy feature 1", "Privacy feature 2"] // For org ideas only
+}
+```
+
+4. **Submit a Pull Request**
+
+### Idea Categories
+
+- **Privacy** - Core privacy technologies
+- **DeFi** - Decentralized finance
+- **Identity** - Digital identity solutions
+- **Communication** - Private messaging and communication
+- **Infrastructure** - Privacy infrastructure
+- **AI** - Privacy-preserving AI/ML
+- **Storage** - Private storage solutions
+- **Security** - Security tools and auditing
+- **Wallet** - Wallet technologies
+- **R&D** - Research and development
+
+### Idea Quality Guidelines
+
+**Good Ideas Should:**
+
+- Focus on privacy, security, or decentralization
+- Be technically feasible for a hackathon timeframe
+- Have clear value proposition
+- Include specific privacy benefits
+- Be original or significantly improve existing solutions
+
+## Technical Contributions
+
+All contributions should follow the manual JSON methodology described above.
+
+## API Documentation
+
+### Endpoints
+
+```
+GET /api/ideas                    # Get all ideas
+GET /api/ideas?type=community     # Get community ideas
+GET /api/ideas?type=expert        # Get expert ideas
+GET /api/ideas?type=organization  # Get organization ideas
+GET /api/ideas/[id]               # Get specific idea
+```
+
+### Data Format
+
+```typescript
+interface Idea {
+  id: string
+  name: string
+  description: string
+  categories: string[]
+  author?: string | AuthorObject
+  organization?: string
+  github?: string
+  website?: string
+  event?: string
+  featured?: boolean
+  features?: string[] // Organization ideas only
+}
+```
+
+## Deployment
+
+- **Production**: [https://usecases.web3privacy.info](https://usecases.web3privacy.info)
+- **Preview**: Automatic deployments for all pull requests
+
+```bash
+pnpm build    # Build the application
+vercel --prod # Deploy to Vercel
+```
+
+## Community
+
+- **Website**: [web3privacy.info](https://web3privacy.info)
+- **Twitter**: [@web3privacy](https://twitter.com/web3privacy)
+- **GitHub**: [github.com/web3privacy](https://github.com/web3privacy)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+## Acknowledgments
+
+- **Community Contributors** - For submitting ideas and improvements
+- **Expert Advisors** - For providing high-quality ideas recommendations
+- **Organizations** - For sharing their project ideas

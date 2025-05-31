@@ -1,4 +1,7 @@
-# Organizational use-cases
+# Organizational Use Cases (Archive)
+
+> **📁 Archived Content** - This file contains historical organizational use cases collected 11 months ago.  
+> These ideas serve as reference material and may be converted to JSON format for the main application in the future.
 
 Repo with use-cases from organizations (within their hackathon guides, githubs etc)
 
@@ -252,7 +255,7 @@ These projects would be implemented as, or in conjunction with, Aztec contracts:
 
 ## Tooling 🔧
 
-Aztec and Noir are new protocols, so we’re always updating the developer tooling. There is a lot we can do here so don’t let these ideas limit you!
+Aztec and Noir are new protocols, so we're always updating the developer tooling. There is a lot we can do here so don't let these ideas limit you!
 
 ### Ideas
 
@@ -294,7 +297,7 @@ You could try to implement these in vanilla Noir, or as Aztec contracts.
 
 ## Data Protecting Proof of Concepts 🔓
 
-We’re always looking to support applications that utilize privacy and ZK proofs in interesting and useful ways.
+We're always looking to support applications that utilize privacy and ZK proofs in interesting and useful ways.
 
 ### Ideas
 
@@ -341,24 +344,24 @@ A curated list of existing projects building with Noir
 - Anonymous proof of token ownership on Aztec for token-gated access
   - [Sequi](https://github.com/sequi-xyz)
   - [Cyclone](https://github.com/TalDerei/cyclone)
-- [SafeRecover](https://github.com/porco-rosso-j/safe-recovery-noir) - Recovery of ownership of Gnosis Safe accounts
+- [SafeRecover](https://github.com/porco-rosso-j/safe-recovery-noir) - Recovery of ownership of Gnosis Safe accounts
 
 ### Gaming
 
-- [Mastermind](https://github.com/vezenovm/mastermind-noir) - Mastermind in Noir
-- [BattleZips](https://battlezips.com/) ([Source Code](https://github.com/BattleZips/BattleZips-Noir)) - On-chain Battleship
-- [Sudoku, Wordle, and Trivia](https://github.com/ruizehung/Zero-Knowledge-Sudoku-Wordle-Trivia) - Sudoku, Wordle, and Trivia games
-- [ZCaptcha](https://github.com/signorecello/zcaptcha) - A ZK version of Captcha
-- [Hangman](https://github.com/resurgencelabs/hangman) - Simple implementation of the Hangman game
+- [Mastermind](https://github.com/vezenovm/mastermind-noir) - Mastermind in Noir
+- [BattleZips](https://battlezips.com/) ([Source Code](https://github.com/BattleZips/BattleZips-Noir)) - On-chain Battleship
+- [Sudoku, Wordle, and Trivia](https://github.com/ruizehung/Zero-Knowledge-Sudoku-Wordle-Trivia) - Sudoku, Wordle, and Trivia games
+- [ZCaptcha](https://github.com/signorecello/zcaptcha) - A ZK version of Captcha
+- [Hangman](https://github.com/resurgencelabs/hangman) - Simple implementation of the Hangman game
 
 ### Governance
 
-- [MeloCafe](https://github.com/MeloCafe) - Anonymous on-chain voting
-- [Nouns Research Sprint](https://github.com/aragonzkresearch/nouns-anonymous-voting) - Anonymous voting research sprint solution with NounsDAO
+- [MeloCafe](https://github.com/MeloCafe) - Anonymous on-chain voting
+- [Nouns Research Sprint](https://github.com/aragonzkresearch/nouns-anonymous-voting) - Anonymous voting research sprint solution with NounsDAO
 
 ### Social
 
-- [FruityFriends](https://github.com/guelowrd/fruity-lib) - Various circuits (Proof of Intersection, Proof of Proximity, Proof of Proper Secret) to be used in social applications
+- [FruityFriends](https://github.com/guelowrd/fruity-lib) - Various circuits (Proof of Intersection, Proof of Proximity, Proof of Proper Secret) to be used in social applications
 
 ### Payments
 
