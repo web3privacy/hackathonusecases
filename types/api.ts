@@ -6,14 +6,16 @@ export interface AIIdeaResponse {
   github?: string
   website?: string
   event?: string
-  author?: string | {
-    name: string
-    organization?: string
-  }
+  author?:
+    | string
+    | {
+        name: string
+        organization?: string
+      }
   basedOn?: string[]
 }
 
 export interface AIGeneratedResponse {
   idea: AIIdeaResponse
   basedOn?: string[]
-} 
+}

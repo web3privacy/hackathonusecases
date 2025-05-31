@@ -59,4 +59,4 @@ export interface PaginationProps {
 // Helper type for Next.js pages
 export interface IdeaPageProps {
   idea?: Idea
-} 
+}

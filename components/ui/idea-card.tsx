@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { Share2, Github, Globe, Copy, Check } from 'lucide-react'
-import { Badge } from "@/components/ui/badge"
+import { Badge } from '@/components/ui/badge'
 import {
   Dialog,
   DialogContent,
@@ -9,7 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
+} from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
 import ReactMarkdown from 'react-markdown'
 import type { IdeaCardProps, ExpertDetails, AuthorObject } from '@/types'
@@ -27,7 +27,7 @@ const IdeaCard: React.FC<IdeaCardProps> = ({
   organization,
   organizationLogo,
   organizationName,
-  features = []
+  features = [],
 }) => {
   const [copied, setCopied] = useState<boolean>(false)
   const [avatarLoaded, setAvatarLoaded] = useState<boolean>(false)
@@ -39,14 +39,15 @@ const IdeaCard: React.FC<IdeaCardProps> = ({
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     } catch (err) {
-      console.error("Failed to copy: ", err)
+      console.error('Failed to copy: ', err)
     }
   }
 
   const getExpertDetails = (): ExpertDetails | null => {
     if (typeof author === 'object' && author !== null) {
       const authorObj = author as AuthorObject
-      const isTwitterUrl = typeof authorObj.name === 'string' &&
+      const isTwitterUrl =
+        typeof authorObj.name === 'string' &&
         (authorObj.name.includes('twitter.com/') || authorObj.name.includes('x.com/'))
       const twitterHandle = isTwitterUrl ? authorObj.name.split('/').pop() : null
       const twitterAvatar = twitterHandle ? `https://unavatar.io/twitter/${twitterHandle}` : null
@@ -56,7 +57,7 @@ const IdeaCard: React.FC<IdeaCardProps> = ({
         avatar: twitterAvatar,
         organization: authorObj.organization || organization,
         displayName: isTwitterUrl ? `@${twitterHandle}` : authorObj.name,
-        twitterUrl: isTwitterUrl ? authorObj.name : null
+        twitterUrl: isTwitterUrl ? authorObj.name : null,
       }
     } else if (typeof author === 'string') {
       const isTwitterUrl = author.includes('twitter.com/') || author.includes('x.com/')
@@ -68,7 +69,7 @@ const IdeaCard: React.FC<IdeaCardProps> = ({
         avatar: twitterAvatar,
         organization: organization,
         displayName: isTwitterUrl ? `@${twitterHandle}` : author,
-        twitterUrl: isTwitterUrl ? author : null
+        twitterUrl: isTwitterUrl ? author : null,
       }
     }
     return null
@@ -78,7 +79,11 @@ const IdeaCard: React.FC<IdeaCardProps> = ({
 
   const getOrgPathName = (): string | null => {
     if (organizationName) {
-      return organizationName.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')
+      return organizationName
+        .toLowerCase()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/[\s_-]+/g, '-')
+        .replace(/^-+|-+$/g, '')
     }
     return null
   }
@@ -100,10 +105,7 @@ const IdeaCard: React.FC<IdeaCardProps> = ({
             </div>
           )}
           <div className="flex-1">
-            <Link
-              href={`/org/${orgPath}`}
-              className="archivo text-md font-medium hover:underline"
-            >
+            <Link href={`/org/${orgPath}`} className="archivo text-md font-medium hover:underline">
               {organizationName || name}
             </Link>
           </div>
@@ -163,7 +165,9 @@ const IdeaCard: React.FC<IdeaCardProps> = ({
           <h3 className="text-sm font-medium mb-1">Privacy features:</h3>
           <ul className="list-none pl-0">
             {features.map((feature, idx) => (
-              <li key={idx} className="text-sm opacity-70">- {feature}</li>
+              <li key={idx} className="text-sm opacity-70">
+                - {feature}
+              </li>
             ))}
           </ul>
         </div>
@@ -196,27 +200,29 @@ const IdeaCard: React.FC<IdeaCardProps> = ({
 
       {renderFeatures()}
 
-      <div className='flex justify-between items-center my-3'>
+      <div className="flex justify-between items-center my-3">
         <div className="flex flex-wrap gap-1 w-2/3">
           {categories.map((category, index) => (
-            <Badge key={index} variant="secondary" className="mr-1 mb-1">{category}</Badge>
+            <Badge key={index} variant="secondary" className="mr-1 mb-1">
+              {category}
+            </Badge>
           ))}
         </div>
-        <div className='w-1/3 text-xs text-end flex justify-end space-x-3'>
+        <div className="w-1/3 text-xs text-end flex justify-end space-x-3">
           {github && (
             <a href={github} target="_blank" rel="noopener noreferrer">
-              <Github className='w-5 h-5' />
+              <Github className="w-5 h-5" />
             </a>
           )}
           {website && (
             <a href={website} target="_blank" rel="noopener noreferrer">
-              <Globe className='w-5 h-5' />
+              <Globe className="w-5 h-5" />
             </a>
           )}
           <Dialog>
             <DialogTrigger asChild>
               <button className="focus:outline-none">
-                <Share2 className='w-5 h-5' />
+                <Share2 className="w-5 h-5" />
               </button>
             </DialogTrigger>
             <DialogContent>
@@ -248,10 +254,12 @@ const IdeaCard: React.FC<IdeaCardProps> = ({
       )}
 
       {event && (
-        <h3 className="archivo mt-2 text-sm opacity-50 text-end hover:underline cursor-pointer">{event}</h3>
+        <h3 className="archivo mt-2 text-sm opacity-50 text-end hover:underline cursor-pointer">
+          {event}
+        </h3>
       )}
     </div>
   )
 }
 
-export default IdeaCard 
+export default IdeaCard

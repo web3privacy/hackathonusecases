@@ -1,18 +1,17 @@
-import { useState, useEffect } from "react"
-import { useRouter } from "next/router"
-import Link from "next/link"
-import { Filter, Github, Globe, Share2, ChevronLeft, ChevronRight } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import IdeaCard from "@/components/ui/idea-card"
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
+import { Filter, Github, Globe, Share2, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import IdeaCard from '@/components/ui/idea-card'
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
-  DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
+} from '@/components/ui/dialog'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -23,9 +22,9 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuPortal,
   DropdownMenuSubContent,
-} from "@/components/ui/dropdown-menu"
-import bgCover from "../assets/generator.jpg"
-import type { Idea, IdeaCardType, Organization, PaginationProps } from "@/types"
+} from '@/components/ui/dropdown-menu'
+import bgCover from '../assets/generator.jpg'
+import type { Idea, IdeaCardType, Organization, PaginationProps } from '@/types'
 
 // Function to read and parse the JSON file
 const readIdeasFile = async (filename: string): Promise<Idea[]> => {
@@ -35,18 +34,25 @@ const readIdeasFile = async (filename: string): Promise<Idea[]> => {
       throw new Error(`HTTP error! status: ${response.status}`)
     }
     const data = await response.json()
-    
+
     // Add IDs to ideas if they don't have them
     const processedData = data.map((idea: Idea, index: number) => {
       if (!idea.id) {
-        const filePrefix = filename.includes("community") ? "community" : 
-                          filename.includes("expert") ? "expert" : "organization"
-        const generatedId = `${filePrefix}-${idea.name.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')}-${index}`
+        const filePrefix = filename.includes('community')
+          ? 'community'
+          : filename.includes('expert')
+            ? 'expert'
+            : 'organization'
+        const generatedId = `${filePrefix}-${idea.name
+          .toLowerCase()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/[\s_-]+/g, '-')
+          .replace(/^-+|-+$/g, '')}-${index}`
         return { ...idea, id: generatedId }
       }
       return idea
     })
-    
+
     console.log(`Data fetched from ${filename}:`, processedData)
     return processedData
   } catch (error) {
@@ -60,48 +66,38 @@ const getRandomIdea = (ideas: Idea[], selectedTags: string[]): Idea | null => {
   if (ideas.length === 0) return null
   const filteredIdeas =
     selectedTags.length > 0
-      ? ideas.filter((idea) =>
-        idea.categories?.some((cat) => selectedTags.includes(cat))
-      )
+      ? ideas.filter(idea => idea.categories?.some(cat => selectedTags.includes(cat)))
       : ideas
   if (filteredIdeas.length === 0) return null
   const randomIndex = Math.floor(Math.random() * filteredIdeas.length)
-  return filteredIdeas[randomIndex]
+  return filteredIdeas[randomIndex] || null
 }
 
 // Function to get all unique tags from ideas
 const getAllTags = (ideas: Idea[]): string[] => {
   const tagSet = new Set<string>()
-  ideas.forEach((idea) => idea.categories?.forEach((cat) => tagSet.add(cat)))
+  ideas.forEach(idea => idea.categories?.forEach(cat => tagSet.add(cat)))
   return Array.from(tagSet)
-}
-
-// Function to determine card type based on idea properties
-const getIdeaType = (idea: Idea): IdeaCardType => {
-  if (idea.organizationName || idea.organizationLogo || idea.features) {
-    return 'organization'
-  } else if (idea.author) {
-    return 'expert'
-  }
-  return 'community'
 }
 
 const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
   return (
     <div className="flex justify-center items-center space-x-4 mt-8 mb-8">
-      <button 
-        onClick={() => onPageChange(Math.max(1, currentPage - 1))} 
+      <button
+        onClick={() => onPageChange(Math.max(1, currentPage - 1))}
         disabled={currentPage <= 1}
         className={`p-2 ${currentPage <= 1 ? 'opacity-50 cursor-not-allowed' : 'hover:text-zinc-300 cursor-pointer'}`}
         aria-label="Previous page"
       >
         <ChevronLeft className="w-5 h-5" />
       </button>
-      
-      <div className="archivo text-sm">{currentPage} / {Math.max(totalPages, 1)}</div>
-      
-      <button 
-        onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))} 
+
+      <div className="archivo text-sm">
+        {currentPage} / {Math.max(totalPages, 1)}
+      </div>
+
+      <button
+        onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
         disabled={currentPage >= totalPages}
         className={`p-2 ${currentPage >= totalPages ? 'opacity-50 cursor-not-allowed' : 'hover:text-zinc-300 cursor-pointer'}`}
         aria-label="Next page"
@@ -115,22 +111,23 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
 export default function Home() {
   const router = useRouter()
   const contributeIdeaTo =
-    "https://github.com/web3privacy/docs/blob/main/src/content/docs/projects/hackathon-use-cases-generator.md"
+    'https://github.com/web3privacy/docs/blob/main/src/content/docs/projects/hackathon-use-cases-generator.md'
   const [communityIdeas, setCommunityIdeas] = useState<Idea[]>([])
   const [expertIdeas, setExpertIdeas] = useState<Idea[]>([])
   const [organizationIdeas, setOrganizationIdeas] = useState<Idea[]>([])
-  const [selectedIdeaType, setSelectedIdeaType] = useState<IdeaCardType>("community")
+  const [selectedIdeaType, setSelectedIdeaType] = useState<IdeaCardType>('community')
   const [generatedIdea, setGeneratedIdea] = useState<Idea | null>(null)
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)
   const [allTags, setAllTags] = useState<string[]>([])
   const [selectedTags, setSelectedTags] = useState<string[]>([])
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [filteredTags, setFilteredTags] = useState<string[]>([])
   const [featuredCommunityIdeas, setFeaturedCommunityIdeas] = useState<Idea[]>([])
   const [featuredExpertIdeas, setFeaturedExpertIdeas] = useState<Idea[]>([])
   const [featuredOrganizationIdeas, setFeaturedOrganizationIdeas] = useState<Idea[]>([])
   const [uniqueOrganizations, setUniqueOrganizations] = useState<Organization[]>([])
-  
+
   // Pagination states
   const [communityPage, setCommunityPage] = useState<number>(1)
   const [expertPage, setExpertPage] = useState<number>(1)
@@ -141,29 +138,29 @@ export default function Home() {
     const fetchData = async () => {
       setIsLoading(true)
       try {
-        const communityData = await readIdeasFile("community-ideas.json")
-        const expertData = await readIdeasFile("expert-ideas.json")
-        
+        const communityData = await readIdeasFile('community-ideas.json')
+        const expertData = await readIdeasFile('expert-ideas.json')
+
         // Try to fetch organization ideas, but don't fail if they don't exist
         let organizationData: Idea[] = []
         try {
-          organizationData = await readIdeasFile("organization-ideas.json")
+          organizationData = await readIdeasFile('organization-ideas.json')
         } catch (err) {
-          console.warn("No organization ideas found:", err)
+          console.warn('No organization ideas found:', err)
         }
-        
+
         setCommunityIdeas(communityData)
         setExpertIdeas(expertData)
         setOrganizationIdeas(organizationData)
-        
+
         const uniqueTags = getAllTags([...communityData, ...expertData, ...organizationData])
         setAllTags(uniqueTags)
         setFilteredTags(uniqueTags)
-        
-        const communityFeatured = communityData.filter((idea) => idea.featured === true)
-        const expertFeatured = expertData.filter((idea) => idea.featured === true)
-        const organizationFeatured = organizationData.filter((idea) => idea.featured === true)
-        
+
+        const communityFeatured = communityData.filter(idea => idea.featured === true)
+        const expertFeatured = expertData.filter(idea => idea.featured === true)
+        const organizationFeatured = organizationData.filter(idea => idea.featured === true)
+
         setFeaturedCommunityIdeas(communityFeatured)
         setFeaturedExpertIdeas(expertFeatured)
         setFeaturedOrganizationIdeas(organizationFeatured)
@@ -181,16 +178,20 @@ export default function Home() {
             return {
               name: orgName,
               logo: orgIdea?.organizationLogo || null,
-              slug: orgName.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')
+              slug: orgName
+                .toLowerCase()
+                .replace(/[^\w\s-]/g, '')
+                .replace(/[\s_-]+/g, '-')
+                .replace(/^-+|-+$/g, ''),
             }
           })
           setUniqueOrganizations(orgs)
         }
-        
+
         setError(null)
       } catch (err) {
-        setError("Failed to load ideas. Please try again later.")
-        console.error("Error loading ideas:", err)
+        setError('Failed to load ideas. Please try again later.')
+        console.error('Error loading ideas:', err)
       } finally {
         setIsLoading(false)
       }
@@ -201,33 +202,34 @@ export default function Home() {
 
   const communityTotalPages = Math.max(1, Math.ceil(featuredCommunityIdeas.length / ideasPerPage))
   const expertTotalPages = Math.max(1, Math.ceil(featuredExpertIdeas.length / ideasPerPage))
-  const organizationTotalPages = Math.max(1, Math.ceil(featuredOrganizationIdeas.length / ideasPerPage))
+  const organizationTotalPages = Math.max(
+    1,
+    Math.ceil(featuredOrganizationIdeas.length / ideasPerPage)
+  )
 
   const handleGenerateIdea = (): void => {
     let ideas: Idea[]
     switch (selectedIdeaType) {
-      case "community":
+      case 'community':
         ideas = communityIdeas
         break
-      case "expert":
+      case 'expert':
         ideas = expertIdeas
         break
-      case "organization":
+      case 'organization':
         ideas = organizationIdeas
         break
       default:
         ideas = [...communityIdeas, ...expertIdeas, ...organizationIdeas]
     }
-    
+
     const newIdea = getRandomIdea(ideas, selectedTags)
     setGeneratedIdea(newIdea)
-    console.log("Generated idea:", newIdea)
+    console.log('Generated idea:', newIdea)
   }
 
   const handleTagToggle = (tag: string): void => {
-    setSelectedTags((prev) =>
-      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
-    )
+    setSelectedTags(prev => (prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]))
   }
 
   // Get paginated ideas for the current tab
@@ -244,7 +246,15 @@ export default function Home() {
 
   return (
     <main className="bg-black w-full min-h-screen pb-10">
-      <div className="bg-image-class p-5" style={{ backgroundImage: `url(${bgCover.src})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
+      <div
+        className="bg-image-class p-5"
+        style={{
+          backgroundImage: `url(${bgCover.src})`,
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+        }}
+      >
         <nav className="flex justify-between p-5 items-center">
           <img
             className="inline-flex justify-center w-40"
@@ -259,9 +269,7 @@ export default function Home() {
           </a>
         </nav>
         <div>
-          <h1 className="major text-center text-3xl md:text-5xl">
-            privacy idea generator
-          </h1>
+          <h1 className="major text-center text-3xl md:text-5xl">privacy idea generator</h1>
           <h3 className="archivo text-center text-[#4c4c4c] mt-5 px-5 md:text-xl">
             Generate ideas curated by the Web3Privacy Now community and experts
           </h3>
@@ -288,17 +296,18 @@ export default function Home() {
                         {generatedIdea.author && typeof generatedIdea.author === 'object' && (
                           <div className="flex items-center mb-4">
                             {generatedIdea.author.avatar && (
-                              <img 
+                              <img
                                 src={generatedIdea.author.avatar}
                                 alt={generatedIdea.author.name}
                                 className="w-10 h-10 rounded-full mr-3 object-cover"
-                                onError={(e) => {
+                                onError={e => {
                                   const target = e.target as HTMLImageElement
                                   target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(
-                                    generatedIdea.author && typeof generatedIdea.author === 'object' 
-                                      ? generatedIdea.author.name 
+                                    generatedIdea.author && typeof generatedIdea.author === 'object'
+                                      ? generatedIdea.author.name
                                       : 'Unknown'
-                                  )}&background=random`                                }}
+                                  )}&background=random`
+                                }}
                               />
                             )}
                             <div>
@@ -313,12 +322,12 @@ export default function Home() {
                             </div>
                           </div>
                         )}
-                        
+
                         {/* Organization info display */}
                         {generatedIdea.organizationName && (
                           <div className="flex items-center mb-4">
                             {generatedIdea.organizationLogo && (
-                              <img 
+                              <img
                                 src={generatedIdea.organizationLogo}
                                 alt={generatedIdea.organizationName}
                                 className="w-12 h-12 mr-3 object-contain"
@@ -329,11 +338,9 @@ export default function Home() {
                             </h3>
                           </div>
                         )}
-                      
+
                         <div className="h-10">
-                          <h1 className="archivo text-lg mb-4">
-                            {generatedIdea.name}
-                          </h1>
+                          <h1 className="archivo text-lg mb-4">{generatedIdea.name}</h1>
                         </div>
                         <hr className="opacity-10 my-2" />
                         <div className="h-20">
@@ -341,19 +348,21 @@ export default function Home() {
                             {generatedIdea.description}
                           </h3>
                         </div>
-                        
+
                         {/* Features list for organization ideas */}
                         {generatedIdea.features && generatedIdea.features.length > 0 && (
                           <div className="mt-4 mb-2">
                             <h4 className="text-sm font-medium">Privacy features:</h4>
                             <ul className="list-none pl-0">
                               {generatedIdea.features.map((feature, idx) => (
-                                <li key={idx} className="text-sm opacity-70">- {feature}</li>
+                                <li key={idx} className="text-sm opacity-70">
+                                  - {feature}
+                                </li>
                               ))}
                             </ul>
                           </div>
                         )}
-                        
+
                         <div className="flex justify-between items-center my-3">
                           <div className="flex space-x-3 w-2/3">
                             {generatedIdea.categories?.map((category, index) => (
@@ -406,9 +415,7 @@ export default function Home() {
                         </div>
                       </>
                     ) : (
-                      <div>
-                        Looks like no ideas were found for the specified filters
-                      </div>
+                      <div>Looks like no ideas were found for the specified filters</div>
                     )}
                   </DialogDescription>
                 </DialogHeader>
@@ -422,28 +429,22 @@ export default function Home() {
                 <DropdownMenuSub>
                   <DropdownMenuSubTrigger>
                     Filter by type (
-                    {selectedIdeaType === "community"
-                      ? "Community Ideas"
-                      : selectedIdeaType === "expert"
-                      ? "Expert Ideas"
-                      : "Organization Ideas"}
+                    {selectedIdeaType === 'community'
+                      ? 'Community Ideas'
+                      : selectedIdeaType === 'expert'
+                        ? 'Expert Ideas'
+                        : 'Organization Ideas'}
                     )
                   </DropdownMenuSubTrigger>
                   <DropdownMenuPortal>
                     <DropdownMenuSubContent>
-                      <DropdownMenuItem
-                        onClick={() => setSelectedIdeaType("community")}
-                      >
+                      <DropdownMenuItem onClick={() => setSelectedIdeaType('community')}>
                         Community Ideas
                       </DropdownMenuItem>
-                      <DropdownMenuItem
-                        onClick={() => setSelectedIdeaType("expert")}
-                      >
+                      <DropdownMenuItem onClick={() => setSelectedIdeaType('expert')}>
                         Expert Ideas
                       </DropdownMenuItem>
-                      <DropdownMenuItem
-                        onClick={() => setSelectedIdeaType("organization")}
-                      >
+                      <DropdownMenuItem onClick={() => setSelectedIdeaType('organization')}>
                         Organization Ideas
                       </DropdownMenuItem>
                     </DropdownMenuSubContent>
@@ -455,7 +456,7 @@ export default function Home() {
                   </DropdownMenuSubTrigger>
                   <DropdownMenuPortal>
                     <DropdownMenuSubContent className="max-h-60 overflow-y-auto">
-                      {allTags.map((tag) => (
+                      {allTags.map(tag => (
                         <DropdownMenuCheckboxItem
                           key={tag}
                           checked={selectedTags.includes(tag)}
@@ -472,25 +473,17 @@ export default function Home() {
           </div>
         </div>
       </div>
-      
+
       {/* Organizations section styled like the screenshot */}
       {uniqueOrganizations.length > 0 && (
         <div className="mt-16 mb-12">
           <h1 className="major text-center text-4xl mb-12 uppercase">ORGANIZATIONS</h1>
           <div className="flex flex-wrap justify-center gap-8">
             {uniqueOrganizations.map((org, index) => (
-              <Link 
-                key={index} 
-                href={`/org/${org.slug}`}
-                className="flex flex-col items-center"
-              >
+              <Link key={index} href={`/org/${org.slug}`} className="flex flex-col items-center">
                 <div className="bg-zinc-900 p-8 rounded-md mb-2 hover:bg-zinc-800 transition-colors">
                   {org.logo ? (
-                    <img 
-                      src={org.logo} 
-                      alt={org.name} 
-                      className="w-24 h-24 object-contain" 
-                    />
+                    <img src={org.logo} alt={org.name} className="w-24 h-24 object-contain" />
                   ) : (
                     <div className="w-24 h-24 flex items-center justify-center bg-zinc-800 rounded">
                       {org.name.substring(0, 2).toUpperCase()}
@@ -503,28 +496,19 @@ export default function Home() {
           </div>
         </div>
       )}
-      
+
       <div className="mt-16">
         <h1 className="major text-center text-4xl uppercase mb-12">FEATURED IDEAS</h1>
         <Tabs defaultValue="community" className="mt-5" onValueChange={handleTabChange}>
           <div className="flex justify-center w-full">
             <TabsList className="archivo border border-zinc-800">
-              <TabsTrigger
-                value="community"
-                className="px-6"
-              >
+              <TabsTrigger value="community" className="px-6">
                 Community ideas
               </TabsTrigger>
-              <TabsTrigger
-                value="expert"
-                className="px-6"
-              >
+              <TabsTrigger value="expert" className="px-6">
                 Expert ideas
               </TabsTrigger>
-              <TabsTrigger
-                value="organization"
-                className="px-6"
-              >
+              <TabsTrigger value="organization" className="px-6">
                 Organization ideas
               </TabsTrigger>
             </TabsList>
@@ -546,10 +530,10 @@ export default function Home() {
                   />
                 ))}
               </div>
-              <Pagination 
-                currentPage={communityPage} 
-                totalPages={communityTotalPages} 
-                onPageChange={setCommunityPage} 
+              <Pagination
+                currentPage={communityPage}
+                totalPages={communityTotalPages}
+                onPageChange={setCommunityPage}
               />
             </TabsContent>
             <TabsContent value="expert">
@@ -570,34 +554,36 @@ export default function Home() {
                   />
                 ))}
               </div>
-              <Pagination 
-                currentPage={expertPage} 
-                totalPages={expertTotalPages} 
-                onPageChange={setExpertPage} 
+              <Pagination
+                currentPage={expertPage}
+                totalPages={expertTotalPages}
+                onPageChange={setExpertPage}
               />
             </TabsContent>
             <TabsContent value="organization">
               <div className="md:flex flex-wrap md:justify-center justify-start px-5 gap-5 space-y-5 md:space-y-0">
-                {getPaginatedIdeas(featuredOrganizationIdeas, organizationPage).map((idea, index) => (
-                  <IdeaCard
-                    key={index}
-                    id={idea.id}
-                    name={idea.name}
-                    description={idea.description}
-                    categories={idea.categories}
-                    github={idea.github}
-                    website={idea.website}
-                    organizationLogo={idea.organizationLogo}
-                    organizationName={idea.organizationName}
-                    features={idea.features}
-                    type="organization"
-                  />
-                ))}
+                {getPaginatedIdeas(featuredOrganizationIdeas, organizationPage).map(
+                  (idea, index) => (
+                    <IdeaCard
+                      key={index}
+                      id={idea.id}
+                      name={idea.name}
+                      description={idea.description}
+                      categories={idea.categories}
+                      github={idea.github}
+                      website={idea.website}
+                      organizationLogo={idea.organizationLogo}
+                      organizationName={idea.organizationName}
+                      features={idea.features}
+                      type="organization"
+                    />
+                  )
+                )}
               </div>
-              <Pagination 
-                currentPage={organizationPage} 
-                totalPages={organizationTotalPages} 
-                onPageChange={setOrganizationPage} 
+              <Pagination
+                currentPage={organizationPage}
+                totalPages={organizationTotalPages}
+                onPageChange={setOrganizationPage}
               />
             </TabsContent>
           </div>
@@ -605,4 +591,4 @@ export default function Home() {
       </div>
     </main>
   )
-} 
+}

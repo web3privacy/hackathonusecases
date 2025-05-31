@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react"
-import { useRouter } from "next/router"
-import Link from "next/link"
-import { ArrowLeft, Github, Globe, Share2, Copy, Check } from "lucide-react"
-import IdeaCard from "@/components/ui/idea-card"
-import { Button } from "@/components/ui/button"
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
+import { ArrowLeft, Share2, Copy, Check } from 'lucide-react'
+import IdeaCard from '@/components/ui/idea-card'
+import { Button } from '@/components/ui/button'
 import {
   Dialog,
   DialogContent,
@@ -11,8 +11,8 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import type { Idea, OrganizationDetails } from "@/types"
+} from '@/components/ui/dialog'
+import type { Idea, OrganizationDetails } from '@/types'
 
 // Function to read and parse the JSON files
 const readIdeasFile = async (filename: string): Promise<Idea[]> => {
@@ -22,13 +22,20 @@ const readIdeasFile = async (filename: string): Promise<Idea[]> => {
       throw new Error(`HTTP error! status: ${response.status}`)
     }
     const data = await response.json()
-    
+
     // Add IDs to ideas if they don't have them
     return data.map((idea: Idea, index: number) => {
       if (!idea.id) {
-        const filePrefix = filename.includes("community") ? "community" : 
-                         filename.includes("expert") ? "expert" : "organization"
-        const generatedId = `${filePrefix}-${idea.name.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')}-${index}`
+        const filePrefix = filename.includes('community')
+          ? 'community'
+          : filename.includes('expert')
+            ? 'expert'
+            : 'organization'
+        const generatedId = `${filePrefix}-${idea.name
+          .toLowerCase()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/[\s_-]+/g, '-')
+          .replace(/^-+|-+$/g, '')}-${index}`
         return { ...idea, id: generatedId }
       }
       return idea
@@ -55,51 +62,57 @@ export default function OrganizationPage() {
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     } catch (err) {
-      console.error("Failed to copy: ", err)
+      console.error('Failed to copy: ', err)
     }
   }
 
   useEffect(() => {
     const fetchOrganizationIdeas = async () => {
       if (!orgName || typeof orgName !== 'string') return
-      
+
       setIsLoading(true)
       try {
         // We'll try to fetch from all idea sources to find matching org ideas
         let allIdeas: Idea[] = []
-        
+
         try {
-          const organizationData = await readIdeasFile("organization-ideas.json")
+          const organizationData = await readIdeasFile('organization-ideas.json')
           allIdeas = [...allIdeas, ...organizationData]
         } catch (err) {
-          console.warn("Error loading organization ideas:", err)
+          console.warn('Error loading organization ideas:', err)
         }
-        
+
         try {
-          const expertData = await readIdeasFile("expert-ideas.json")
+          const expertData = await readIdeasFile('expert-ideas.json')
           allIdeas = [...allIdeas, ...expertData]
         } catch (err) {
-          console.warn("Error loading expert ideas:", err)
+          console.warn('Error loading expert ideas:', err)
         }
-        
+
         try {
-          const communityData = await readIdeasFile("community-ideas.json")
+          const communityData = await readIdeasFile('community-ideas.json')
           allIdeas = [...allIdeas, ...communityData]
         } catch (err) {
-          console.warn("Error loading community ideas:", err)
+          console.warn('Error loading community ideas:', err)
         }
-        
+
         // Normalize the organization name for comparison
         const normalizedOrgName = orgName.toLowerCase()
-        
+
         // Filter ideas that belong to this organization
         const filteredIdeas = allIdeas.filter(idea => {
           // For organization ideas, check organizationName
-          if (idea.organizationName && 
-              idea.organizationName.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '') === normalizedOrgName) {
+          if (
+            idea.organizationName &&
+            idea.organizationName
+              .toLowerCase()
+              .replace(/[^\w\s-]/g, '')
+              .replace(/[\s_-]+/g, '-')
+              .replace(/^-+|-+$/g, '') === normalizedOrgName
+          ) {
             return true
           }
-          
+
           return false
         })
 
@@ -107,7 +120,7 @@ export default function OrganizationPage() {
           setError(`No ideas found for ${orgName}`)
         } else {
           setOrganizationIdeas(filteredIdeas)
-          
+
           // Find the organization details from the first matching idea
           const orgIdea = filteredIdeas.find(idea => idea.organizationName)
           if (orgIdea) {
@@ -115,12 +128,12 @@ export default function OrganizationPage() {
               name: orgIdea.organizationName!,
               logo: orgIdea.organizationLogo,
               github: orgIdea.github,
-              website: orgIdea.website
+              website: orgIdea.website,
             })
           }
         }
       } catch (err) {
-        console.error("Error fetching organization ideas:", err)
+        console.error('Error fetching organization ideas:', err)
         setError(`Failed to load ideas for ${orgName}. Please try again later.`)
       } finally {
         setIsLoading(false)
@@ -158,13 +171,13 @@ export default function OrganizationPage() {
           <Link href="/" className="mr-6 mt-2">
             <ArrowLeft className="text-white hover:text-gray-300" />
           </Link>
-          
+
           {organizationDetails && (
             <div className="flex flex-col md:flex-row md:items-center gap-6">
               {organizationDetails.logo && (
-                <img 
-                  src={organizationDetails.logo} 
-                  alt={organizationDetails.name} 
+                <img
+                  src={organizationDetails.logo}
+                  alt={organizationDetails.name}
                   className="w-20 h-20 object-contain"
                 />
               )}
@@ -172,9 +185,9 @@ export default function OrganizationPage() {
                 <h1 className="text-3xl font-bold mb-4">{organizationDetails.name}</h1>
                 <div className="flex mt-2 space-x-6">
                   {organizationDetails.github && (
-                    <a 
-                      href={organizationDetails.github} 
-                      target="_blank" 
+                    <a
+                      href={organizationDetails.github}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-xl hover:text-gray-300"
                     >
@@ -182,9 +195,9 @@ export default function OrganizationPage() {
                     </a>
                   )}
                   {organizationDetails.website && (
-                    <a 
-                      href={organizationDetails.website} 
-                      target="_blank" 
+                    <a
+                      href={organizationDetails.website}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-xl hover:text-gray-300"
                     >
@@ -221,20 +234,18 @@ export default function OrganizationPage() {
               </div>
             </div>
           )}
-          
-          {!organizationDetails && (
-            <h1 className="text-4xl font-bold">Ideas from {orgName}</h1>
-          )}
+
+          {!organizationDetails && <h1 className="text-4xl font-bold">Ideas from {orgName}</h1>}
         </div>
-        
+
         {/* Ideas grid */}
         <div className="mt-12">
           <h2 className="text-3xl mb-8 archivo">Ideas ({organizationIdeas.length})</h2>
           <div className="md:flex flex-wrap md:justify-start justify-start gap-6 space-y-5 md:space-y-0">
             {organizationIdeas.map((idea, index) => {
               // Determine idea type
-              const ideaType = "organization"
-              
+              const ideaType = 'organization'
+
               return (
                 <IdeaCard
                   key={index}
@@ -258,4 +269,4 @@ export default function OrganizationPage() {
       </div>
     </main>
   )
-} 
+}

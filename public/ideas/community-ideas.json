@@ -1,10 +1,7 @@
 [
   {
     "name": "zk loyalty",
-    "categories": [
-      "Privacy",
-      "Loyalty Program"
-    ],
+    "categories": ["Privacy", "Loyalty Program"],
     "description": "A GDPR compliant, anonymous loyalty program",
     "event": "ETHDam",
     "github": "https://github.com/ETHDam-Hackathon/zkLoyalty/",
@@ -13,10 +10,7 @@
   },
   {
     "name": "Whisper",
-    "categories": [
-      "Privacy",
-      "Social"
-    ],
+    "categories": ["Privacy", "Social"],
     "description": "Platform for anonymized members to create privacy-preserved groups",
     "event": "ETHDam",
     "github": "https://github.com/gundeep/ethdam",
@@ -25,10 +19,7 @@
   },
   {
     "name": "ZeroDock",
-    "categories": [
-      "Computation",
-      "Blockchain"
-    ],
+    "categories": ["Computation", "Blockchain"],
     "description": "Providing provable off-chain computation based on on-chain events",
     "event": "ETHDam",
     "github": "https://github.com/Quix44/ZeroDock-ethdam-2024.git",
@@ -37,10 +28,7 @@
   },
   {
     "name": "TACo Snap",
-    "categories": [
-      "Wallet",
-      "Security"
-    ],
+    "categories": ["Wallet", "Security"],
     "description": "Store sensitive data like seed phrases and passwords directly within your MetaMask wallet",
     "event": "ETHDam",
     "github": "https://github.com/Feka7/taco-snap",
@@ -49,10 +37,7 @@
   },
   {
     "name": "SunkETH",
-    "categories": [
-      "Token",
-      "Privacy"
-    ],
+    "categories": ["Token", "Privacy"],
     "description": "Token implementation of \"Zero-Knowledge Wormholes\"",
     "event": "ETHDam",
     "github": "https://github.com/kevincharm/i_lost_my_eth_in_a_boating_accident",
@@ -61,10 +46,7 @@
   },
   {
     "name": "Stealth Keystore",
-    "categories": [
-      "Wallet",
-      "Security"
-    ],
+    "categories": ["Wallet", "Security"],
     "description": "Control multiple Safes from a single registered key using an on-chain keystore",
     "event": "ETHDam",
     "github": "https://github.com/fluidkey/ethdam-2024",
@@ -73,10 +55,7 @@
   },
   {
     "name": "StealthAlloc",
-    "categories": [
-      "DAO",
-      "Privacy"
-    ],
+    "categories": ["DAO", "Privacy"],
     "description": "DAOs privately fund ventures",
     "event": "ETHDam",
     "github": "https://github.com/tse-lao/ethdam24",
@@ -85,10 +64,7 @@
   },
   {
     "name": "NEVO",
-    "categories": [
-      "Voting",
-      "Privacy"
-    ],
+    "categories": ["Voting", "Privacy"],
     "description": "Decentralized voting by combining the privacy-enhanced MACI protocol with Near Protocol's seamless cross-chain capabilities",
     "event": "ETHDam",
     "github": "https://github.com/atahanyild/NEVO",
@@ -97,10 +73,7 @@
   },
   {
     "name": "munus",
-    "categories": [
-      "Charity",
-      "Privacy"
-    ],
+    "categories": ["Charity", "Privacy"],
     "description": "Anonymous charity donations that allow for the donator to prove he did the donation",
     "event": "ETHDam",
     "github": "https://github.com/hackaugusto/munus",
@@ -109,10 +82,7 @@
   },
   {
     "name": "BrickWall",
-    "categories": [
-      "Social",
-      "Privacy"
-    ],
+    "categories": ["Social", "Privacy"],
     "description": "Company reviews platform with privacy-preserving groups",
     "event": "ETHDam",
     "github": "https://github.com/Eugenumber1/BrickWall",
@@ -121,10 +91,7 @@
   },
   {
     "name": "Browser socket MPC",
-    "categories": [
-      "Security",
-      "Networking"
-    ],
+    "categories": ["Security", "Networking"],
     "description": "tlsnotary in browsers via the direct socket api",
     "event": "ETHDam",
     "github": "https://github.com/maceip/tlsnotary-direct",
@@ -133,10 +100,7 @@
   },
   {
     "name": "AUDIT-TRAIL",
-    "categories": [
-      "Storage",
-      "Security"
-    ],
+    "categories": ["Storage", "Security"],
     "description": "Immutable and permanent record storage",
     "event": "ETHDam",
     "github": "",
@@ -145,10 +109,7 @@
   },
   {
     "name": "ｗｈｉｓｐｅｒ",
-    "categories": [
-      "Finance",
-      "Privacy"
-    ],
+    "categories": ["Finance", "Privacy"],
     "description": "Private Cross-chain Quadratic Funding",
     "event": "ETHDam",
     "github": "https://github.com/ethdam24-quadratic/secret-repo",
@@ -157,10 +118,7 @@
   },
   {
     "name": "Football",
-    "categories": [
-      "Gaming",
-      "Privacy"
-    ],
+    "categories": ["Gaming", "Privacy"],
     "description": "On-chain football manager game that leverages the privacy that TEN Protocol provides to hide players' strategies from opponents",
     "event": "SCALING ETHEREUM 2024",
     "github": "https://github.com/Akhil-2310/Scaling-ethereum",
@@ -169,10 +127,7 @@
   },
   {
     "name": "z0Wallet",
-    "categories": [
-      "Wallet",
-      "Privacy"
-    ],
+    "categories": ["Wallet", "Privacy"],
     "description": "Privacy focused multi sig wallet powered by the risc0 stack",
     "event": "SCALING ETHEREUM 2024",
     "github": "https://github.com/rahul0tripathi/z0wallet",
@@ -181,10 +136,7 @@
   },
   {
     "name": "VerifyLearning",
-    "categories": [
-      "Machine Learning",
-      "Privacy"
-    ],
+    "categories": ["Machine Learning", "Privacy"],
     "description": "Secure Model Training: Zero-Knowledge Proofs can be used to ensure that the data used for training machine learning models remains private",
     "event": "SCALING ETHEREUM 2024",
     "github": "https://github.com/deepshah9696/ScalingWeb3",
@@ -193,10 +145,7 @@
   },
   {
     "name": "AuthChain:FHE Auth",
-    "categories": [
-      "Auth",
-      "Privacy"
-    ],
+    "categories": ["Auth", "Privacy"],
     "description": "A decentralized authentication app leveraging blockchain, passkeys, and Fully Homomorphic Encryption",
     "event": "SCALING ETHEREUM 2024",
     "github": "https://github.com/pratham-bhatnagar/fhe-2fa",
@@ -205,10 +154,7 @@
   },
   {
     "name": "zkSocial",
-    "categories": [
-      "Social",
-      "Privacy"
-    ],
+    "categories": ["Social", "Privacy"],
     "description": "Social media powered by ZKML",
     "event": "SCALING ETHEREUM 2024",
     "github": "https://github.com/star-gazer111/zkSocial",
@@ -217,10 +163,7 @@
   },
   {
     "name": "Shadow Pay",
-    "categories": [
-      "Payments",
-      "Privacy"
-    ],
+    "categories": ["Payments", "Privacy"],
     "description": "A privacy preserving p2p transaction platform",
     "event": "SCALING ETHEREUM 2024",
     "github": "https://github.com/Ankush523/shadow-pay",
@@ -229,10 +172,7 @@
   },
   {
     "name": "FHE Vickrey Auction",
-    "categories": [
-      "Auction",
-      "Privacy"
-    ],
+    "categories": ["Auction", "Privacy"],
     "description": "A type of sealed-bid second-price auction powered by FHE",
     "event": "SCALING ETHEREUM 2024",
     "github": "https://github.com/tnkshuuhei/fhe-vickrey",
@@ -241,10 +181,7 @@
   },
   {
     "name": "PrivPay",
-    "categories": [
-      "Payments",
-      "Privacy"
-    ],
+    "categories": ["Payments", "Privacy"],
     "description": "The DeFi application to receive and send payments with just simple Link, no need to reveal your address",
     "event": "SCALING ETHEREUM 2024",
     "github": "https://github.com/marotipatre/Priv-Pay",
@@ -253,10 +190,7 @@
   },
   {
     "name": "GhostPay",
-    "categories": [
-      "Payments",
-      "Privacy"
-    ],
+    "categories": ["Payments", "Privacy"],
     "description": "Defi application that let you send and receive funds anonymously with just a link",
     "event": "SCALING ETHEREUM 2024",
     "github": "https://github.com/porco-rosso-j/eth-rome-2023",
@@ -265,10 +199,7 @@
   },
   {
     "name": "zkbiometric",
-    "categories": [
-      "Auth",
-      "Privacy"
-    ],
+    "categories": ["Auth", "Privacy"],
     "description": "Authentication by securely verifying biometric onboarding data",
     "event": "SCALING ETHEREUM 2024",
     "github": "https://github.com/aridder/zkbiometric",
@@ -277,10 +208,7 @@
   },
   {
     "name": "nfl",
-    "categories": [
-      "Machine Learning",
-      "Privacy"
-    ],
+    "categories": ["Machine Learning", "Privacy"],
     "description": "Use Nillion for training federated learning models while keeping datasets private",
     "event": "SCALING ETHEREUM 2024",
     "github": "https://github.com/bowenyou/nillion-federated-learning",
@@ -289,10 +217,7 @@
   },
   {
     "name": "Monadic DNA",
-    "categories": [
-      "Genomics",
-      "Privacy"
-    ],
+    "categories": ["Genomics", "Privacy"],
     "description": "Privacy preserving personal genomics for health and ancestry",
     "event": "SCALING ETHEREUM 2024",
     "github": "https://github.com/Cryptonomic/MonadicDNA",
@@ -301,10 +226,7 @@
   },
   {
     "name": "zkWarden",
-    "categories": [
-      "Social",
-      "Privacy"
-    ],
+    "categories": ["Social", "Privacy"],
     "description": "Farcaster x zk proofs for verifying user details like age and location, allowing access to restricted group chats",
     "event": "SCALING ETHEREUM 2024",
     "github": "https://github.com/fabianferno/zkwarden",
@@ -313,10 +235,7 @@
   },
   {
     "name": "AddressMe",
-    "categories": [
-      "Social",
-      "Privacy"
-    ],
+    "categories": ["Social", "Privacy"],
     "description": "A private address book",
     "event": "SCALING ETHEREUM 2024",
     "github": "https://github.com/MikePawel/AddressMe",
@@ -325,10 +244,7 @@
   },
   {
     "name": "Staked Steps",
-    "categories": [
-      "Gaming",
-      "Fitness"
-    ],
+    "categories": ["Gaming", "Fitness"],
     "description": "A gamified fitness app where users can join public or private challenges by staking cryptocurrency",
     "event": "SCALING ETHEREUM 2024",
     "github": "https://github.com/mohanvaddi/staked-steps",
@@ -337,10 +253,7 @@
   },
   {
     "name": "Thumper",
-    "categories": [
-      "Privacy",
-      "Coordination"
-    ],
+    "categories": ["Privacy", "Coordination"],
     "description": "Structured zk setup ceremonies with trustless coordination, privacy, sybil-resistance, and zk-proven results",
     "event": "SCALING ETHEREUM 2024",
     "github": "https://github.com/justinfrevert/thumper",
@@ -349,10 +262,7 @@
   },
   {
     "name": "Polar",
-    "categories": [
-      "Auth",
-      "Privacy"
-    ],
+    "categories": ["Auth", "Privacy"],
     "description": "Web3 auth provider that privately stores user data in decentralized storage and selectively reveals it to the client app",
     "event": "SCALING ETHEREUM 2024",
     "github": "https://github.com/Complexia/polar",
@@ -361,10 +271,7 @@
   },
   {
     "name": "zK-Vote",
-    "categories": [
-      "Voting",
-      "Privacy"
-    ],
+    "categories": ["Voting", "Privacy"],
     "description": "A decentralized voting platform",
     "event": "ETHBucharest",
     "github": "https://github.com/Akhil-2310/Eth-Bucharest",
@@ -373,10 +280,7 @@
   },
   {
     "name": "stray",
-    "categories": [
-      "Social",
-      "Privacy"
-    ],
+    "categories": ["Social", "Privacy"],
     "description": "The go-to extension for every website, providing chat functionality to ensure privacy, facilitate engaging conversations",
     "event": "ETHBucharest",
     "github": "https://github.com/Enrypase/stray",
@@ -385,9 +289,7 @@
   },
   {
     "name": "MultiFactor Wallet",
-    "categories": [
-      "Wallet"
-    ],
+    "categories": ["Wallet"],
     "description": "provided a Web2-like experience to Web3 authentication while preserving user security and privacy.",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/Ferossgp/mfkdf-wallet",
@@ -396,10 +298,7 @@
   },
   {
     "name": "zkStealth",
-    "categories": [
-      "Transactions",
-      "DeFi"
-    ],
+    "categories": ["Transactions", "DeFi"],
     "description": "Stealth Addresses make ZKP more accessible to the general ethereum user",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/sembrestels/zkStealth/",
@@ -408,10 +307,7 @@
   },
   {
     "name": "Cr3dential",
-    "categories": [
-      "DID",
-      "Credentials"
-    ],
+    "categories": ["DID", "Credentials"],
     "description": "Secure, instant verification without exposing personal data for academics",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/cduchinois/ethberlin_cr3dential",
@@ -420,9 +316,7 @@
   },
   {
     "name": "KinkLink",
-    "categories": [
-      "Dating"
-    ],
+    "categories": ["Dating"],
     "description": "Privacy-preserving dating service",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/swissDAO-labs/KinkLink",
@@ -431,9 +325,7 @@
   },
   {
     "name": "GitVault",
-    "categories": [
-      "Programming"
-    ],
+    "categories": ["Programming"],
     "description": "Identity-less code collaboration on a censorship resistant version control",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/hackyguru/ethberlin",
@@ -442,9 +334,7 @@
   },
   {
     "name": "shovel-bootstrap",
-    "categories": [
-      "Data"
-    ],
+    "categories": ["Data"],
     "description": "an open source tool for synchronizing Ethereum data to your Postgres database",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/jalbritt/ETHBerlin-shovel-bootstrap",
@@ -453,9 +343,7 @@
   },
   {
     "name": "BlockWhisper",
-    "categories": [
-      "Whistleblowing"
-    ],
+    "categories": ["Whistleblowing"],
     "description": "a decentralized platform that enables anyone to anonymously share sensitive information",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/itsmeyaw/ethberlin4/tree/main",
@@ -464,9 +352,7 @@
   },
   {
     "name": "Zukofi",
-    "categories": [
-      "Voting"
-    ],
+    "categories": ["Voting"],
     "description": "Private qudaratic voting using FHE",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/shuklaayush/zukofi",
@@ -475,9 +361,7 @@
   },
   {
     "name": "CypherSmith",
-    "categories": [
-      "Wallet"
-    ],
+    "categories": ["Wallet"],
     "description": "Wallet dApp which automates the process of stealth wallet creation and management",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/dvboost/cypher-smith",
@@ -486,10 +370,7 @@
   },
   {
     "name": "Zupass Collab",
-    "categories": [
-      "Collaboration",
-      "Groups"
-    ],
+    "categories": ["Collaboration", "Groups"],
     "description": "Onchain Community Identity for ZuPass Groups",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/vijaykrishnavanshi/ethberlin04",
@@ -498,10 +379,7 @@
   },
   {
     "name": "zk0fficer",
-    "categories": [
-      "Collaboration",
-      "Groups"
-    ],
+    "categories": ["Collaboration", "Groups"],
     "description": "allows for the reusing and validation of existing digital credentials, while keeping your credentials private",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/hooperben/zkOfficer",
@@ -510,9 +388,7 @@
   },
   {
     "name": "CloakMyFox",
-    "categories": [
-      "DID"
-    ],
+    "categories": ["DID"],
     "description": "fingerprinting resistance to Metamask",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/onyb/cloakmyfox",
@@ -521,10 +397,7 @@
   },
   {
     "name": "Chainmail",
-    "categories": [
-      "Whistleblowing",
-      "Email"
-    ],
+    "categories": ["Whistleblowing", "Email"],
     "description": "empowers and incentivises whistleblowers that would otherwise be too afraid to reveal vital information for fear of safety or reputational damage",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/HumptyDumptyDevs/chainmail/tree/main",
@@ -533,10 +406,7 @@
   },
   {
     "name": "Trigger Warding",
-    "categories": [
-      "Whistleblowing",
-      "Data"
-    ],
+    "categories": ["Whistleblowing", "Data"],
     "description": "Programmable, encrypted & triggerable data vault",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/TriggerWard/catacombs",
@@ -545,9 +415,7 @@
   },
   {
     "name": "zk-twitter",
-    "categories": [
-      "Socials"
-    ],
+    "categories": ["Socials"],
     "description": "connect with each other by dropping ZK-Proveable data (called PODs)",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/ichub/zk-twitter",
@@ -556,10 +424,7 @@
   },
   {
     "name": "CarnationFM",
-    "categories": [
-      "Communication",
-      "Media"
-    ],
+    "categories": ["Communication", "Media"],
     "description": "an experiment in decentralized and encrypted communication with a focus on music as transport vessel carrying hidden messages",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/Tranquil-Flow/carnation-radio/tree/main",
@@ -568,10 +433,7 @@
   },
   {
     "name": "Pomar",
-    "categories": [
-      "P2P",
-      "Education"
-    ],
+    "categories": ["P2P", "Education"],
     "description": "peer-to-peer spaces where mentees can join mentors on a quest to learn something mutually beneficial.",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/obernardovieira/ethberlin4",
@@ -580,9 +442,7 @@
   },
   {
     "name": "SilentVote",
-    "categories": [
-      "Voting"
-    ],
+    "categories": ["Voting"],
     "description": "secure and anonymous voting system",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/savchart/eth_vote_module",
@@ -591,9 +451,7 @@
   },
   {
     "name": "PeerPack",
-    "categories": [
-      "Storage"
-    ],
+    "categories": ["Storage"],
     "description": "censorship resistance package distribution system for opensource ecosystems",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/BeyondDimensions/PeerPack",
@@ -602,9 +460,7 @@
   },
   {
     "name": "PriMaci",
-    "categories": [
-      "Voting"
-    ],
+    "categories": ["Voting"],
     "description": "eliminating the need to trust into public parties and private voting with MACI",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/CodeByNikolas/ETHBerlinPriMacyBigRepo",
@@ -613,10 +469,7 @@
   },
   {
     "name": "Decentralized Freelance Platform",
-    "categories": [
-      "Hiring",
-      "Reputation"
-    ],
+    "categories": ["Hiring", "Reputation"],
     "description": "bring trust between pseudonyms in the context of freelancing so that no information beyond what is necessary is exchanged to the other party",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/chrdamico/ETHBerlin2024/tree/main",
@@ -625,10 +478,7 @@
   },
   {
     "name": "Canonical Frontend Registry",
-    "categories": [
-      "Frontend",
-      "Security"
-    ],
+    "categories": ["Frontend", "Security"],
     "description": "a Web extension + smart contract which are used to verify that frontends at a particular ENS domain are legit / not compromised",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/mfahampshire/CFRWebExtension",
@@ -637,11 +487,7 @@
   },
   {
     "name": "zk TRIPSTER",
-    "categories": [
-      "Bug bounty",
-      "Hiring",
-      "Security"
-    ],
+    "categories": ["Bug bounty", "Hiring", "Security"],
     "description": "Bug bounty program in the DeFi with proving vulnerabilities via ZK proofs",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/tripster-hackers/zkTripster",
@@ -650,10 +496,7 @@
   },
   {
     "name": "Whirl",
-    "categories": [
-      "Transactions",
-      "DeFi"
-    ],
+    "categories": ["Transactions", "DeFi"],
     "description": "enchance privacy to Atomic Swaps from Bitcoin to Ethereum",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/itublockchain/ETHBerlin-Ezytrax/tree/main",
@@ -662,10 +505,7 @@
   },
   {
     "name": "zKal",
-    "categories": [
-      "Calendar",
-      "Project management"
-    ],
+    "categories": ["Calendar", "Project management"],
     "description": "de-Googled community & group calendars",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/voboda/zKal",
@@ -674,9 +514,7 @@
   },
   {
     "name": "zkAd",
-    "categories": [
-      "Marketing"
-    ],
+    "categories": ["Marketing"],
     "description": "Privacy preserving personalized ads",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/4turkuaz/eth-berlin",
@@ -685,10 +523,7 @@
   },
   {
     "name": "Private Peers",
-    "categories": [
-      "Collaboration",
-      "P2P"
-    ],
+    "categories": ["Collaboration", "P2P"],
     "description": "Own subjective sub-graph of connections, and attributes",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/olehmisar/six-dos",
@@ -697,9 +532,7 @@
   },
   {
     "name": "Acropolis",
-    "categories": [
-      "Voting"
-    ],
+    "categories": ["Voting"],
     "description": "Authorized Anonymous Voting through Signatures over Public Keys",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/cspr-rad/acropolis",
@@ -708,11 +541,7 @@
   },
   {
     "name": "Kabuso",
-    "categories": [
-      "Censorship resistance",
-      "Transactions",
-      "DeFi"
-    ],
+    "categories": ["Censorship resistance", "Transactions", "DeFi"],
     "description": "censorship resistant smart-contracts",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/VMLVaske/Kabuso",
@@ -721,11 +550,7 @@
   },
   {
     "name": "ZkUbiToken",
-    "categories": [
-      "Sybil resistance",
-      "Transactions",
-      "DeFi"
-    ],
+    "categories": ["Sybil resistance", "Transactions", "DeFi"],
     "description": "redistributing a universal basic income (UBI) to ensure fair wealth distribution, leveraging zero-knowledge proofs for sybil-resistant identity verification without the need for a trust network",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/valle-xyz/ZkUbi",
@@ -734,10 +559,7 @@
   },
   {
     "name": "zu-git-proofs",
-    "categories": [
-      "Collaboration",
-      "Reputation"
-    ],
+    "categories": ["Collaboration", "Reputation"],
     "description": "anonymous feedback in forums by assigning credibility badges based on GitHub contributions",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/sztok7/zu-git-proofs",
@@ -746,9 +568,7 @@
   },
   {
     "name": "Schufher",
-    "categories": [
-      "Credit scoring"
-    ],
+    "categories": ["Credit scoring"],
     "description": "private alternative to the Schufa credit scores",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/TUM-Blockchain-Club/ethberlin-schufher",
@@ -757,9 +577,7 @@
   },
   {
     "name": "InclusionBribes",
-    "categories": [
-      "MEV"
-    ],
+    "categories": ["MEV"],
     "description": "the scale for non censoring block builders to build more profitable blocks",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/nodestarQ/InclusionBribes",
@@ -768,10 +586,7 @@
   },
   {
     "name": "RageAgainst.eu",
-    "categories": [
-      "DeFi",
-      "Frontend"
-    ],
+    "categories": ["DeFi", "Frontend"],
     "description": "give everyday DeFi users the power to host their own frontends locally",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/kevincharm/rageagainst/",
@@ -780,10 +595,7 @@
   },
   {
     "name": "Secret Talk",
-    "categories": [
-      "Communication",
-      "Project management"
-    ],
+    "categories": ["Communication", "Project management"],
     "description": "Ethereum powered voice encryption that allows you to join calls on Google Meet, Discrod, Teams and still be in charge of who can actually hear you",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/gedithejedi/secret-talk",
@@ -792,10 +604,7 @@
   },
   {
     "name": "Voto",
-    "categories": [
-      "Voting",
-      "DID"
-    ],
+    "categories": ["Voting", "DID"],
     "description": "an on-chain censorship-resistant anonymous voting solution built on decentralised identities.",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/gedithejedi/secret-talk",
@@ -804,9 +613,7 @@
   },
   {
     "name": "Shadowlings",
-    "categories": [
-      "Defi"
-    ],
+    "categories": ["Defi"],
     "description": "generates unique and disposable deposit addresses that appear to be clean EOAs but are supercharged using EIP-3074 and ERC-4337",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/nlordell/shadowlings",
@@ -815,10 +622,7 @@
   },
   {
     "name": "Coinguard",
-    "categories": [
-      "Defi",
-      "Wallet"
-    ],
+    "categories": ["Defi", "Wallet"],
     "description": "an Ethereum self custody wallet with a integrated incognito mode",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/TrungNguyen1409/ethberlin24_coinguard",
@@ -827,10 +631,7 @@
   },
   {
     "name": "Bet&Bed",
-    "categories": [
-      "Reputation",
-      "DID"
-    ],
+    "categories": ["Reputation", "DID"],
     "description": "a solution that allows for blind auctions curated by on-chain activity to determine a better match with the house owner / host.",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/grmkris/eth-berlin-2024",
@@ -839,10 +640,7 @@
   },
   {
     "name": "ZKMAV",
-    "categories": [
-      "Reputation",
-      "Whistleblowing"
-    ],
+    "categories": ["Reputation", "Whistleblowing"],
     "description": "a platform to help authenticate true photos, guaranteeing their binding to an immutable timestamp and relevant information to boost the legitimacy of a photo without giving away personal information of the one behind the camera.",
     "event": "ETHBerlin 2024",
     "github": "https://github.com/aatifsyed/c2pa4a/",

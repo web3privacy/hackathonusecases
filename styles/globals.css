@@ -3,18 +3,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-  
+
 .major {
-  font-family: "Major Mono Display", monospace;
+  font-family: 'Major Mono Display', monospace;
   font-weight: 400;
   font-style: normal;
 }
 
 .archivo {
-  font-family: "Archivo", sans-serif;
+  font-family: 'Archivo', sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+  font-variation-settings: 'wdth' 100;
 }

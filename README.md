@@ -31,11 +31,12 @@ Hackathon use-cases generator - generate ideas curated by the Web3Privacy Now co
         "featured": true
     }
 ```
+
 3. Add your data (use-cases).
 4. Make a Pull Request.
 5. Our team will review contributions - later they will appear on the front-end.
 
-# Tech specs 
+# Tech specs
 
 Deployed at [https://ideas.web3privacy.info/](https://ideas.web3privacy.info/)
 

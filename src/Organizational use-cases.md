@@ -1,11 +1,14 @@
 # Organizational use-cases
+
 Repo with use-cases from organizations (within their hackathon guides, githubs etc)
 
 ## Contents
+
 - [Waku](#Waku)
 - [Aztec](#Aztec)
 
 ## Waku
+
 [source](https://github.com/waku-org/ideas/)
 
 <details>
@@ -227,6 +230,7 @@ The codebases on GitHub are vulnerable to censorship as they are stored and retr
 </details>
 
 ## Aztec
+
 [source](https://github.com/AztecProtocol/dev-rel/blob/main/hackathons/INSPIRATION.md)
 
 ## DeFi 💸
