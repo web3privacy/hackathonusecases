@@ -1,7 +1,7 @@
 export const APP_CONFIG = {
   ITEMS_PER_PAGE: 4,
   CONTRIBUTE_URL:
-    'https://github.com/web3privacy/docs/blob/main/src/content/docs/projects/hackathon-use-cases-generator.md',
+    'https://docs.web3privacy.info/projects/privacy-idea-generator',
   LOGO_URL: 'https://web3privacy.info/logo.svg',
   DATA_ENDPOINTS: {
     COMMUNITY: '/data/ideas/community-ideas.json',
