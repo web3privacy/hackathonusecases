@@ -17,3 +17,10 @@
   font-style: normal;
   font-variation-settings: 'wdth' 100;
 }
+
+/* Mobile viewport fixes */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+}
