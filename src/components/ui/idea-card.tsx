@@ -200,32 +200,32 @@ const IdeaCard: React.FC<IdeaCardProps> = ({
 
       {renderFeatures()}
 
-      <div className="flex justify-between items-center my-3">
-        <div className="flex flex-wrap gap-1 w-2/3">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center my-3 gap-3">
+        <div className="flex flex-wrap gap-1 sm:w-2/3">
           {categories.map((category, index) => (
-            <Badge key={index} variant="secondary" className="mr-1 mb-1">
+            <Badge key={index} variant="secondary" className="mr-1 mb-1 text-xs">
               {category}
             </Badge>
           ))}
         </div>
-        <div className="w-1/3 text-xs text-end flex justify-end space-x-3">
+        <div className="sm:w-1/3 text-xs flex justify-start sm:justify-end space-x-3">
           {github && (
-            <a href={github} target="_blank" rel="noopener noreferrer">
+            <a href={github} target="_blank" rel="noopener noreferrer" aria-label="View on GitHub">
               <Github className="w-5 h-5" />
             </a>
           )}
           {website && (
-            <a href={website} target="_blank" rel="noopener noreferrer">
+            <a href={website} target="_blank" rel="noopener noreferrer" aria-label="Visit website">
               <Globe className="w-5 h-5" />
             </a>
           )}
           <Dialog>
             <DialogTrigger asChild>
-              <button className="focus:outline-none">
+              <button className="focus:outline-none" aria-label="Share this idea">
                 <Share2 className="w-5 h-5" />
               </button>
             </DialogTrigger>
-            <DialogContent>
+            <DialogContent className="sm:max-w-md">
               <DialogHeader>
                 <DialogTitle>Share this idea</DialogTitle>
                 <DialogDescription>
