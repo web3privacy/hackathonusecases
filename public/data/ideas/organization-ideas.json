@@ -20,5 +20,16 @@
     "organizationLogo": "https://waku.org/theme/image/logo.svg",
     "github": "https://github.com/waku-org",
     "featured": true
+  },
+  {
+    "id": "qr-keycard-app",
+    "name": "EIP-4527 Keycard signer",
+    "description": "Keycard Shell uses EIP-4527 (IIUC) to be able to communicate TX data and signature via QR codes. Build a mobile app that does just that and uses Keycard via NFC to actually sign.",
+    "categories": ["Wallet"],
+    "features": ["tx data decoding", "air-gapped wallet"],
+    "organizationName": "Keycard",
+    "organizationLogo": "https://keycard.tech/icon.png",
+    "github": "https://github.com/keycard-tech/keycard-shell/issues/109",
+    "featured": true
   }
 ]
