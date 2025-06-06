@@ -31,5 +31,27 @@
     "organizationLogo": "https://keycard.tech/icon.png",
     "github": "https://github.com/keycard-tech/keycard-shell/issues/109",
     "featured": true
+  },
+  {
+    "id": "codex-filehog",
+    "name": "Codex FileHog",
+    "description": "A tool to store up entire folders of data on the Codex storage network. See the Github repo for the full description and requirements.",
+    "categories": ["Storage"],
+    "features": ["file sharing", "backup"],
+    "organizationName": "Codex",
+    "organizationLogo": "https://raw.githubusercontent.com/acid-info/design-assets/refs/heads/master/codex/codex-mark-primary-white.png",
+    "github": "https://github.com/benbierens/codex-filehog",
+    "featured": true
+  },
+  {
+    "id": "waku-fileverse",
+    "name": "Replace Filverse signaling server with Waku",
+    "description": "Fileverse uses a signaling server to establish WebRTC connections between peers. Replace this with Waku to enable (more) private collabiration.",
+    "categories": ["Privacy", "Collaboration"],
+    "features": ["ddocs", "signaling server"],
+    "organizationName": "Waku",
+    "organizationLogo": "https://raw.githubusercontent.com/acid-info/design-assets/refs/heads/master/waku/waku-mark-primary-white.png",
+    "github": "https://github.com/fileverse/fileverse-ddoc/blob/42ac3a4fab56d06e35fdcae488293cedc03d8fce/package/use-ddoc-editor.tsx#L176",
+    "featured": true
   }
 ]
