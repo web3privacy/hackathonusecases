@@ -510,5 +510,13 @@
     "author": "https://x.com/web3privacy",
     "organization": "",
     "featured": true
+  },
+  {
+    "name": "Pamphlet Generator",
+    "categories": ["Hacktivism"],
+    "description": "A tool allowing designers to publish templates for pamhplets, stickers, zines etc. on a decentralized storage (e.g. Codex). The app will allow for downlaoding the design package, fill in the template with custom information and export assets in easily printable format. The goal is to help event/meetup organizers to get quickly to high quality materials without relying on centralized services like Figma.",
+    "author": "https://x.com/vpavlin",
+    "Github": "-",
+    "featured": false
   }
 ]
