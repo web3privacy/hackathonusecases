@@ -53,5 +53,16 @@
     "organizationLogo": "https://raw.githubusercontent.com/acid-info/design-assets/refs/heads/master/waku/waku-mark-primary-white.png",
     "github": "https://github.com/fileverse/fileverse-ddoc/blob/42ac3a4fab56d06e35fdcae488293cedc03d8fce/package/use-ddoc-editor.tsx#L176",
     "featured": true
+  },
+  {
+    "name": "Open Community Notes",
+    "description": "Build an open community notes network to overlay facts to any article (press or social media), using zero-knowledge to keep history of contributors private, similar to X's algorithm. Waku and Codex can be used to distribute and store community notes, Noir for programmable zk.",
+    "categories": ["Social", "R&D", "Censorship-Resistance"],
+    "author": "@fryorcraken",
+    "organizationName": "Waku",
+    "organizationLogo": "https://raw.githubusercontent.com/acid-info/design-assets/refs/heads/master/waku/waku-mark-primary-white.png",
+    "github": "https://github.com/waku-org",
+    "website": "https://waku.org",
+    "featured": true
   }
 ]
